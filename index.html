@@ -3,23 +3,48 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="author" content="Szegedi Bence, Tukacs Patrik" />
+    <link rel="icon" type="image/x-icon" href="./képek/pipa favicon.ico">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ToDo App</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <nav class="menu">
-      <h1>ToDo App</h1>
-      <div class="item">
-        <h1>Főoldal</h1>
-        <h1>Leírás</h1>
+    
+    <div class="topnav">
+      <a class="active" id="left" href="#home">ToDo APP</a>
+      <a id="left"href="#galeria">Galéria</a>
+      <a id="left"href="#rolunk">Rólunk</a>
+      <button class="gomb" id="right">Regisztráció</button>
+      <button class="gomb" id="right">Bejelentkezés</button>
+      
+      
+    </div>
+    
+    <div class="container">
+      <!--<img id="boritokep" src="./képek/planner2.jpg" alt="naptár">-->
+      <div class="centered">
+        
       </div>
-      <div>
-        <button>Bejelentkezés</button>
-        <button>Regisztráció</button>
-      </div>
-    </nav>
-    <img id="minta" src="./képek/minta.png" alt="minta">
+
+    </div>
+    <div class="bg-img" id="bejelentkezes">
+      <form action="/action_page.php" class="form">
+        <h1>Bejelentkezés</h1>
+    
+        <label for="email"><b>Email</b></label>
+        <input type="text" placeholder="Enter Email" name="email" required>
+    
+        <label for="psw"><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" name="psw" required>
+    
+        <button type="submit" class="login">Login</button>
+      </form>
+    </div>
+    
+    
+
+   
+    
   </body>
 </html>
