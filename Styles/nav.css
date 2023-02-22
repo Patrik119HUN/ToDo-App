@@ -30,3 +30,11 @@
   background-color: #e3fc02;
   color: #1f1f21;
 }
+
+.logo{
+  color: #e3fc02;
+  font-family: monospace;
+  font-weight: bold;
+  font-size: 30px;
+  margin: 150px 25px;
+}
