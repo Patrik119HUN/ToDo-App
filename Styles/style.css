@@ -41,9 +41,20 @@ body button {
   transform: translate(-50%, -50%);
 }
 
+.bg-img{
+  background-image: url(../képek/planner.jpg);
+  min-height: 700px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  
+}
 .form {
+  float: right;
   right: 0;
-  margin: 20px;
+  margin-top: 150px;
+  margin-bottom: 150px;
+  margin-right: 60px;
   max-width: 350px;
   padding: 16px;
   background-color: #1f1f21;
