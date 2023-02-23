@@ -18,9 +18,7 @@
   color: #e3fc02;
   height: 100%;
 }
-#right {
-  margin-left: auto;
-}
+
 
 .topnav a:hover {
   background-color: gray;
@@ -39,7 +37,5 @@
   font-weight: bold;
   font-size: 30px;
   width: fit-content;
-  margin: 2rem;
-  margin-top: auto;
-  margin-bottom: auto;
+  margin: auto 
 }
