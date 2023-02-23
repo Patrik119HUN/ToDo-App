@@ -1,9 +1,15 @@
 <?php 
 include 'Route.php';
 use Steampixel\Route;
-Route::add('/hello', function() {
+
+Route::add('/', function() {
   include('./Sites/index.php');
 });
+
+Route::add('/galeria', function() {
+  include('./Sites/galeria.php');
+});
+
 Route::pathNotFound(function($path) {
   // Do not forget to send a status header back to the client
   // The router will not send any headers by default
