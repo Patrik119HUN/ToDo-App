@@ -1,41 +1,101 @@
+:root {
+  --fekete: #1f1f21;
+  --sarga: #e3fc02;
+}
+
 .topnav {
   position: fixed;
   display: flex;
+  justify-content: space-between;
   top: 0;
   width: 100%;
-  background-color: #1f1f21;
+  background-color: var(--fekete);
   overflow: hidden;
   height: 3.5rem;
 }
-
+.mobile {
+  margin: auto;
+}
+.ham {
+  display: none;
+}
+.invisible {
+  display: none;
+}
+@media screen and (max-width: 700px) {
+  .topnav {
+    flex-direction: column;
+    height: fit-content;
+  }
+  .logo {
+    order: -2;
+    margin-left: 1rem !important;
+    margin-top: auto !important;
+    margin-bottom: auto !important;
+    padding: 1rem;
+  }
+  .asd {
+    margin: auto;
+  }
+  .ham {
+    display: block;
+    background-color: transparent;
+    border: 0;
+    order: -1;
+    width: 3rem;
+    height: 3rem;
+    align-self: center;
+    margin-right: 1rem;
+  }
+  .mobile {
+    order: -1;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row !important;
+    height: fit-content;
+    width:100%;
+  }
+}
+@media screen and (min-width:700px){
+  .mobile{
+    display: none;
+  }
+}
+@media screen and (min-width:800px){
+  .mobile{
+    display: block;
+  }
+}
 .topnav a {
   display: inline-block;
-  padding: 16px 22px;
+  padding: 1rem 1.4rem;
   text-align: center;
   text-decoration: none;
-  font-size: 17px;
+  font-size: 1rem;
   font-weight: bold;
-  color: #e3fc02;
-  height: 100%;
+  color: var(--sarga);
+  height: 3.5rem;
 }
-
-
+/*  */
+#menu{
+  display: flex;
+  justify-content: center;
+}
 .topnav a:hover {
   background-color: gray;
-  color: #e3fc02;
+  color: var(--sarga);
 }
 
 .topnav a.active {
-  background-color: #e3fc02;
-  color: #1f1f21;
+  background-color: var(--sarga);
+  color: var(--fekete);
 }
 
-.logo{
+.logo {
   text-align: center;
-  color: #e3fc02;
+  color: var(--sarga);
   font-family: monospace;
   font-weight: bold;
-  font-size: 30px;
-  width: fit-content;
-  margin: auto 
+  font-size: 2rem;
+  margin: 0;
 }
