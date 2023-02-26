@@ -16,7 +16,7 @@
 
     
     <main class="bg-signup" id="bejelentkezes">
-      <form action="/action_page.php" class="form">
+      <form action="/action_page.php" class="form" id="reset">
         <h1>Regisztráció</h1>
 
         <label for="email"><b>Email</b></label>
@@ -40,8 +40,8 @@
       
     </footer>
     <script src="../JS/index.js">
-        function myFunction() {
-        document.getElementById("bejelentkezes").reset();
+      function myFunction() {
+        document.getElementById("reset").reset();
         }
     </script>
   </body>
