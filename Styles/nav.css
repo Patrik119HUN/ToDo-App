@@ -2,7 +2,13 @@
   --fekete: #1f1f21;
   --sarga: #e3fc02;
 }
-
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  height: 100% ;
+  display: flex;
+  justify-content: center;
+}
 .topnav {
   position: fixed;
   display: flex;
@@ -11,63 +17,13 @@
   width: 100%;
   background-color: var(--fekete);
   overflow: hidden;
-  height: 3.5rem;
-}
-.mobile {
-  margin: auto;
 }
 .ham {
   display: none;
 }
-.invisible {
-  display: none;
-}
-@media screen and (max-width: 700px) {
-  .topnav {
-    flex-direction: column;
-    height: fit-content;
-  }
-  .logo {
-    order: -2;
-    margin-left: 1rem !important;
-    margin-top: auto !important;
-    margin-bottom: auto !important;
-    padding: 1rem;
-  }
-  .asd {
-    margin: auto;
-  }
-  .ham {
-    display: block;
-    background-color: transparent;
-    border: 0;
-    order: -1;
-    width: 3rem;
-    height: 3rem;
-    align-self: center;
-    margin-right: 1rem;
-  }
-  .mobile {
-    order: -1;
-    display: flex;
-    justify-content: space-between;
-    flex-direction: row !important;
-    height: fit-content;
-    width:100%;
-  }
-}
-@media screen and (min-width:700px){
-  .mobile{
-    display: none;
-  }
-}
-@media screen and (min-width:800px){
-  .mobile{
-    display: block;
-  }
-}
+
+
 .topnav a {
-  display: inline-block;
   padding: 1rem 1.4rem;
   text-align: center;
   text-decoration: none;
@@ -77,10 +33,7 @@
   height: 3.5rem;
 }
 /*  */
-#menu{
-  display: flex;
-  justify-content: center;
-}
+
 .topnav a:hover {
   background-color: gray;
   color: var(--sarga);
@@ -98,4 +51,52 @@
   font-weight: bold;
   font-size: 2rem;
   margin: 0;
+}
+
+@media screen and (max-width: 700px) {
+  .topnav {
+    flex-direction: column;
+    height: fit-content;
+  }
+  .logo {
+    margin-left: 1rem !important;
+    margin-top: auto !important;
+    margin-bottom: auto !important;
+    padding: 1rem;
+  }
+  .ham {
+    display: block;
+    background-color: transparent;
+    border: 0;
+    width: 3rem;
+    height: 3rem;
+    align-self: center;
+    margin-right: 1rem;
+  }
+  ul:first-child {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row !important;
+    height: fit-content;
+    width:100%;
+    margin: auto;
+  }
+}
+@media screen and (min-width:700px){
+  ul:first-child{
+    display: none;
+  }
+}
+@media screen and (min-width:800px){
+  ul:first-child{
+    display: block;
+    order:1;
+    margin: auto;
+  }
+  ul:last-child{
+    order:2;
+  }
+}
+.invisible {
+  display: none;
 }
