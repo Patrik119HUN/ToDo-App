@@ -10,6 +10,7 @@
 
 .topnav a {
   display: inline-block;
+  background-color: #1f1f21;
   padding: 16px 22px;
   text-align: center;
   text-decoration: none;
@@ -20,11 +21,31 @@
 }
 
 
-.topnav a:hover {
+.topnav a:hover, a:focus, a:active {
   background-color: gray;
+  text-decoration: none;
   color: #e3fc02;
 }
-
+a::before {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: 3px;
+  left: 0;
+  height: 3px;
+  width: 100%;
+  background-color: #000;
+  transform-origin: right top;
+  transform: scale(0, 1);
+  transition: color 0.1s,transform 0.2s ease-out;
+}
+a:active::before {
+  background-color: #000;
+}
+a:hover::before, a:focus::before {
+  transform-origin: left top;
+  transform: scale(1, 1);
+}
 .topnav a.active {
   background-color: #e3fc02;
   color: #1f1f21;
