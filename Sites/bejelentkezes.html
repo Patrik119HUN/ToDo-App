@@ -15,7 +15,7 @@
     
 
     <main class="bg-img" id="bejelentkezes">
-        <form action="/action_page.php" class="form">
+        <form action="/action_page.php" class="form" id="reset">
           <h1>Bejelentkezés</h1>
 
           <label for="email"><b>Email</b></label>
@@ -38,10 +38,10 @@
       <div class="name" id="right">ToDo APP by Tukacs Patrik and Szegedi Bence</div>  
     </footer>
     <script src="../JS/index.js">
-      myFunction(){
-        document.getElementsByClassName("form").reset();
+      function myFunction(){
+        document.getElementsById("reset").reset();
         console.log("bazdmeg");
-      };
+      }
     </script>
   </body>
 </html>
