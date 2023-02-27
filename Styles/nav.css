@@ -10,7 +10,7 @@ nav ul {
   justify-content: center;
 }
 .topnav {
-  position: fixed;
+  position: sticky;
   display: flex;
   justify-content: space-between;
   top: 0;

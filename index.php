@@ -9,6 +9,16 @@ Route::add('/', function() {
 Route::add('/galeria', function() {
   include('./Sites/galeria.php');
 });
+Route::add('/regisztracio', function() {
+  include('./Sites/regisztracio.php');
+});
+Route::add('/bejelentkezes', function() {
+  include('./Sites/bejelentkezes.php');
+});
+
+Route::add('/rolunk', function() {
+  include('./Sites/rolunk.php');
+});
 
 Route::pathNotFound(function($path) {
   // Do not forget to send a status header back to the client
@@ -19,4 +29,3 @@ Route::pathNotFound(function($path) {
   echo 'The requested path "'.$path.'" was not found!';
 });
 Route::run('/');
-?>
