@@ -12,7 +12,7 @@
     <li><a href="/rolunk">Rólunk</a></li>
   </ul>
   <ul id="menu">
-    <li><a>Regisztráció</a></li>
+    <li><a href="../Sites/regisztracio.html">Regisztráció</a></li>
     <li><a href="../Sites/bejelentkezes.html">Bejelentkezés</a></li>
   </ul>
 </nav>

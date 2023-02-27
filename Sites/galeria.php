@@ -33,8 +33,8 @@
             <li>Jegyzeteket írhatsz a teendők mellé</li>
         </ul>
         Hiszünk abban, hogy ezzel az applikációval motiválni tudunk téged, hogy produktív napod legyen.
-        <br> <br>
-        <span id="use">Regisztrálj még ma és használd <span id="ingyen">INGYEN</span> a ToDo-t!</span>
+        <br> 
+        <p id="use">Regisztrálj még ma és használd <span id="ingyen">INGYEN</span> a ToDo-t!</p>
 
     </div>
     <?php include './Modules/footer.php' ?>

@@ -30,12 +30,18 @@
           />
 
           <button type="submit" class="login">Belépek</button>
+          <input type="button" onclick="myFunction()" value="Reset form">
         </form>
     </main>
 
     <footer class="footer">
       <div class="name" id="right">ToDo APP by Tukacs Patrik and Szegedi Bence</div>  
     </footer>
-    <script src="../JS/index.js"></script>
+    <script src="../JS/index.js">
+      myFunction(){
+        document.getElementsByClassName("form").reset();
+        console.log("bazdmeg");
+      };
+    </script>
   </body>
 </html>

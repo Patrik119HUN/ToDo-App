@@ -32,32 +32,13 @@ nav ul {
   color: var(--sarga);
   height: 3.5rem;
 }
-/*  */
 
 
 .topnav a:hover {
-  background-color: gray;
-  text-decoration: none;
-  color: var(--sarga);
-}
-a::before {
-  content: '';
-  display: block;
-  position: absolute;
-  bottom: 3px;
-  left: 0;
-  height: 3px;
-  width: 100%;
-  background-color: #000;
-  transform-origin: right top;
-  transform: scale(0, 1);
-  transition: color 0.1s,transform 0.2s ease-out;
+  background-color: gray !important;
+  color: var(--sarga) !important;
 }
 
-a:hover::before, a:focus::before {
-  transform-origin: left top;
-  transform: scale(1, 1);
-}
 .topnav a.active {
   background-color: var(--sarga);
   color: var(--fekete);
