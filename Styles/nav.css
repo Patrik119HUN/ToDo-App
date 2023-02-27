@@ -39,6 +39,11 @@ nav ul {
   color: var(--sarga) !important;
 }
 
+.topnav a:is(:link, :active, :visited).currant {
+  background-color: gray;
+  color: var(--sarga);
+}
+
 .topnav a.active {
   background-color: var(--sarga);
   color: var(--fekete);
