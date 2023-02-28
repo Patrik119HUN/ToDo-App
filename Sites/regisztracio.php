@@ -19,16 +19,18 @@
 
   <main class="bg-signup" id="bejelentkezes">
     <form action="/action_page.php" class="form" id="reset">
-      <h1>Regisztráció</h1>
+      <fieldset>
+        <h1>Regisztráció</h1>
 
-      <label for="email"><b>Email</b></label>
-      <input type="text" placeholder="Add meg az email címed" name="email" required />
+        <label for="email"><b>Email</b></label>
+        <input type="text" placeholder="Add meg az email címed" name="email" required />
 
-      <label for="psw"><b>Password</b></label>
-      <input type="password" placeholder="Adj meg egy jelszót" name="psw" required />
+        <label for="psw"><b>Password</b></label>
+        <input type="password" placeholder="Adj meg egy jelszót" name="psw" required />
 
-      <button type="submit" class="login">Regisztrálok</button>
-      <input type="button" onclick="myFunction()" value="Reset form">
+        <button type="submit" class="login">Regisztrálok</button>
+        <input class="rButton" type="button" onclick="myFunction()" value="Reset form">
+      </fieldset>
     </form>
   </main>
 
