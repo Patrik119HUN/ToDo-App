@@ -1,10 +1,8 @@
-A felhasználó mindig tudja, hogy melyik oldalon van éppen (pl. az aktuális menüpont
-más dizájnnal jelenik meg) (0/2 pont)
+
 Az oldal tartalma igényesen animálva jelenik meg (pl. az egyes elemek beúsznak, fokozatosan jelennek meg, stb.) (0/3/6 pont)
-Az elkészített HTML oldalak mindegyike reszponzív, különböz® méret¶ kijelz®kön is megfelel®en néznek ki, mobilon is megfelel®en jelennek meg. (0/5/10 pont)
+
 Összesen legalább 6 különböz® típusú, értelmesen felhasznált input mez® található (0/2
 pont)
-Van olyan ¶rlap, amelyik tartalmaz alapállapot (reset) gombot (0/2 pont)
-Van olyan ¶rlap, amelyik tartalmaz mez®csoportosítást (0/2 pont) <fieldset>
+
 Pseudo-elemek használata (before, after, selection, rst-letter, rst-line, stb.) (mindegyik
 1 pont, max 2 pont)
