@@ -10,7 +10,7 @@
   <ul id="menu">
     <li><a class='<?= ($activePage == 'index') ? 'active':''; ?>' href="/" >Kezdőlap</a></li>
     <li><a class='<?= ($activePage == 'galeria') ? 'active':''; ?>' href="/galeria">Galéria</a></li>
-    <li><a class='<?= ($activePage == 'rolunk') ? 'active':''; ?>' href="/rolunk">Rólunk</a></li>
+    <!--<li><a class='</*?= ($activePage == 'rolunk') ? 'active':''; ?>*/' href="/rolunk">Rólunk</a></li>-->
   </ul>
   <ul id="menu">
     <li><a class='<?= ($activePage == 'regisztracio') ? 'active':''; ?>' href="/regisztracio">Regisztráció</a></li>
