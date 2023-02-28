@@ -33,10 +33,8 @@
   <?php include 'Modules/footer.php' ?>
   <script>
     function myFunction() {
-      document.getElementsById("reset").reset();
-      console.log("bazdmeg");
+      document.getElementById("reset").reset();
     }
   </script>
 </body>
-
 </html>
