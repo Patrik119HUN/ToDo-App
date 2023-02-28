@@ -37,8 +37,8 @@
         <p id="use">Regisztrálj még ma és használd <span id="ingyen">INGYEN</span> a ToDo-t!</p>-->
         <table>
             <tr>
-                <th></th>
-                <th></th>
+                <th>Előnyök</th>
+                <th>Hátrányok</th>
             </tr>
             <tr>
                 <td></td>
