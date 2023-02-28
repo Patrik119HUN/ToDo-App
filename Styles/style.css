@@ -88,9 +88,13 @@ fieldset{
   border-color: #1f1f21;
 }
 .rButton {
-  background-color: gray;
-  color: #e3fc02;
+  background-color: #e3fc02;
+  font-family: monospace;
+  font-weight: bold;
+  color: #1f1f21;
   cursor: pointer;
+  width: 25%;
+  height: 1.5rem;
   opacity: 0.9;
   margin-top: 0.5rem;
 

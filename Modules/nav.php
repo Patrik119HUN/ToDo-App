@@ -8,7 +8,7 @@
     <button class="ham" id="myBtn"><img src="../SVG/menu.svg" alt="" style="width: 2rem;"></button>
   </ul>
   <ul id="menu">
-    <li><a class='<?= ($activePage == 'index') ? 'active':''; ?>' href="/" >ToDo APP</a></li>
+    <li><a class='<?= ($activePage == 'index') ? 'active':''; ?>' href="/" >Kezdőlap</a></li>
     <li><a class='<?= ($activePage == 'galeria') ? 'active':''; ?>' href="/galeria">Galéria</a></li>
     <li><a class='<?= ($activePage == 'rolunk') ? 'active':''; ?>' href="/rolunk">Rólunk</a></li>
   </ul>

@@ -29,7 +29,7 @@
         <input type="password" placeholder="Adj meg egy jelszót" name="psw" required />
 
         <button type="submit" class="login">Regisztrálok</button>
-        <input class="rButton" type="button" onclick="myFunction()" value="Reset form">
+        <input class="rButton" type="reset" onclick="myFunction()" value="Törlés">
       </fieldset>
     </form>
   </main>
