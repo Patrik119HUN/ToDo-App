@@ -69,7 +69,12 @@ body button {
   font-family: monospace;
   color: #e3fc02;
 }
-
+@media screen and (max-width:700px) {
+  .form{
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
 input[type="text"],
 input[type="password"] {
   width: 100%;

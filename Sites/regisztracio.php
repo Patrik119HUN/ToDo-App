@@ -18,14 +18,32 @@
 
 
   <main class="bg-signup" id="bejelentkezes">
-    <form action="/action_page.php" class="form" id="reset">
+    <form action="/action_page.php" class="form" id="reset" method="POST">
       <fieldset>
         <h1>Regisztráció</h1>
+        <div style="display:flex; gap:2rem">
+          <div>
+            <label for="email"><b>Vezeték név</b></label>
+            <input type="text" placeholder="Jankó" name="email" required />
+          </div>
+          <div>
+            <label for="email"><b>Kereszt név</b></label>
+            <input type="text" placeholder="Pista" name="email" required />
+          </div>
+        </div>
 
         <label for="email"><b>Email</b></label>
-        <input type="text" placeholder="Add meg az email címed" name="email" required />
+        <input type="text" placeholder="jankopisti@valami.com" name="email" required />
 
-        <label for="psw"><b>Password</b></label>
+
+        <label for="psw"><b>Születési dátum</b></label>
+        <br>
+        <input type="date" name="psw" required />
+        <br>
+        <label for="psw"><b>Jelszó</b></label>
+        <input type="password" placeholder="Adj meg egy jelszót" name="psw" required />
+
+        <label for="psw"><b>Jelszó újra</b></label>
         <input type="password" placeholder="Adj meg egy jelszót" name="psw" required />
 
         <button type="submit" class="login">Regisztrálok</button>
