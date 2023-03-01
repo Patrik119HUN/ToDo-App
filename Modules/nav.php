@@ -1,6 +1,6 @@
 <link rel="stylesheet" href="../Styles/nav.css" />
 
-<?php $activePage = basename($_SERVER['PHP_SELF'], ".php");?>
+<?php $activePage = basename($_SERVER['PHP_SELF'], ".php"); ?>
 
 <nav class="topnav">
   <ul>
@@ -8,13 +8,13 @@
     <button class="ham" id="myBtn"><img src="../SVG/menu.svg" alt="" style="width: 2rem;"></button>
   </ul>
   <ul id="menu">
-    <li><a class='<?= ($activePage == 'index') ? 'active':''; ?>' href="/" >Kezdőlap</a></li>
-    <li><a class='<?= ($activePage == 'galeria') ? 'active':''; ?>' href="/galeria">Galéria</a></li>
+    <li class='<?= ($activePage == 'index') ? 'active' : ''; ?> '><a href="/">Kezdőlap</a></li>
+    <li class='<?= ($activePage == 'galeria') ? 'active' : ''; ?>'><a href="/galeria">Galéria</a></li>
     <!--<li><a class='</*?= ($activePage == 'rolunk') ? 'active':''; ?>*/' href="/rolunk">Rólunk</a></li>-->
   </ul>
   <ul id="menu">
-    <li><a class='<?= ($activePage == 'regisztracio') ? 'active':''; ?>' href="/regisztracio">Regisztráció</a></li>
-    <li><a class='<?= ($activePage == 'bejelentkezes') ? 'active':''; ?>' href="/bejelentkezes">Bejelentkezés</a></li>
+    <li class='<?= ($activePage == 'regisztracio') ? 'active' : ''; ?>'><a href="/regisztracio">Regisztráció</a></li>
+    <li class='<?= ($activePage == 'bejelentkezes') ? 'active' : ''; ?>'><a href="/bejelentkezes">Bejelentkezés</a></li>
   </ul>
 </nav>
 

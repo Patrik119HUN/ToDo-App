@@ -11,7 +11,7 @@ Route::add('/galeria', function() {
 });
 Route::add('/regisztracio', function() {
   include('./Sites/regisztracio.php');
-});
+},'get');
 Route::add('/bejelentkezes', function() {
   include('./Sites/bejelentkezes.php');
 });

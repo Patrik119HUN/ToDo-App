@@ -16,49 +16,100 @@
 <body>
 
   <?php include 'Modules/nav.php' ?>
+  <?php
+  $fiokok = [];
+  $hibak = [];
+
+
+  if (isset($_GET["register"])) {   // csak azután dolgozzuk fel az űrlapot, miután az el lett küldve
+
+    if (!isset($_GET["surename"]) && trim($_GET["surename"]) === "")
+      $hibak[] = "A vezetéknév megadása kötelező!";
+
+    if (!isset($_GET["forename"]) && trim($_GET["forename"]) === "")
+      $hibak[] = "A keresztnév megadása kötelező!";
+
+    if (!isset($_GET["email"]) && trim($_GET["email"]) === "")
+      $hibak[] = "A e-mail cím megadása kötelező!";
+
+    if (!isset($_GET["psw"]) || trim($_GET["psw"]) === "" || !isset($_GET["psw_n"]) || trim($_GET["psw_n"]) === "")
+      $hibak[] = "A jelszó és az ellenőrző jelszó megadása kötelező!";
+
+    if (!isset($_GET["birthday"]) || trim($_GET["birthday"]) === "")
+      $hibak[] = "Az életkor megadása kötelező!";
+    foreach ($fiokok as $fiok) {
+      if ($fiok["felhasznalonev"] === $felhasznalonev)  // ha egy regisztrált felhasználó neve megegyezik az űrlapon megadott névvel...
+        $hibak[] = "A felhasználónév már foglalt!";
+    }
+    $vezeteknev = $_GET["surename"];
+    $keresztnev = $_GET["forename"];
+    $email = $_GET["email"];
+    $jelszo = $_GET["psw"];
+    $jelszo2 = $_GET["psw_n"];
+    $eletkor = $_GET["birthday"];
+    // túl rövid jelszó
+    if (strlen($jelszo) < 5)
+      $hibak[] = "A jelszónak legalább 5 karakter hosszúnak kell lennie!";
+
+    // a két jelszó nem egyezik
+    if ($jelszo !== $jelszo2)
+      $hibak[] = "A jelszó és az ellenőrző jelszó nem egyezik!";
+
+    // 18 év alatti életkor
+    if ($eletkor < 18)
+      $hibak[] = "Csak 18 éves kortól lehet regisztrálni!";
+
+    if (count($hibak) === 0) {   // ha nem történt hiba a regisztráció során, hozzáadjuk az újonnan regisztrált felhasználót a $fiokok tömbhöz
+      $fiokok[] = ["vezeteknev" => $vezeteknev,"keresztnev" => $keresztnev, "jelszo" => $jelszo, "eletkor" => $eletkor,"email" => $email ];
+      $siker = TRUE;
+    } else {                    // ha voltak hibák, akkor a regisztráció sikertelen
+      $siker = FALSE;
+    }
+  }
+  ?>
 
 
   <main class="bg-signup" id="bejelentkezes">
-    <form action="/action_page.php" class="form" id="reset" method="POST">
+    <form action="/regisztracio" class="form" id="reset" method="GET">
       <fieldset>
         <h1>Regisztráció</h1>
         <div style="display:flex; gap:2rem">
           <div>
-            <label for="email"><b>Vezeték név</b></label>
-            <input type="text" placeholder="Jankó" name="email" required />
+            <label for="surename"><b>Vezeték név</b></label>
+            <input type="text" placeholder="Jankó" name="surename" value="<?php if (isset($_GET['surename'])) echo $_GET['surename']; ?>" />
           </div>
           <div>
-            <label for="email"><b>Kereszt név</b></label>
-            <input type="text" placeholder="Pista" name="email" required />
+            <label for="forename"><b>Kereszt név</b></label>
+            <input type="text" placeholder="Pista" name="forename" value="<?php if (isset($_GET['forename'])) echo $_GET['forename']; ?>" />
           </div>
         </div>
 
-        <label for="name"><b>Teljes név</b></label>
-        <input type="text" placeholder="Add meg a teljes neved" name="name" required />
-
         <label for="birthday"><b>Születési dátum: </b></label>
-        <input type="date" id="birthday" name="birthday" required />
+        <input type="date" id="birthday" name="birthday" value="<?php if (isset($_GET['birthday'])) echo $_GET['birthday']; ?>" />
 
         <label for="email"><b>Email</b></label>
-        <input type="text" placeholder="jankopisti@valami.com" name="email" required />
+        <input type="text" placeholder="jankopisti@valami.com" name="email" value="<?php if (isset($_GET['email'])) echo $_GET['email']; ?>" />
 
-
-        <label for="psw"><b>Születési dátum</b></label>
-        <br>
-        <input type="date" name="psw" required />
-        <br>
         <label for="psw"><b>Jelszó</b></label>
-        <input type="password" placeholder="Adj meg egy jelszót" name="psw" required />
+        <input type="password" placeholder="Adj meg egy jelszót" name="psw" />
 
-        <label for="psw"><b>Jelszó újra</b></label>
-        <input type="password" placeholder="Adj meg egy jelszót" name="psw" required />
+        <label for="psw_n"><b>Jelszó újra</b></label>
+        <input type="password" placeholder="Adj meg egy jelszót" name="psw_n" />
 
-        <button type="submit" class="login">Regisztrálok</button>
-
-        <input  type="reset"  class="rButton" onclick="myFunction()" value="Törlés">
+        <button type="submit" class="login" name="register">Regisztrálok</button>
+        <input type="reset" class="rButton" onclick="myFunction()" value="Törlés">
 
       </fieldset>
     </form>
+    <?php
+    if (isset($siker) && $siker === TRUE) {  // ha nem volt hiba, akkor a regisztráció sikeres
+      echo "<p>Sikeres regisztráció!</p>";
+    } else {                                // az esetleges hibákat kiírjuk egy-egy bekezdésben
+      foreach ($hibak as $hiba) {
+        echo "<p>" . $hiba . "</p>";
+      }
+    }
+    ?>
   </main>
 
   <?php include 'Modules/footer.php' ?>
