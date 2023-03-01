@@ -17,7 +17,8 @@
 
   <?php include 'Modules/nav.php' ?>
   <?php
-  $fiokok = [];
+  include "./kozos.php"; 
+  $fiokok =  loadUsers("users.txt");
   $hibak = [];
 
 
@@ -37,10 +38,7 @@
 
     if (!isset($_GET["birthday"]) || trim($_GET["birthday"]) === "")
       $hibak[] = "Az életkor megadása kötelező!";
-    foreach ($fiokok as $fiok) {
-      if ($fiok["felhasznalonev"] === $felhasznalonev)  // ha egy regisztrált felhasználó neve megegyezik az űrlapon megadott névvel...
-        $hibak[] = "A felhasználónév már foglalt!";
-    }
+
     $vezeteknev = $_GET["surename"];
     $keresztnev = $_GET["forename"];
     $email = $_GET["email"];
@@ -59,13 +57,16 @@
     if ($eletkor < 18)
       $hibak[] = "Csak 18 éves kortól lehet regisztrálni!";
 
-    if (count($hibak) === 0) {   // ha nem történt hiba a regisztráció során, hozzáadjuk az újonnan regisztrált felhasználót a $fiokok tömbhöz
+    if (count($hibak) === 0) { 
+      $jelszo = password_hash($jelszo, PASSWORD_DEFAULT); 
+       // ha nem történt hiba a regisztráció során, hozzáadjuk az újonnan regisztrált felhasználót a $fiokok tömbhöz
       $fiokok[] = ["vezeteknev" => $vezeteknev,"keresztnev" => $keresztnev, "jelszo" => $jelszo, "eletkor" => $eletkor,"email" => $email ];
+      saveUsers("users.txt", $fiokok);
       $siker = TRUE;
     } else {                    // ha voltak hibák, akkor a regisztráció sikertelen
       $siker = FALSE;
     }
-  }
+  } 
   ?>
 
 

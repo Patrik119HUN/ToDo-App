@@ -1,0 +1,3 @@
+a:5:{s:10:"vezeteknev";s:5:"Pista";s:10:"keresztnev";s:4:"Kuki";s:6:"jelszo";s:60:"$2y$10$0E8yN7JKcK0QPXZ7.GjQHe0nNuTVUlgCCmqYWKYrwO8GEOLtyWjim";s:7:"eletkor";s:10:"2023-03-09";s:5:"email";s:18:"pistakuki@kuki.com";}
+a:5:{s:10:"vezeteknev";s:5:"Nigga";s:10:"keresztnev";s:5:"Gigga";s:6:"jelszo";s:60:"$2y$10$HGw6KLfQ8gWcEQu2RU5yj.88h522ihQ1QC1.xYkIDxyM4JYdvmRzK";s:7:"eletkor";s:10:"2023-03-21";s:5:"email";s:19:"niggagigga@kuki.com";}
+a:5:{s:10:"vezeteknev";s:5:"Nigga";s:10:"keresztnev";s:5:"Gigga";s:6:"jelszo";s:60:"$2y$10$9.AV83aQ3jVD9T3Cz7MaIuBdfqwwC6kugMqhOR7Fb6N1Z1WkRrdeC";s:7:"eletkor";s:10:"2023-03-21";s:5:"email";s:19:"niggagigga@kuki.com";}
