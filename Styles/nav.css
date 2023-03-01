@@ -8,6 +8,7 @@ nav ul {
   height: 100%;
   display: flex;
   justify-content: center;
+  margin: 0;
 }
 .topnav {
   position: sticky;
@@ -51,7 +52,7 @@ nav ul {
   left: 0;
   background-color: var(--sarga);
   width: 0;
-  height: 2px;
+  height: 3px;
   margin: 0 auto;
 }
 .topnav li:hover::after {
@@ -103,7 +104,6 @@ nav ul {
     flex-direction: row !important;
     height: fit-content;
     width: 100%;
-    margin-bottom: 1rem;
   }
   ul:nth-child(2) {
     margin-top: 2rem;

@@ -17,12 +17,15 @@
 
   <?php include 'Modules/nav.php' ?>
   <?php
-  include "./kozos.php"; 
+  include "./common.php";
   $fiokok =  loadUsers("users.txt");
   $hibak = [];
 
 
   if (isset($_GET["register"])) {   // csak azután dolgozzuk fel az űrlapot, miután az el lett küldve
+
+    if (!isset($_GET["id"]) && trim($_GET["id"]) === "")
+      $hibak[] = "A felhasználó név megadása kötelező!";
 
     if (!isset($_GET["surename"]) && trim($_GET["surename"]) === "")
       $hibak[] = "A vezetéknév megadása kötelező!";
@@ -39,6 +42,8 @@
     if (!isset($_GET["birthday"]) || trim($_GET["birthday"]) === "")
       $hibak[] = "Az életkor megadása kötelező!";
 
+
+    $id = $_GET["id"];
     $vezeteknev = $_GET["surename"];
     $keresztnev = $_GET["forename"];
     $email = $_GET["email"];
@@ -46,6 +51,7 @@
     $jelszo2 = $_GET["psw_n"];
     $eletkor = $_GET["birthday"];
     // túl rövid jelszó
+
     if (strlen($jelszo) < 5)
       $hibak[] = "A jelszónak legalább 5 karakter hosszúnak kell lennie!";
 
@@ -57,16 +63,20 @@
     if ($eletkor < 18)
       $hibak[] = "Csak 18 éves kortól lehet regisztrálni!";
 
-    if (count($hibak) === 0) { 
-      $jelszo = password_hash($jelszo, PASSWORD_DEFAULT); 
-       // ha nem történt hiba a regisztráció során, hozzáadjuk az újonnan regisztrált felhasználót a $fiokok tömbhöz
-      $fiokok[] = ["vezeteknev" => $vezeteknev,"keresztnev" => $keresztnev, "jelszo" => $jelszo, "eletkor" => $eletkor,"email" => $email ];
+    foreach ($fiokok as $fiok) {
+      if ($fiok["id"] === $id)
+        $hibak[] = "A felhasználónév már foglalt!";
+    }
+    if (count($hibak) === 0) {
+      $jelszo = password_hash($jelszo, PASSWORD_DEFAULT);
+      // ha nem történt hiba a regisztráció során, hozzáadjuk az újonnan regisztrált felhasználót a $fiokok tömbhöz
+      $fiokok[] = ["id" => $id, "vezeteknev" => $vezeteknev, "keresztnev" => $keresztnev, "jelszo" => $jelszo, "eletkor" => $eletkor, "email" => $email];
       saveUsers("users.txt", $fiokok);
       $siker = TRUE;
     } else {                    // ha voltak hibák, akkor a regisztráció sikertelen
       $siker = FALSE;
     }
-  } 
+  }
   ?>
 
 
@@ -84,7 +94,8 @@
             <input type="text" placeholder="Pista" name="forename" value="<?php if (isset($_GET['forename'])) echo $_GET['forename']; ?>" />
           </div>
         </div>
-
+        <label for="id"><b>Felhasználónév</b></label>
+        <input type="text" placeholder="jankópityu129" name="id" value="<?php if (isset($_GET['id'])) echo $_GET['id']; ?>" />
         <label for="birthday"><b>Születési dátum: </b></label>
         <input type="date" id="birthday" name="birthday" value="<?php if (isset($_GET['birthday'])) echo $_GET['birthday']; ?>" />
 
@@ -98,19 +109,20 @@
         <input type="password" placeholder="Adj meg egy jelszót" name="psw_n" />
 
         <button type="submit" class="login" name="register">Regisztrálok</button>
+        <?php
+        if (isset($siker) && $siker === TRUE) {  // ha nem volt hiba, akkor a regisztráció sikeres
+          echo "<p style='color:green; font-size:1rem;'>Sikeres regisztráció!</p>";
+        } else {                                // az esetleges hibákat kiírjuk egy-egy bekezdésben
+          foreach ($hibak as $hiba) {
+            echo "<p style='color:green; font-size:1rem;>" . $hiba . "</p>";
+          }
+        }
+        ?>
         <input type="reset" class="rButton" onclick="myFunction()" value="Törlés">
 
       </fieldset>
     </form>
-    <?php
-    if (isset($siker) && $siker === TRUE) {  // ha nem volt hiba, akkor a regisztráció sikeres
-      echo "<p>Sikeres regisztráció!</p>";
-    } else {                                // az esetleges hibákat kiírjuk egy-egy bekezdésben
-      foreach ($hibak as $hiba) {
-        echo "<p>" . $hiba . "</p>";
-      }
-    }
-    ?>
+
   </main>
 
   <?php include 'Modules/footer.php' ?>
