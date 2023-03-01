@@ -30,92 +30,6 @@ body button {
   cursor: pointer;
 }
 
-.container {
-  text-align: center;
-}
-
-
-.centered {
-  top: 50%;
-  bottom: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.bg-img{
-  background-image: url(../képek/planner.jpg);
-  min-height: 700px;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  
-}
-.bg-signup{
-  background-image: url(../képek/bike2.jpg);
-  min-height: 700px;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  
-}
-.form {
-  float: right;
-  right: 0;
-  margin-top: 150px;
-  margin-bottom: 150px;
-  margin-right: 60px;
-  max-width: 350px;
-  padding: 16px;
-  background-color: #1f1f21;
-  font-family: monospace;
-  color: #e3fc02;
-}
-@media screen and (max-width:700px) {
-  .form{
-    margin-right: auto;
-    margin-left: auto;
-  }
-}
-input[type="text"],
-input[type="password"] {
-  width: 100%;
-  padding: 15px;
-  margin: 5px 0 22px 0;
-  border: none;
-  background: #f1f1f1;
-}
-input[type="text"]:focus,
-input[type="password"]:focus {
-  background-color: #ddd;
-  outline: none;
-}
-
-fieldset{
-  border-color: #1f1f21;
-}
-.rButton {
-  background-color: gray;
-  color: #e3fc02;
-  cursor: pointer;
-  opacity: 0.9;
-  margin-top: 0.5rem;
-
-
-}
-
-.login {
-  background-color: #e3fc02;
-  color: #1f1f21;
-  padding: 16px 20px;
-  border: none;
-  cursor: pointer;
-  width: 100%;
-  opacity: 0.9;
-}
-
-.login:hover {
-  opacity: 1;
-}
-
 * {
   box-sizing: border-box;
 }
@@ -150,6 +64,16 @@ fieldset{
   padding: 0.8rem 0.8rem;
   
 }
+
+table{
+  text-align: center;
+  border-color: #fff;
+
+}
+table th, td{
+  vertical-align: middle;
+}
+
 #use{
   font-size: 1.2rem;
   text-align: center;

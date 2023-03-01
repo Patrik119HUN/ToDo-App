@@ -9,6 +9,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Regisztráció</title>
   <link rel="stylesheet" href="../Styles/style.css" />
+  <link rel="stylesheet" href="../Styles/form.css" />
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 </head>
 
@@ -32,6 +33,12 @@
           </div>
         </div>
 
+        <label for="name"><b>Teljes név</b></label>
+        <input type="text" placeholder="Add meg a teljes neved" name="name" required />
+
+        <label for="birthday"><b>Születési dátum: </b></label>
+        <input type="date" id="birthday" name="birthday" required />
+
         <label for="email"><b>Email</b></label>
         <input type="text" placeholder="jankopisti@valami.com" name="email" required />
 
@@ -47,7 +54,9 @@
         <input type="password" placeholder="Adj meg egy jelszót" name="psw" required />
 
         <button type="submit" class="login">Regisztrálok</button>
-        <input class="rButton" type="button" onclick="myFunction()" value="Reset form">
+
+        <input  type="reset"  class="rButton" onclick="myFunction()" value="Törlés">
+
       </fieldset>
     </form>
   </main>

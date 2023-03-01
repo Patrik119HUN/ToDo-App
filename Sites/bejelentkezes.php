@@ -9,6 +9,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Bejelentkezés</title>
   <link rel="stylesheet" href="../Styles/style.css" />
+  <link rel="stylesheet" href="../Styles/form.css" />
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 </head>
 
@@ -27,7 +28,7 @@
         <input type="password" placeholder="Adj meg egy jelszót" name="psw" required />
 
         <button type="submit" class="login">Belépek</button>
-        <input class="rButton" type="button" onclick="myFunction()" value="Reset form">
+        <input class="rButton" type="reset" onclick="myFunction()" value="Törlés">
       </fieldset>
     </form>
   </main>

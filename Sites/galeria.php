@@ -24,7 +24,7 @@
     <div class="bg-image img5"></div>
 
     <main class="bg-text">
-        Szeretnéd könnybben és átláthatóbban rendezni a teendőidet?
+        <!--Szeretnéd könnybben és átláthatóbban rendezni a teendőidet?
         A ToDo app segítségével ezt egyszerűen teheted meg.
         <br>
         <ul>
@@ -34,9 +34,30 @@
         </ul>
         Hiszünk abban, hogy ezzel az applikációval motiválni tudunk téged, hogy produktív napod legyen.
         <br> 
-        <p id="use">Regisztrálj még ma és használd <span id="ingyen">INGYEN</span> a ToDo-t!</p>
+        <p id="use">Regisztrálj még ma és használd <span id="ingyen">INGYEN</span> a ToDo-t!</p>-->
+        <table>
+            <tr>
+                <th>Előnyök</th>
+                <th>Hátrányok</th>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
 
+            </tr>
+            <tr>
+
+            </tr>
+
+        </table>
     </main>
+
     <?php include './Modules/footer.php' ?>
 </body>
 
