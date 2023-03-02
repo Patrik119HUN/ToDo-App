@@ -73,6 +73,7 @@
       $fiokok[] = ["id" => $id, "vezeteknev" => $vezeteknev, "keresztnev" => $keresztnev, "jelszo" => $jelszo, "eletkor" => $eletkor, "email" => $email];
       saveUsers("users.txt", $fiokok);
       $siker = TRUE;
+      header("Location /bejelentkezes");
     } else {                    // ha voltak hibák, akkor a regisztráció sikertelen
       $siker = FALSE;
     }

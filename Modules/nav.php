@@ -13,8 +13,13 @@
     <!--<li><a class='</*?= ($activePage == 'rolunk') ? 'active':''; ?>*/' href="/rolunk">Rólunk</a></li>-->
   </ul>
   <ul id="menu">
-    <li class='<?= ($activePage == 'regisztracio') ? 'active' : ''; ?>'><a href="/regisztracio">Regisztráció</a></li>
-    <li class='<?= ($activePage == 'bejelentkezes') ? 'active' : ''; ?>'><a href="/bejelentkezes">Bejelentkezés</a></li>
+    <?php if (isset($_SESSION["user"])) { ?>
+      <li><a href="/"><?php echo $_SESSION["user"]["id"]?></a></li>
+      <li><a href="/kijelentkezes">Kijelentkezés</a></li>
+      <?php } else { ?>
+      <li class='<?= ($activePage == 'regisztracio') ? 'active' : ''; ?>'><a href="/regisztracio">Regisztráció</a></li>
+      <li class='<?= ($activePage == 'bejelentkezes') ? 'active' : ''; ?>'><a href="/bejelentkezes">Bejelentkezés</a></li>
+    <?php } ?>
   </ul>
 </nav>
 

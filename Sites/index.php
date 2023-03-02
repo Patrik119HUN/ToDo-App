@@ -22,7 +22,7 @@
     <div class="bg-image img4"></div>
     <div class="bg-image img5"></div>
 
-   <main class="bg-text">
+    <main class="bg-text">
         Szeretnéd könnybben és átláthatóbban rendezni a teendőidet?
         A ToDo app segítségével ezt egyszerűen teheted meg.
         <br>
@@ -36,7 +36,7 @@
         <span id="use">Regisztrálj még ma és használd <span id="ingyen">INGYEN</span> a ToDo-t!</span>
 
     </main>
-    
+
     <?php include 'Modules/footer.php' ?>
 </body>
 

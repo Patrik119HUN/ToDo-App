@@ -1,1 +1,0 @@
-a:6:{s:2:"id";s:9:"pityuka69";s:10:"vezeteknev";s:6:"Jankó";s:10:"keresztnev";s:5:"Pista";s:6:"jelszo";s:60:"$2y$10$GUlVoQmJjcqo6oYaS/nh8OYqeStiPc0DwzlFkrCAjQYTWQQLI3xZi";s:7:"eletkor";s:10:"2023-03-25";s:5:"email";s:21:"jankópisti@gmail.com";}

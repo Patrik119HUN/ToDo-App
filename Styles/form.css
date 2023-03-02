@@ -60,7 +60,7 @@
     height: 1.8rem;
     margin-top: 0.5rem;
     opacity: 0.9;
-    
+    border: 0;
   }
   .rButton:hover {
     opacity: 1;
