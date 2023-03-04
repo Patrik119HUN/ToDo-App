@@ -70,8 +70,13 @@ table{
   border-color: #fff;
 
 }
-table th, td{
+table th{
   vertical-align: middle;
+  color: red;
+}
+
+table td{
+  vertical-align: left;
 }
 
 #use{
