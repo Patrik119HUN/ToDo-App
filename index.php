@@ -25,6 +25,16 @@ Route::add('/rolunk', function () {
   session_start();
   include('./Sites/rolunk.php');
 });
+Route::add('/teendok', function () {
+  session_start();
+  include('./Sites/teendok.php');
+});
+
+Route::add('/felhasznalo',function(){
+  session_start();
+  include('./Sites/felhasznalo.php');
+});
+
 Route::add('/kijelentkezes', function () {
   session_start();
   session_unset();

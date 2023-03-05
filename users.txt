@@ -1,0 +1,1 @@
+a:6:{s:2:"id";s:9:"patrik119";s:10:"vezeteknev";s:6:"Tukacs";s:10:"keresztnev";s:6:"Patrik";s:6:"jelszo";s:60:"$2y$10$IpYcyWtyiayxy0S55Lcov.U324ESlYNRz0GOei0ebIBR0ERqgEaT6";s:7:"eletkor";s:10:"2023-03-15";s:5:"email";s:25:"tukacs.patrik77@gmail.com";}

@@ -28,7 +28,6 @@ nav ul {
   padding: 1rem 1.4rem;
   height: 3.5rem;
   position: relative;
-  width: 50%;
   margin-left: auto;
   margin-right: auto;
 }
@@ -57,7 +56,7 @@ nav ul {
 }
 .topnav li:hover::after {
   width: 100%;
-  transition: width .3s ease-in-out;
+  transition: width 0.3s ease-in-out;
 }
 
 .topnav li:is(:link, :active, :visited).currant {
@@ -98,22 +97,22 @@ nav ul {
     align-self: center;
     margin-right: 1rem;
   }
-  ul:first-child {
+  nav ul:first-child {
     display: flex;
     justify-content: space-between;
     flex-direction: row !important;
     height: fit-content;
     width: 100%;
   }
-  ul:nth-child(2) {
+  nav ul:nth-child(2) {
     margin-top: 2rem;
   }
-  ul:not(:first-child) {
+  nav ul:not(:first-child) {
     flex-direction: column;
     height: fit-content;
     margin: 0;
   }
-  ul:last-child {
+  nav ul:last-child {
     margin-bottom: 100%;
   }
   .topnav li {
@@ -121,17 +120,17 @@ nav ul {
   }
 }
 @media screen and (min-width: 700px) {
-  ul:first-child {
+  .topnav nav ul:first-child {
     display: none;
   }
 }
 @media screen and (min-width: 800px) {
-  ul:first-child {
+  nav ul:first-child {
     display: block;
     order: 1;
     margin: auto;
   }
-  ul:last-child {
+  nav ul:last-child {
     order: 2;
   }
 }
