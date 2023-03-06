@@ -24,17 +24,6 @@
     <div class="bg-image img5"></div>
 
     <main class="bg-text">
-        <!--Szeretnéd könnybben és átláthatóbban rendezni a teendőidet?
-        A ToDo app segítségével ezt egyszerűen teheted meg.
-        <br>
-        <ul>
-            <li>Átlátható heti naptár</li>
-            <li>Személyre szabhatod a megjelenítést</li>
-            <li>Jegyzeteket írhatsz a teendők mellé</li>
-        </ul>
-        Hiszünk abban, hogy ezzel az applikációval motiválni tudunk téged, hogy produktív napod legyen.
-        <br> 
-        <p id="use">Regisztrálj még ma és használd <span id="ingyen">INGYEN</span> a ToDo-t!</p>-->
         <table>
             <tr>
                 <th>A ToDo app-val</th>

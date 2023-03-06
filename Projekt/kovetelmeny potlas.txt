@@ -1,8 +1,5 @@
 
 Az oldal tartalma igényesen animálva jelenik meg (pl. az egyes elemek beúsznak, fokozatosan jelennek meg, stb.) (0/3/6 pont)
 
-Összesen legalább 6 különböz® típusú, értelmesen felhasznált input mez® található (0/2
-pont)
 
-Pseudo-elemek használata (before, after, selection, rst-letter, rst-line, stb.) (mindegyik
-1 pont, max 2 pont)
+
