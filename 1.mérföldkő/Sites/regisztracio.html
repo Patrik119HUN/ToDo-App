@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="author" content="Szegedi Bence, Tukacs Patrik" />
+  <link rel="icon" type="image/x-icon" href="/Képek/pipa favicon.ico">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Regisztráció</title>
+  <link rel="stylesheet" href="../Styles/style.css" />
+  <link rel="stylesheet" href="../Styles/form.css" />
+  <link rel="stylesheet" href="../Styles/nav.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+</head>
+
+<nav class="topnav">
+  <ul>
+    <p class="logo">ToDo APP</p>
+    <button class="ham" id="myBtn"><img src="../SVG/menu.svg" alt="" style="width: 2rem;"></button>
+  </ul>
+  <ul id="menu">
+    <li class="active"><a href="/Sites/index.html">Kezdőlap</a></li>
+    <li class="active"><a href="/Sites/galeria.html">Galéria</a></li>
+  </ul>
+  <ul id="menu">
+      <li class="active"><a href="/Sites/regisztracio.html">Regisztráció</a></li>
+      <li class="active"><a href="/Sites/bejelentkezes.html">Bejelentkezés</a></li>
+  </ul>
+</nav>
+
+
+  <main class="bg-signup" id="bejelentkezes">
+    <form action="/regisztracio" class="form" id="reset" method="GET">
+      <fieldset>
+        <h1>Regisztráció</h1>
+        <div style="display:flex; gap:2rem">
+          <div>
+            <label for="surename"><b>Vezeték név</b></label>
+            <input type="text" placeholder="Jankó" name="surename"  />
+          </div>
+          <div>
+            <label for="forename"><b>Kereszt név</b></label>
+            <input type="text" placeholder="Pista" name="forename" />
+          </div>
+        </div>
+        <label for="id"><b>Felhasználónév</b></label>
+        <input type="text" placeholder="jankópityu129" name="id"  />
+        <label for="birthday"><b>Születési dátum: </b></label>
+        <input type="date" id="birthday" name="birthday"  />
+
+        <label for="email"><b>Email</b></label>
+        <input type="text" placeholder="jankopisti@valami.com" name="email" />
+
+        <label for="psw"><b>Jelszó</b></label>
+        <input type="password" placeholder="Adj meg egy jelszót" name="psw" />
+
+        <label for="psw_n"><b>Jelszó újra</b></label>
+        <input type="password" placeholder="Adj meg egy jelszót" name="psw_n" />
+
+        <button type="submit" class="login" name="register">Regisztrálok</button>
+        
+        <input type="reset" class="rButton" onclick="myFunction()" value="Törlés">
+
+      </fieldset>
+    </form>
+
+  </main>
+
+  <footer>
+    <p>Made by Tukacs Patrik, Szegedi Bence</p>
+  </footer>
+
+  <script>
+    function myFunction() {
+      document.getElementById("reset").reset();
+    }
+  </script>
+</body>
+
+</html>
