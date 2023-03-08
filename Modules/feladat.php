@@ -1,5 +1,12 @@
 
 <?php
+
+enum tipusok
+{
+    case Kesz;
+    case Folyamatban;
+    case Nincs;
+}
 class feladat
 {
     private $neve;
@@ -7,7 +14,7 @@ class feladat
     private $statusza;
     private $ideje;
 
-    public function __construct($neve, $leirasa, $statusza, $ideje)
+    public function __construct($neve, $leirasa,  tipusok $statusza, $ideje)
     {     // konstruktor
         $this->neve = $neve;      // adattagok inicializálása a konstruktor paraméterei alapján
         $this->leirasa = $leirasa;
@@ -25,7 +32,13 @@ class feladat
     }
     public function getStatusz()
     {
-        return $this->statusza;
+        $valasz = "";
+        match ($this->statusza) {
+            tipusok::Kesz => $valasz = "kesz",
+            tipusok::Nincs => $valasz = "nincs",
+            tipusok::Folyamatban => $valasz = "folyamatban",
+        };
+        return $valasz;
     }
     public function getIdo()
     {
@@ -35,6 +48,9 @@ class feladat
     {  // setter
         $this->neve = $ertek;
     }
-
+    public function render()
+    {
+        echo '<div id="Hello">'. $this->neve .'</div>';
+    }
 }
 ?>

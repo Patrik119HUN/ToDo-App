@@ -1,0 +1,51 @@
+.kesz {
+  background-color: green;
+}
+.nincs {
+  background-color: red;
+}
+.folyamatban {
+  background-color: blue;
+}
+
+.task {
+  margin: 2rem;
+  display: flex;
+  flex-direction: column;
+  background-color: brown;
+  border-style: solid;
+  border-width: 3px;
+  border-color: black;
+  width: max-content;
+}
+.task h3 {
+  font-family: monospace;
+  font-weight: 600;
+  font-size: 1.75rem;
+  margin: 0;
+  width: 100%;
+  border-style: solid;
+  padding: 1rem 3rem;
+  border-width: 0px 0px 3px 0px;
+  border-color: black;
+}
+.task p {
+  padding: 1rem;
+  margin: 0;
+  font-family: monospace;
+  font-weight: 500;
+  font-size: 1.45rem;
+  color: black;
+}
+.task input[type="date"] {
+  background-color: transparent;
+  border: 0;
+}
+.task select {
+  width: 2rem;
+  background-color: transparent;
+  border: 0;
+}
+.task select:focus {
+  outline: 0;
+}

@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rólunk</title>
     <link rel="stylesheet" href="../Styles/style.css" />
+    <link rel="stylesheet" href="../Styles/feladatok.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 </head>
 
@@ -16,21 +17,26 @@
     <?php include 'Modules/nav.php' ?>
     <?php include 'Modules/footer.php' ?>
 
-    <div style="background-color: yellow;">
+    <div style="background-color: yellow; padding:1rem;">
         <?php
         include 'Modules/feladat.php';
-        $feladat = new feladat("Sétálni", "ma", "nincs kész", 2003);
+        $feladat = new feladat("Sétálni", "ma", tipusok::Kesz, 2023 - 03 - 05);
 
         ?>
-        <div>
-            <ul>
-                <li><?php echo $feladat->getNev(); ?></li>
-                <li><?php echo $feladat->getStatusz(); ?></li>
-                <li><?php echo $feladat->getLeiras(); ?></li>
-                <li><?php echo $feladat->getIdo(); ?></li>
-            </ul>
+        <div class="task">
+            <h3><?php echo $feladat->getNev(); ?></h3>
+            <p><?php echo $feladat->getLeiras(); ?></ő>
+            <div>
+                <select name="cars" id="cars">
+                    <option value="kesz">Kész</option>
+                    <option value="folyamatban">Folyamatban</option>
+                    <option value="vege">Vége</option>
+                </select>
+                <input type="date" value='<?php echo $feladat->getIdo(); ?>'></input>
+            </div>
         </div>
     </div>
+
 </body>
 
 </html>
