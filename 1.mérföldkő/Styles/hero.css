@@ -17,96 +17,18 @@
   height: 100vh;
 }
 
-#cards {
-  margin: 1rem auto 2rem auto;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  width: fit-content;
-}
-
-#cards:hover > .card::after {
-  opacity: 1;
-}
-
-.card {
-  background-color: rgba(255, 255, 255, 0.1);
-  border-radius: 15px;
-  cursor: pointer;
-  display: flex;
-  height: 460px;
-  width: 500px;
-  flex-direction: column;
-  position: relative;
-}
-
-.card:hover::before {
-  opacity: 1;
-}
-
-.card::before,
-.card::after {
-  border-radius: inherit;
-  content: "";
-  height: 100%;
-  left: 0px;
-  opacity: 0;
+.text-container {
   position: absolute;
-  top: 0px;
-  transition: opacity 500ms;
-  width: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
-
-.card::before {
-  background: radial-gradient(
-    800px circle at var(--mouse-x) var(--mouse-y),
-    rgba(255, 255, 255, 0.06),
-    transparent 40%
-  );
-  z-index: 3;
-}
-
-.card::after {
-  background: radial-gradient(
-    400px circle at var(--mouse-x) var(--mouse-y),
-    rgba(255, 255, 255, 0.2),
-    transparent 30%
-  );
-  z-index: 1;
-}
-
-.card > .card-content {
-  background-color: var(--card-color);
-  border-radius: inherit;
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-  inset: 1px;
-  padding: 10px;
-  position: absolute;
-  z-index: 2;
-}
-.card > img {
-  border-radius: inherit;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0.5;
-}
-.card > p {
-  font-size: 1.5rem;
-  position: absolute;
-  bottom: 0;
-  margin-left: auto;
-  margin-right: auto;
-  width: 100%;
-  text-align: center;
-}
-.card-title {
+.text-container h2 {
   color: white;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
-  font-size: 2.25rem;
-  font-weight: 400;
-  margin-top: 3rem;
+  font-size: 2.75rem;
+  width: 90%;
+  margin-bottom: 1rem;
+}
+.text-container p{
+    font-size: 1.25rem"
 }
