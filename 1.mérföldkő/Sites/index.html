@@ -13,6 +13,7 @@
     <title>ToDo App</title>
     <link rel="stylesheet" href="/Styles/style.css" />
     <link rel="stylesheet" href="/Styles/nav.css" />
+    <link rel="stylesheet" href="/Styles/hero.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
   </head>
 
@@ -34,34 +35,70 @@
       </ul>
     </nav>
 
-    <div class="bg-image img1"></div>
-    <div class="bg-image img2"></div>
-    <div class="bg-image img3"></div>
-    <div class="bg-image img4"></div>
-    <div class="bg-image img5"></div>
+    <div class="hero">
+      <img class="hero-image" src="../képek/kavezok.jpg" alt="hello" />
+      <span class="hero-text">
+        <h1 style="width: 50%">
+          Szeretnéd könnybben és átláthatóbban rendezni a teendőidet?
+        </h1>
+        <p>A ToDo app segítségével ezt egyszerűen teheted meg.</p>
+      </span>
+    </div>
+    <h2 class="card-title">Főbb feladatai</h2>
+    <div id="cards">
+      <div class="card">
+        <img src="../képek/bike.jpg" alt="" />
+        <p>Átlátható heti naptár</p>
+      </div>
+      <div class="card">
+        <img src="../képek/coffee-gc0ac3039f_1920.jpg" alt="" />
+        <p>Jegyzeteket írhatsz a teendők mellé</p>
+      </div>
+      <div class="card">
+        <img src="../képek/guggolas.jpg" alt="" />
+        <p>Személyre szabhatod a megjelenítést</p>
+      </div>
+    </div>
 
-    <main class="bg-text">
-      Szeretnéd könnybben és átláthatóbban rendezni a teendőidet? A ToDo app
-      segítségével ezt egyszerűen teheted meg.
-      <br />
-      <ul>
-        <li>Átlátható heti naptár</li>
-        <li>Személyre szabhatod a megjelenítést</li>
-        <li>Jegyzeteket írhatsz a teendők mellé</li>
-      </ul>
-      Hiszünk abban, hogy ezzel az applikációval motiválni tudunk téged, hogy
-      produktív napod legyen.
-      <br />
-      <br />
-      <span id="use"
-        >Regisztrálj még ma és használd <span id="ingyen">INGYEN</span> a
-        ToDo-t!</span
+    <div style="position: relative">
+      <img
+        src="../Képek/futas2.jpg"
+        style="opacity: 0.7; height: 100vh; width: 100%"
+        alt=""
+      />
+      <div
+        style="
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        "
       >
-    </main>
+        <h2
+          style="
+            color: white;
+            font-size: 2.75rem;
+            width: 90%;
+            margin-bottom: 1rem;
+          "
+        >
+          Hiszünk abban, hogy ezzel az applikációval motiválni tudunk téged,
+          hogy produktív napod legyen.
+        </h2>
+        <p style="font-size: 1.25rem">
+          Regisztrálj még ma és használd <span id="ingyen">INGYEN</span> a
+          ToDo-t!
+        </p>
+      </div>
+    </div>
+    <!-- <main class="bg-text">
+
+    </main> -->
 
     <footer>
-      <p>Made by Tukacs Patrik, Szegedi Bence</p>
+      <p style="padding: auto">Made by Tukacs Patrik, Szegedi Bence</p>
     </footer>
+    <script src="../JS/grid.js"></script>
     <script src="../JS/nav.js"></script>
   </body>
 </html>
