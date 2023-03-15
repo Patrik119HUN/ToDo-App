@@ -16,7 +16,7 @@
   cursor: pointer;
   display: flex;
   height: 460px;
-  width: 500px;
+  width: 30rem;
   flex-direction: column;
   position: relative;
 }
