@@ -1,4 +1,5 @@
-body, html {
+body,
+html {
   margin: 0;
   font-family: monospace, Helvetica, sans-serif;
   font-weight: 200;
@@ -19,7 +20,7 @@ body button {
 .gomb {
   background-color: #1f1f21;
   color: #e3fc02;
-  
+
   border: none;
   text-align: center;
   transition: 0.3s;
@@ -35,31 +36,49 @@ body button {
 }
 
 .bg-image {
-  height: 80%; 
+  height: 80%;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
-.img1 { background-image: url("../képek/kavezok.jpg"); }
-.img2 { background-image: url("../képek/bike2.jpg"); }
-.img3 { background-image: url("../képek/sulyzok.jpg"); }
-.img4 { background-image: url("../képek/kocsma.jpg"); }
-.img5 { background-image: url("../képek/futas2.jpg"); }
+.img1 {
+  background-image: url("../képek/kavezok.jpg");
+}
+.img2 {
+  background-image: url("../képek/bike2.jpg");
+}
+.img3 {
+  background-image: url("../képek/sulyzok.jpg");
+}
+.img4 {
+  background-image: url("../képek/kocsma.jpg");
+}
+.img5 {
+  background-image: url("../képek/futas2.jpg");
+}
 
-.gimg1 { background-image: url("../képek/chill.jpg"); }
-.gimg2 { background-image: url("../képek/pár.jpg"); }
-.gimg3 { background-image: url("../képek/task2.jpg"); }
-.gimg4 { background-image: url("../képek/coffee-gc0ac3039f_1920.jpg"); }
+.gimg1 {
+  background-image: url("../képek/chill.jpg");
+}
+.gimg2 {
+  background-image: url("../képek/pár.jpg");
+}
+.gimg3 {
+  background-image: url("../képek/task2.jpg");
+}
+.gimg4 {
+  background-image: url("../képek/coffee-gc0ac3039f_1920.jpg");
+}
 
 .bg-text {
-  background-color: rgb(0,0,0); 
-  background-color: rgba(0,0,0, 0.7); 
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.7);
   color: #fff;
   font-weight: bold;
   font-size: 1rem;
   border: 0.5rem solid #e3fc02;
-  position: fixed; 
+  position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -67,17 +86,16 @@ body button {
   width: 24rem;
   height: 23rem;
   padding: 0.8rem 0.8rem;
-  
 }
 
-table{
+table {
   text-align: center;
   border-collapse: collapse;
   padding: 20px;
   margin: 0;
 }
 
-table th{
+table th {
   vertical-align: middle;
   color: red;
   border-style: solid;
@@ -86,7 +104,7 @@ table th{
   height: 2.5rem;
 }
 
-table td{
+table td {
   vertical-align: left;
   color: #fff;
   border-style: solid;
@@ -94,17 +112,23 @@ table td{
   border-color: #e3fc02;
   padding-right: 5px;
   height: 6rem;
-  
 }
 
-#use{
+#use {
   font-size: 1.2rem;
   text-align: center;
   margin-left: 25px;
-  margin-right: 25px;;
+  margin-right: 25px;
 }
-#ingyen{
+#ingyen {
   color: red;
 }
 
-
+@media print {
+  header h1,
+  header nav,
+  footer,
+  img {
+    display: none;
+  }
+}

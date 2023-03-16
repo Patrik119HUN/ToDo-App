@@ -7,4 +7,9 @@ footer{
     margin-bottom: 5rem;
     margin-left: 2rem;
   }
-  
+
+@media print {
+  footer{
+    display: none;
+  }
+}

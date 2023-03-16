@@ -139,3 +139,8 @@ nav ul {
 .invisible {
   display: none;
 }
+@media print {
+  .topnav{
+    display: none;
+  }
+}
