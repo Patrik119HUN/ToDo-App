@@ -19,7 +19,7 @@
   width: 30rem;
   aspect-ratio: 1;
   flex-direction: column;
-  position: relative;
+  position: relative; 
 }
 
 .card:hover::before {

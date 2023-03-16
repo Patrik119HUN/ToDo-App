@@ -7,10 +7,20 @@
   position: absolute;
   color: white;
   width: 75%;
-  top: 20%;
   transform-origin: 0 0;
-  left: 20%;
+  top: 15%;
+  animation-name: myMove;
+  animation-duration: 3s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease;
+  
 }
+
+@keyframes myMove {
+  0% {left: 0%;}
+  100% {left: 20%; animation-play-state: paused;}
+ }
+ 
 .hero-text h1{
   width: 50%
 }
