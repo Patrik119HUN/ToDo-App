@@ -4,11 +4,12 @@
 }
 .hero-text {
   font-size: 1.7rem;
+  display: inline-block;
   position: absolute;
   color: white;
   width: 80%;
   transform-origin: 0 0;
-  top: 10%;
+  top: 15%;
   animation-name: myMove;
   animation-duration: 2s;
   animation-iteration-count: 1;
