@@ -58,3 +58,10 @@
   }
 }
 
+@media print {
+  .hero-text h1{
+      font-size: 30pt;
+      display: block;
+      color: #000 ;
+  }
+}

@@ -125,10 +125,23 @@ table td {
 }
 
 @media print {
-  header h1,
-  header nav,
+  header,
+  header,
   footer,
   img {
     display: none;
+  }
+  h1,h2,h3,p{
+    font-size: 1cm !important;
+    color: black !important;
+  }
+  *{
+    background: none !important;
+  }
+  div   {
+    padding: initial !important;
+    margin: initial !important;
+    display: block !important;
+    position: initial !important;
   }
 }
