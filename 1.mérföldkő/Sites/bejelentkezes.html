@@ -2,30 +2,32 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="author" content="Szegedi Bence, Tukacs Patrik" />
-  <link rel="icon" type="image/x-icon" href="/Képek/pipa favicon.ico">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8" >
+  <meta name="author" content="Szegedi Bence, Tukacs Patrik" >
+  <link rel="icon" type="image/x-icon" href="/Képek/pipa%20favicon.ico">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" >
   <title>Bejelentkezés</title>
-  <link rel="stylesheet" href="../Styles/style.css" />
-  <link rel="stylesheet" href="../Styles/form.css" />
-  <link rel="stylesheet" href="../Styles/nav.css" />
-  <link rel="stylesheet" href="../Styles/footer.css" />
+  <link rel="stylesheet" href="../Styles/style.css" >
+  <link rel="stylesheet" href="../Styles/form.css" >
+  <link rel="stylesheet" href="../Styles/nav.css" >
+  <link rel="stylesheet" href="../Styles/footer.css" >
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 </head>
 
 <body>
   <nav class="topnav">
     <ul>
-      <p class="logo">ToDo APP</p>
-      <button class="ham" id="myBtn"><img src="../SVG/menu.svg" alt="" style="width: 2rem;"></button>
+      <li>
+        <p class="logo">ToDo APP</p>
+        <button class="ham" id="myBtn"><img src="../SVG/menu.svg" alt="" style="width: 2rem;"></button>
+      </li>
     </ul>
-    <ul id="menu">
+    <ul>
       <li><a href="../Sites/index.html">Kezdőlap</a></li>
       <li><a href="../Sites/galeria.html">Galéria</a></li>
     </ul>
-    <ul id="menu">
+    <ul>
         <li><a href="../Sites/regisztracio.html">Regisztráció</a></li>
         <li class="active"><a href="../Sites/bejelentkezes.html">Bejelentkezés</a></li>
     </ul>
@@ -37,10 +39,10 @@
         <h1>Bejelentkezés</h1>
 
         <label for="username"><b>Felhasználónév vagy E-mail cím</b></label>
-        <input type="text" placeholder="'jankópityu129' vagy 'jankopisti@valami.com'" name="username" required />
+        <input type="text" id="username" placeholder="'jankópityu129' vagy 'jankopisti@valami.com'" name="username" required >
 
         <label for="psw"><b>Password</b></label>
-        <input type="password" placeholder="Adj meg egy jelszót" name="psw" required />
+        <input type="password" id="psw" placeholder="Adj meg egy jelszót" name="psw" required >
 
         <button type="submit" class="login" name="login">Belépek</button>
         
