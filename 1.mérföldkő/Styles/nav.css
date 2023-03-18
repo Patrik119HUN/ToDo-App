@@ -22,14 +22,17 @@ nav ul {
   padding-left: 2rem;
   padding-right: 2rem;
 }
-.ham {
+/*.ham {
   display: none;
-}
+}*/
+
+
+
 .topnav li {
-  padding: 1rem 1.4rem;
+  padding: 1rem 1.3rem;
   height: 3.5rem;
   position: relative;
-  width: 50%;
+  width: 100%;
   margin-left: auto;
   margin-right: auto;
 }
@@ -46,6 +49,26 @@ nav ul {
   font-weight: 500;
   color: var(--sarga);
 }
+
+#lgo {
+  text-align: center;
+  color: var(--sarga);
+  font-family: monospace;
+  font-weight: bold;
+  font-size: 2rem;
+  margin: 0;
+}
+
+#logo::after {
+  position: absolute;
+  content: "";
+  bottom: 0px;
+  left: 0;
+  width: 0;
+  height: 3px;
+  margin: 0 auto;
+}
+
 .topnav li::after {
   position: absolute;
   content: "";
@@ -56,6 +79,7 @@ nav ul {
   height: 3px;
   margin: 0 auto;
 }
+
 .topnav li:hover::after {
   width: 100%;
   transition: width .3s ease-in-out;
@@ -66,14 +90,7 @@ nav ul {
   color: var(--sarga);
 }
 
-.logo {
-  text-align: center;
-  color: var(--sarga);
-  font-family: monospace;
-  font-weight: bold;
-  font-size: 2rem;
-  margin: 0;
-}
+
 
 @media screen and (max-width: 700px) {
   .topnav {
