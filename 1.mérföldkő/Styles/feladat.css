@@ -1,9 +1,11 @@
 .bg-img {
     background-image: url(../képek/lightbulb-g16c95b97f_1920.jpg);
-    min-height: 100vh;
+    min-height: 110vh;
+    width: 100%;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    position: absolute;
   }
   
 #kep{
@@ -11,6 +13,7 @@
     margin-left: auto;
     margin-right: auto;
     position: relative;
+    border-radius: 2%;
     top: 18rem;
   }
 
@@ -19,18 +22,18 @@
     position: relative;
   }
   .hero-text {
-    font-family: Lucida Handwriting;
+    font-family: monospace;
     font-size: 0.8rem;
     display: inline-block;
     position: absolute;
     color: black;
-    padding-left: 2px;
+    padding-left: 5px;
     background-color: rgba(242, 216, 0, 1);
     width: 80%;
     margin-left: auto;
     margin-right: auto;
     transform-origin: 0 0;
-    top: 6rem;
+    top: 7rem;
     animation-name: myMove;
     animation-duration: 2s;
     animation-iteration-count: 1;
@@ -39,10 +42,12 @@
   }
   .hero-text h1{
     margin-left: 30px;
+    font-weight: bold;
   }
   .hero-text p{
-    margin-left: 50px;
-    font-family: Lucida Handwriting;
+    margin-left: 25px;
+    
+    font-family:monospace;
     font-size: 1.2rem;
     color: black;
   }
@@ -57,5 +62,27 @@
     }
   }
   
+  @media screen and (max-width: 700px) {
+    #kep{
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      position: relative;
+      top: 25rem;
+      width: 90%;
+    }
+    .hero-text{
+      max-height: 150px;
+      font-size: 0.5rem;
+      top: 8rem;
+    }
+    .hero-text p{
+      margin-left: 35px;
+      font-family: Lucida Handwriting;
+      margin-right: 15px;
+      font-size: 0.8rem;
+      color: black;
+    }
+  }
 
   
