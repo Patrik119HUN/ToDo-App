@@ -2,31 +2,33 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="author" content="Szegedi Bence, Tukacs Patrik" />
-  <link rel="icon" type="image/x-icon" href="/Képek/pipa favicon.ico">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8" >
+  <meta name="author" content="Szegedi Bence, Tukacs Patrik" >
+  <link rel="icon" type="image/x-icon" href="/Képek/pipa%20favicon.ico">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" >
   <title>Regisztráció</title>
-  <link rel="stylesheet" href="/Styles/style.css" />
-  <link rel="stylesheet" href="/Styles/form.css" />
-  <link rel="stylesheet" href="/Styles/nav.css" />
-  <link rel="stylesheet" href="/Styles/footer.css" />
+  <link rel="stylesheet" href="../Styles/style.css" >
+  <link rel="stylesheet" href="../Styles/form.css" >
+  <link rel="stylesheet" href="../Styles/nav.css" >
+  <link rel="stylesheet" href="../Styles/footer.css" >
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 </head>
 
 <nav class="topnav">
   <ul>
-    <p class="logo">ToDo APP</p>
-    <button class="ham" id="myBtn"><img src="../SVG/menu.svg" alt="" style="width: 2rem;"></button>
+    <li>
+      <p class="logo">ToDo APP</p>
+      <button class="ham" id="myBtn"><img src="../SVG/menu.svg" alt="" style="width: 2rem;"></button>
+    </li>
   </ul>
-  <ul id="menu">
-    <li><a href="/Sites/index.html">Kezdőlap</a></li>
-    <li><a href="/Sites/galeria.html">Galéria</a></li>
+  <ul>
+    <li><a href="../Sites/index.html">Kezdőlap</a></li>
+    <li><a href="../Sites/galeria.html">Galéria</a></li>
   </ul>
-  <ul id="menu">
-    <li class="active"><a href="/Sites/regisztracio.html">Regisztráció</a></li>
-    <li><a href="/Sites/bejelentkezes.html">Bejelentkezés</a></li>
+  <ul>
+    <li class="active"><a href="../Sites/regisztracio.html">Regisztráció</a></li>
+    <li><a href="../Sites/bejelentkezes.html">Bejelentkezés</a></li>
   </ul>
 </nav>
 
@@ -38,26 +40,27 @@
       <div style="display:flex; gap:2rem">
         <div>
           <label for="surename"><b>Vezeték név</b></label>
-          <input type="text" placeholder="Jankó" name="surename" />
+          <input type="text" id="surename" placeholder="Jankó" name="surename" >
         </div>
         <div>
           <label for="forename"><b>Kereszt név</b></label>
-          <input type="text" placeholder="Pista" name="forename" />
+          <input type="text" id="forename" placeholder="Pista" name="forename" >
         </div>
       </div>
       <label for="id"><b>Felhasználónév</b></label>
-      <input type="text" placeholder="jankópityu129" name="id" />
+      <input type="text" id="id" placeholder="jankópityu129" name="id" >
+      
       <label for="birthday"><b>Születési dátum: </b></label>
-      <input type="date" id="birthday" name="birthday" />
+      <input type="date" id="birthday" name="birthday" >
 
       <label for="email"><b>Email</b></label>
-      <input type="text" placeholder="jankopisti@valami.com" name="email" />
+      <input type="text" id="email" placeholder="jankopisti@valami.com" name="email" >
 
       <label for="psw"><b>Jelszó</b></label>
-      <input type="password" placeholder="Adj meg egy jelszót" name="psw" />
+      <input type="password" id="psw"  placeholder="Adj meg egy jelszót" name="psw" >
 
       <label for="psw_n"><b>Jelszó újra</b></label>
-      <input type="password" placeholder="Adj meg egy jelszót" name="psw_n" />
+      <input type="password" id="psw_n" placeholder="Adj meg egy jelszót" name="psw_n" >
 
       <button type="submit" class="login" name="register">Regisztrálok</button>
 

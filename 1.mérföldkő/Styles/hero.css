@@ -3,17 +3,23 @@
   position: relative;
 }
 .hero-text {
-  font-size: 1.75rem;
+  font-size: 1.7rem;
+  display: inline-block;
   position: absolute;
   color: white;
-  width: 75%;
+  width: 80%;
   transform-origin: 0 0;
   top: 15%;
   left: 15%;
   animation-name: myMove;
   animation-duration: 2s;
   animation-iteration-count: 1;
+<<<<<<< HEAD
   animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+=======
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
+>>>>>>> b4e288eb1a8bc9281c5f55493d8cb6de073deeab
 }
 
 @keyframes myMove {
@@ -61,6 +67,7 @@
     font-size: 1.3rem;
     width: 90%;
     left: 5%;
+    top: 20%;
   }
   .hero-text h1 {
     width: 90%;

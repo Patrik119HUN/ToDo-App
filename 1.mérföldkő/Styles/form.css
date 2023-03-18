@@ -15,16 +15,32 @@
 .form {
   float: right;
   right: 0;
-  margin-top: 6rem;
+  margin-top: 4rem;
   margin-bottom: 5rem;
   margin-right: 1.3rem;
   max-width: 350px;
-  padding: 16px;
+  padding: 10px;
   background-color: #1f1f21;
   font-family: monospace;
   color: #e3fc02;
 }
 
+@media screen and (max-width: 700px) {
+
+  .form{
+    float: right;
+    right: 0;
+    margin-top: 6rem;
+    margin-bottom: 5rem;
+    margin-right: 1.3rem;
+    max-width: 350px;
+    padding: 16px;
+    background-color: #1f1f21;
+    font-family: monospace;
+    color: #e3fc02;
+  }
+
+}
 input[type="text"],
 input[type="password"] {
   width: 100%;
