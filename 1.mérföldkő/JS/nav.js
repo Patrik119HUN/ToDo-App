@@ -1,8 +1,8 @@
 $(window).resize(function () {
   if (window.innerWidth > 700) {
-    $("[id=menu]").removeClass("invisible");
+    $(".menu").removeClass("invisible");
   }
 });
 $("#myBtn").click(function () {
-  $("[id=menu]").toggleClass("invisible");
+  $(".menu").toggleClass("invisible");
 });

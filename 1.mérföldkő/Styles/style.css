@@ -105,7 +105,7 @@ table th {
 }
 
 table td {
-  vertical-align: left;
+  vertical-align: middle;
   color: #fff;
   border-style: solid;
   border-width: 1px;

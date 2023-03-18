@@ -14,12 +14,8 @@
   animation-name: myMove;
   animation-duration: 2s;
   animation-iteration-count: 1;
-<<<<<<< HEAD
-  animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
-=======
   animation-timing-function: ease;
   animation-fill-mode: forwards;
->>>>>>> b4e288eb1a8bc9281c5f55493d8cb6de073deeab
 }
 
 @keyframes myMove {
