@@ -1,0 +1,61 @@
+.bg-img {
+    background-image: url(../képek/lightbulb-g16c95b97f_1920.jpg);
+    min-height: 1500px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    top: 18rem;
+  }
+
+  .hero {
+    display: block;
+    position: relative;
+  }
+  .hero-text {
+    font-family: Lucida Handwriting;
+    font-size: 0.8rem;
+    display: inline-block;
+    position: absolute;
+    color: black;
+    padding-left: 2px;
+    background-color: rgba(242, 216, 0, 1);
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    transform-origin: 0 0;
+    top: 6rem;
+    animation-name: myMove;
+    animation-duration: 2s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+  }
+  .hero-text h1{
+    margin-left: 30px;
+  }
+  .hero-text p{
+    margin-left: 50px;
+    font-family: Lucida Handwriting;
+    font-size: 1.2rem;
+    color: black;
+  }
+  
+  @keyframes myMove {
+    0% {
+      left: 0%;
+    }
+    100% {
+      left: 10%;
+      animation-play-state: paused;
+    }
+  }
+  
+
+  
