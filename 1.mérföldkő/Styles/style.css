@@ -131,17 +131,35 @@ table td {
   img {
     display: none;
   }
-  h1,h2,h3,p{
-    font-size: 1cm !important;
+  h1,
+  h2,
+  h3,
+  p,
+  a, th, td {
+    font-size: initial !important;
+    font-weight: initial !important;
     color: black !important;
+    font-size: 15pt !important;
+    margin: initial;
   }
-  *{
+  * {
     background: none !important;
   }
-  div   {
+  *::after {
+    content: none !important;
+  }
+  *::before {
+    content: none !important;
+  }
+  div,
+  p,
+  span {
+    aspect-ratio: initial !important;
+    height: auto !important;
+    width: auto !important;
     padding: initial !important;
     margin: initial !important;
-    display: block !important;
+    display: initial !important;
     position: initial !important;
   }
 }

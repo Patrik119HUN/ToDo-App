@@ -9,23 +9,28 @@
   width: 75%;
   transform-origin: 0 0;
   top: 15%;
+  left: 15%;
   animation-name: myMove;
-  animation-duration: 3s;
+  animation-duration: 2s;
   animation-iteration-count: 1;
-  animation-timing-function: ease;
-  
+  animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
 }
 
 @keyframes myMove {
-  0% {left: 0%;}
-  100% {left: 20%; animation-play-state: paused;}
- }
- 
-.hero-text h1{
-  width: 50%
+  0% {
+    left: 0%;
+  }
+  100% {
+    left: 15%;
+    animation-play-state: paused;
+  }
 }
-.hero-text p{
-  width: 50%
+
+.hero-text h1 {
+  width: 50%;
+}
+.hero-text p {
+  width: 50%;
 }
 
 .hero-image {
@@ -47,31 +52,35 @@
   width: 90%;
   margin-bottom: 1rem;
 }
-.text-container p{
-    font-size: 1.25rem;
+.text-container p {
+  font-size: 1.25rem;
 }
 
-@media screen and (max-width:700px) {
-  .hero-text{
+@media screen and (max-width: 700px) {
+  .hero-text {
     font-size: 1.3rem;
     width: 90%;
     left: 5%;
   }
-  .hero-text h1{
+  .hero-text h1 {
     width: 90%;
   }
-  .text-container{
+  .text-container {
     left: 40%;
   }
-  .text-container h2{
+  .text-container h2 {
     font-size: 2rem;
   }
 }
 
 @media print {
-  .hero-text h1{
-      font-size: 30pt;
-      display: block;
-      color: #000 ;
+  .hero-text h1 {
+    font-size: 25pt !important;
+    margin-bottom: 0;
+    display: block;
+    color: #000;
+  }
+  .hero-text p {
+    font-size: 15pt !important;
   }
 }

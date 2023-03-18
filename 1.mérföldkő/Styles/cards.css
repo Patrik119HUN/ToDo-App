@@ -19,7 +19,7 @@
   width: 30rem;
   aspect-ratio: 1;
   flex-direction: column;
-  position: relative; 
+  position: relative;
 }
 
 .card:hover::before {
@@ -92,7 +92,7 @@
   font-weight: 400;
   margin-top: 3rem;
 }
-@media screen and (max-width:700px) {
+@media screen and (max-width: 700px) {
   .card {
     width: 100%;
   }
@@ -100,8 +100,16 @@
     width: 100%;
   }
 }
-@media print{
-  .card{
+@media print {
+  .card {
     display: none;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+  #cards {
+    margin-top: 2cm !important;
+    margin-bottom : 2cm !important;
+    display: flex !important;
+    flex-direction: column !important;
   }
 }
