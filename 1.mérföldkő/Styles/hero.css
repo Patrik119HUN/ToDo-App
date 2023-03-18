@@ -65,12 +65,13 @@
 @media screen and (max-width: 700px) {
   .hero-text {
     font-size: 1.3rem;
-    width: 90%;
+    width: fit-content;
     left: 5%;
     top: 20%;
   }
   .hero-text h1 {
-    width: 90%;
+    width: 62%;
+
   }
   .text-container {
     left: 40%;

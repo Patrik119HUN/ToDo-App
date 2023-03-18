@@ -135,7 +135,10 @@ table td {
   h2,
   h3,
   p,
-  a, th, td {
+  a,
+  b,
+  th,
+  td {
     font-size: initial !important;
     font-weight: initial !important;
     color: black !important;
@@ -153,7 +156,8 @@ table td {
   }
   div,
   p,
-  span {
+  span,
+  form {
     aspect-ratio: initial !important;
     height: auto !important;
     width: auto !important;
@@ -161,5 +165,10 @@ table td {
     margin: initial !important;
     display: initial !important;
     position: initial !important;
+    float:left !important;
+  }
+  input,
+  button {
+    border: groove !important;
   }
 }
