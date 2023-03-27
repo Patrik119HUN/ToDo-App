@@ -1,4 +1,5 @@
-body, html {
+body,
+html {
   margin: 0;
   font-family: monospace, Helvetica, sans-serif;
   font-weight: 200;
@@ -19,7 +20,7 @@ body button {
 .gomb {
   background-color: #1f1f21;
   color: #e3fc02;
-  
+
   border: none;
   text-align: center;
   transition: 0.3s;
@@ -35,26 +36,49 @@ body button {
 }
 
 .bg-image {
-  height: 80%; 
+  height: 80%;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
-.img1 { background-image: url("../képek/kavezok.jpg"); }
-.img2 { background-image: url("../képek/bike2.jpg"); }
-.img3 { background-image: url("../képek/sulyzok.jpg"); }
-.img4 { background-image: url("../képek/kocsma.jpg"); }
-.img5 { background-image: url("../képek/futas2.jpg"); }
+.img1 {
+  background-image: url("../pics/kavezok.jpg");
+}
+.img2 {
+  background-image: url("../pics/bike2.jpg");
+}
+.img3 {
+  background-image: url("../pics/sulyzok.jpg");
+}
+.img4 {
+  background-image: url("../pics/kocsma.jpg");
+}
+.img5 {
+  background-image: url("../pics/futas2.jpg");
+}
+
+.gimg1 {
+  background-image: url("../pics/chill.jpg");
+}
+.gimg2 {
+  background-image: url("../pics/pár.jpg");
+}
+.gimg3 {
+  background-image: url("../pics/task2.jpg");
+}
+.gimg4 {
+  background-image: url("../pics/coffee-gc0ac3039f_1920.jpg");
+}
 
 .bg-text {
-  background-color: rgb(0,0,0); 
-  background-color: rgba(0,0,0, 0.7); 
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.7);
   color: #fff;
   font-weight: bold;
   font-size: 1rem;
   border: 0.5rem solid #e3fc02;
-  position: fixed; 
+  position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -62,48 +86,89 @@ body button {
   width: 24rem;
   height: 23rem;
   padding: 0.8rem 0.8rem;
-  
 }
 
-table{
+table {
   text-align: center;
   border-collapse: collapse;
   padding: 20px;
   margin: 0;
-
-
 }
-table th{
+
+table th {
   vertical-align: middle;
   color: red;
   border-style: solid;
   border-width: 1px;
   border-color: #e3fc02;
   height: 2.5rem;
-  
-  
- 
 }
 
-table td{
-  vertical-align: left;
+table td {
+  vertical-align: middle;
   color: #fff;
   border-style: solid;
   border-width: 1px;
   border-color: #e3fc02;
   padding-right: 5px;
   height: 6rem;
-  
 }
 
-#use{
+#use {
   font-size: 1.2rem;
   text-align: center;
   margin-left: 25px;
-  margin-right: 25px;;
+  margin-right: 25px;
 }
-#ingyen{
+#ingyen {
   color: red;
 }
 
-
+@media print {
+  header,
+  header,
+  footer,
+  img {
+    display: none;
+  }
+  h1,
+  h2,
+  h3,
+  p,
+  a,
+  b,
+  th,
+  td {
+    font-size: initial !important;
+    font-weight: initial !important;
+    color: black !important;
+    font-size: 15pt !important;
+    margin: initial;
+  }
+  * {
+    background: none !important;
+  }
+  *::after {
+    content: none !important;
+  }
+  *::before {
+    content: none !important;
+  }
+  div,
+  p,
+  span,
+  form {
+    aspect-ratio: initial !important;
+    height: auto !important;
+    width: auto !important;
+    padding: initial !important;
+    margin: initial !important;
+    display: initial !important;
+    position: initial !important;
+    float:left !important;
+  }
+  input,
+  button {
+    border: groove !important;
+  }
+}

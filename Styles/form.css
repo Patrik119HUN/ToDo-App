@@ -1,23 +1,36 @@
-.bg-img{
-    background-image: url(../képek/planner.jpg);
-    min-height: 800px;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    
-  }
-  .bg-signup{
-    background-image: url(../képek/bike2.jpg);
-    min-height: 700px;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    
-  }
-  .form {
+.bg-img {
+  background-image: url(../pics/planner.jpg);
+  min-height: 800px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.bg-signup {
+  background-image: url(../pics/bike2.jpg);
+  min-height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.form {
+  float: right;
+  right: 0;
+  margin-top: 4rem;
+  margin-bottom: 5rem;
+  margin-right: 1.3rem;
+  max-width: 350px;
+  padding: 10px;
+  background-color: #1f1f21;
+  font-family: monospace;
+  color: #e3fc02;
+}
+
+@media screen and (max-width: 700px) {
+
+  .form{
     float: right;
     right: 0;
-    margin-top: 3rem;
+    margin-top: 6rem;
     margin-bottom: 5rem;
     margin-right: 1.3rem;
     max-width: 350px;
@@ -26,56 +39,56 @@
     font-family: monospace;
     color: #e3fc02;
   }
-  
-  input[type="text"],
-  input[type="password"] {
-    width: 100%;
-    padding: 15px;
-    margin: 5px 0 22px 0;
-    border: none;
-    background: #f1f1f1;
-  }
-  input[type="text"]:focus,
-  input[type="password"]:focus {
-    background-color: #ddd;
-    outline: none;
-  }
-  
-  #birthday {
-    margin-bottom: 1.5rem;
-    margin-top: 0.5rem;
-  }
-  
-  
-  fieldset{
-    border-color: #1f1f21;
-  }
-  .rButton {
-    background-color: #e3fc02;
-    font-family: monospace;
-    font-weight: bold;
-    color: #1f1f21;
-    cursor: pointer;
-    width: 100%;
-    height: 1.8rem;
-    margin-top: 0.5rem;
-    opacity: 0.9;
-    border: 0;
-  }
-  .rButton:hover {
-    opacity: 1;
-  }
-  
-  .login {
-    background-color: #e3fc02;
-    color: #1f1f21;
-    padding: 16px 20px;
-    border: none;
-    cursor: pointer;
-    width: 100%;
-    opacity: 0.9;
-  }
-  
-  .login:hover {
-    opacity: 1;
-  }
+
+}
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+}
+input[type="text"]:focus,
+input[type="password"]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+#birthday {
+  margin-bottom: 1.5rem;
+  margin-top: 0.5rem;
+}
+
+fieldset {
+  border-color: #1f1f21;
+}
+.rButton {
+  background-color: #e3fc02;
+  font-family: monospace;
+  font-weight: bold;
+  color: #1f1f21;
+  cursor: pointer;
+  width: 100%;
+  height: 1.8rem;
+  margin-top: 0.5rem;
+  opacity: 0.9;
+  border: 0;
+}
+.rButton:hover {
+  opacity: 1;
+}
+
+.login {
+  background-color: #e3fc02;
+  color: #1f1f21;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.login:hover {
+  opacity: 1;
+}

@@ -3,8 +3,23 @@ include 'Route.php';
 
 use Steampixel\Route;
 
+$links = [
+  "regisztracio" => "Regisztráció",
+  "bejelentkezes" => "Bejelentkezés"
+];
+$oldalak = [
+  "/" => "Kezdőlap",
+  "galeria" => "Galéria",
+  "feladatszerkeszto" => "Feladatszerkesztő",
+];
+$GLOBALS['alma'] = [$oldalak, $links];
+
 Route::add('/', function () {
   session_start();
+
+  if (!isset($_SESSION['alma'])) {
+    $_SESSION['alma'] = $GLOBALS['alma'];
+  }
   include('./Sites/index.php');
 });
 
@@ -21,9 +36,9 @@ Route::add('/bejelentkezes', function () {
   include('./Sites/bejelentkezes.php');
 }, 'get');
 
-Route::add('/rolunk', function () {
+Route::add('/feladatszerkeszto', function () {
   session_start();
-  include('./Sites/rolunk.php');
+  include('./Sites/feladatszerkeszto.php');
 });
 Route::add('/teendok', function () {
   session_start();

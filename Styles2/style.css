@@ -1,0 +1,109 @@
+body, html {
+  margin: 0;
+  font-family: monospace, Helvetica, sans-serif;
+  font-weight: 200;
+  background-color: #1f1f21;
+  height: 100%;
+}
+body p {
+  font-family: monospace, Helvetica, sans-serif;
+  color: aliceblue;
+}
+body button {
+  color: #e3fc02;
+  font-family: monospace, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 17px;
+}
+
+.gomb {
+  background-color: #1f1f21;
+  color: #e3fc02;
+  
+  border: none;
+  text-align: center;
+  transition: 0.3s;
+}
+.gomb:hover {
+  background-color: gray;
+  color: #e3fc02;
+  cursor: pointer;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.bg-image {
+  height: 80%; 
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.img1 { background-image: url("../képek/kavezok.jpg"); }
+.img2 { background-image: url("../képek/bike2.jpg"); }
+.img3 { background-image: url("../képek/sulyzok.jpg"); }
+.img4 { background-image: url("../képek/kocsma.jpg"); }
+.img5 { background-image: url("../képek/futas2.jpg"); }
+
+.bg-text {
+  background-color: rgb(0,0,0); 
+  background-color: rgba(0,0,0, 0.7); 
+  color: #fff;
+  font-weight: bold;
+  font-size: 1rem;
+  border: 0.5rem solid #e3fc02;
+  position: fixed; 
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 24rem;
+  height: 23rem;
+  padding: 0.8rem 0.8rem;
+  
+}
+
+table{
+  text-align: center;
+  border-collapse: collapse;
+  padding: 20px;
+  margin: 0;
+
+
+}
+table th{
+  vertical-align: middle;
+  color: red;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #e3fc02;
+  height: 2.5rem;
+  
+  
+ 
+}
+
+table td{
+  vertical-align: left;
+  color: #fff;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #e3fc02;
+  padding-right: 5px;
+  height: 6rem;
+  
+}
+
+#use{
+  font-size: 1.2rem;
+  text-align: center;
+  margin-left: 25px;
+  margin-right: 25px;;
+}
+#ingyen{
+  color: red;
+}
+
+

@@ -15,7 +15,7 @@
 
 <body>
 
-  <?php include 'Modules/nav.php' ?>
+  <?php include 'Components/nav.php' ?>
   <?php
   include "./common.php";
   $fiokok =  loadUsers("users.txt");
@@ -126,7 +126,7 @@
 
   </main>
 
-  <?php include 'Modules/footer.php' ?>
+  <?php include 'Components/footer.php' ?>
   <script>
     function myFunction() {
       document.getElementById("reset").reset();

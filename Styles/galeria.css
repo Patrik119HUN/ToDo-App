@@ -1,11 +1,21 @@
-body, html {
-    margin: 0;
-    font-family: monospace, Helvetica, sans-serif;
-    font-weight: 200;
-    background-color: #1f1f21;
-    height: 100%;
+body,
+html {
+  margin: 0;
+  font-family: monospace, Helvetica, sans-serif;
+  font-weight: 200;
+  background-color: #1f1f21;
+  height: 100%;
+}
+body p {
+  font-family: monospace, Helvetica, sans-serif;
+  color: aliceblue;
+}
+
+@media print {
+  table td th{
+    height: fit-content !important;
   }
-  body p {
-    font-family: monospace, Helvetica, sans-serif;
-    color: aliceblue;
+  .bg-text{
+    height: auto !important;
   }
+}

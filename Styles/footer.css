@@ -2,7 +2,14 @@ footer{
     font-family: monospace;
     font-size: 15px;
     color:#e3fc02;
-    padding: 30px 30px;
-    display: flex;
+    padding-right: 2rem;
+    display: flex;  
+    margin-bottom: 5rem;
+    margin-left: 2rem;
   }
-  
+
+@media print {
+  footer{
+    display: none;
+  }
+}

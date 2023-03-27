@@ -1,6 +1,7 @@
-
 <?php
-// a regisztrált felhasználók fájlból való betöltéséért felelő függvény
+
+
+
 
 function loadUsers($path)
 {
@@ -10,7 +11,7 @@ function loadUsers($path)
   if ($file === FALSE) {
     $file = fopen($path, "w");
     fclose($file);
-    $file = fopen($path,"r");
+    $file = fopen($path, "r");
   }
 
   while (($line = fgets($file)) !== FALSE) {  // fájl tartalmának beolvasása soronként
@@ -37,4 +38,3 @@ function saveUsers($path, $users)
 
   fclose($file);
 }
-?>
