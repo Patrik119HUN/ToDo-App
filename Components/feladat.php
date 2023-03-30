@@ -13,6 +13,7 @@ class feladat
     private $leirasa;
     private $allapot;
     private $hatarIdo;
+    
 
     public function __construct($neve, $leirasa = " ",  tipusok $allapot = tipusok::Nincs, $hatarIdo)
     {     // konstruktor
@@ -57,6 +58,16 @@ class feladat
     {  
         $this->leirasa = $ertek;
     }
+    public function setAllapot($state)
+    {
+        if($state == "Kész"){
+            $this->allapot = tipusok::Kesz;
+        }elseif($state == "Folyamatban"){
+            $this->allapot = tipusok::Folyamatban;
+        }elseif($state == "Nincs"){
+            $this->allapot = tipusok::Nincs;
+        }
+    }
     //fuggvenyek
     public function kesz()
     {
@@ -68,29 +79,27 @@ class feladat
         if($this->getIdo() - date("Y-m-d",$t) < 3){
             echo "Márcsak 3 napod van hátra a határidő végéig!<br>";
         }
-        
     }
+    
     public function render()
     {
-
         echo "<div class=task>
-                <h3>$this->neve</h3>
-                <p>$this->leirasa</ő>
-                <div>
+                <h2>$this->neve</h2>
+                <p id=felso>Leírás : <br></p>
+                <p id=leiras>$this->leirasa</p>                
+                <form action=feladat.php method=POST>
+                    <p>Állapot: </p>
                     <select name=cars id=cars>
                         <option value=kesz>Kész</option>
                         <option value=folyamatban>Folyamatban</option>
                         <option value=vege>Vége</option>
                     </select>
-                    <br>
-                    <label for=date>Határidő</label>
-                    <input type=date  id=date name=date></input>
-                    <br>
-                    $this->hatarIdo
-                    <br>
-                </div>
-              </div>";
-        
+                    <div class=button>
+                        <button type=submit name=allapot>Jóváhagy</button>
+                    </div>
+                </form>
+                <p>Határidő: $this->hatarIdo</p>                
+            </div>";
     }
 }
 ?>

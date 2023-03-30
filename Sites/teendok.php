@@ -18,10 +18,10 @@
     <?php include 'Components/footer.php' ?>
     
 
-    <div style="background-color: yellow; padding:1rem;">
+    <div>
         <?php
         include 'Components/feladat.php';
-        $feladat = new feladat("Sétálni", "Levinni a blökit.", tipusok::Kesz, "2023-03-05");
+        $feladat = new feladat("Séta", "Levinni a blökit", tipusok::Kesz, "2023-03-05");
         $feladat->render();
         
         
