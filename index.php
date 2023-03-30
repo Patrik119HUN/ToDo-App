@@ -3,22 +3,36 @@ include 'Route.php';
 
 use Steampixel\Route;
 
-$links = [
-  "regisztracio" => "Regisztráció",
-  "bejelentkezes" => "Bejelentkezés"
+$kijelentkezve = [
+  [
+    "/" => "Kezdőlap",
+    "galeria" => "Galéria",
+    "feladatszerkeszto" => "Feladatszerkesztő",
+  ],
+  [
+    "regisztracio" => "Regisztráció",
+    "bejelentkezes" => "Bejelentkezés"
+  ]
 ];
-$oldalak = [
-  "/" => "Kezdőlap",
-  "galeria" => "Galéria",
-  "feladatszerkeszto" => "Feladatszerkesztő",
+
+$bejelentkezve = [
+  [
+    "teendok" => "teendok",
+  ],
+  [
+    "felhasznalo" => "alma",
+    "kijelentkezes" => "Kijelentkezés",
+  ]
 ];
-$GLOBALS['alma'] = [$oldalak, $links];
+$GLOBALS['Bejelentkezve'] = $bejelentkezve;
+$GLOBALS['Kijelentkezve'] = $kijelentkezve;
 
 Route::add('/', function () {
   session_start();
 
-  if (!isset($_SESSION['alma'])) {
-    $_SESSION['alma'] = $GLOBALS['alma'];
+  if (!isset($_SESSION['Kijelentkezve']) || !isset($_SESSION['Bejelentkezve'])) {
+    $_SESSION['Kijelentkezve'] = $GLOBALS['Kijelentkezve'];
+    $_SESSION['Bejelentkezve'] = $GLOBALS['Bejelentkezve'];
   }
   include('./Sites/index.php');
 });
@@ -45,7 +59,7 @@ Route::add('/teendok', function () {
   include('./Sites/teendok.php');
 });
 
-Route::add('/felhasznalo',function(){
+Route::add('/felhasznalo', function () {
   session_start();
   include('./Sites/felhasznalo.php');
 });
@@ -55,6 +69,11 @@ Route::add('/kijelentkezes', function () {
   session_unset();
   session_destroy();
 
+  session_start();
+  if (!isset($_SESSION['Kijelentkezve']) || !isset($_SESSION['Bejelentkezve'])) {
+    $_SESSION['Kijelentkezve'] = $GLOBALS['Kijelentkezve'];
+    $_SESSION['Bejelentkezve'] = $GLOBALS['Bejelentkezve'];
+  }
   header("Location: /bejelentkezes");    // átirányítás
 });
 Route::pathNotFound(function ($path) {

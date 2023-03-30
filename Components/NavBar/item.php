@@ -1,4 +1,6 @@
 <?php function NavItem(string $path, string $name)
 {
-    echo "<li><a href=$path>$name</a></li>";
+    $activePage = basename($_SERVER['PHP_SELF'], ".php");
+    $class = ($activePage==$path) ? 'active' : '';
+    echo "<li class=$class ><a href=$path>$name</a></li>";
 }
