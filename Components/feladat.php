@@ -11,17 +11,17 @@ class feladat
 {
     private $neve;
     private $leirasa;
-    private $statusza;
-    private $ideje;
+    private $allapot;
+    private $hatarIdo;
 
-    public function __construct($neve, $leirasa,  tipusok $statusza, $ideje)
+    public function __construct($neve, $leirasa = " ",  tipusok $allapot = tipusok::Nincs, $hatarIdo)
     {     // konstruktor
         $this->neve = $neve;      // adattagok inicializálása a konstruktor paraméterei alapján
         $this->leirasa = $leirasa;
-        $this->statusza = $statusza;
-        $this->ideje = $ideje;
+        $this->allapot = $allapot;
+        $this->hatarIdo = $hatarIdo;
     }
-
+    //getterek
     public function getNev()
     {
         return $this->neve;
@@ -30,10 +30,10 @@ class feladat
     {
         return $this->leirasa;
     }
-    public function getStatusz()
+    public function getAllapot()
     {
         $valasz = "";
-        match ($this->statusza) {
+        match ($this->allapot) {
             tipusok::Kesz => $valasz = "kesz",
             tipusok::Nincs => $valasz = "nincs",
             tipusok::Folyamatban => $valasz = "folyamatban",
@@ -42,15 +42,39 @@ class feladat
     }
     public function getIdo()
     {
-        return $this->ideje;
+        return $this->hatarIdo;
     }
+    // setterek
     public function setNev($ertek)
-    {  // setter
+    {  
         $this->neve = $ertek;
+    }
+    public function setHatarIdo($ertek)
+    {  
+        $this->hatarIdo = $ertek;
+    }
+    public function setLeirasa($ertek)
+    {  
+        $this->leirasa = $ertek;
+    }
+    //fuggvenyek
+    public function kesz()
+    {
+        echo "<h2>Szuper, ezzel a feladattal megvagy!</h2><br>";
+    }
+    public function figyelmeztet()
+    {
+        $t=time();
+        if($this->getIdo() - date("Y-m-d",$t) < 3){
+            echo "Márcsak 3 napod van hátra a határidő végéig!<br>";
+        }
+        
     }
     public function render()
     {
         echo '<div id="Hello">'. $this->neve .'</div>';
+        $t="2023-05-04";
+        echo date("Y-m-d", $t);
     }
 }
 ?>
