@@ -72,9 +72,25 @@ class feladat
     }
     public function render()
     {
-        echo '<div id="Hello">'. $this->neve .'</div>';
-        $t="2023-05-04";
-        echo date("Y-m-d", $t);
+
+        echo "<div class=task>
+                <h3>$this->neve</h3>
+                <p>$this->leirasa</ő>
+                <div>
+                    <select name=cars id=cars>
+                        <option value=kesz>Kész</option>
+                        <option value=folyamatban>Folyamatban</option>
+                        <option value=vege>Vége</option>
+                    </select>
+                    <br>
+                    <label for=date>Határidő</label>
+                    <input type=date  id=date name=date></input>
+                    <br>
+                    $this->hatarIdo
+                    <br>
+                </div>
+              </div>";
+        
     }
 }
 ?>

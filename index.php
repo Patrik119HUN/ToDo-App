@@ -17,7 +17,7 @@ $kijelentkezve = [
 
 $bejelentkezve = [
   [
-    "teendok" => "teendok",
+    "teendok" => "Teendők",
   ],
   [
     "felhasznalo" => "alma",
