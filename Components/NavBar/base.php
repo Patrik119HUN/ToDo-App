@@ -12,11 +12,14 @@
         <img src="../SVG/menu.svg" alt="" style="width: 2rem" />
     </button>
 </div>
-<?php foreach ( $_SESSION['alma'] as $as) {
-    echo "<ul class='menu'>";
-    foreach ($as as $fajl => $nev) {
-        NavItem($fajl, $nev);
+
+<?php
+$bejelentkezve = $_SESSION['Kijelentkezve'];
+foreach ($bejelentkezve as $linkek) {
+   echo "<ul class='menu'>";
+    foreach ($linkek as $url => $nev) {
+        NavItem($url, $nev);
     }
-    echo "</ul>";
+   echo "</ul>";
 }
 ?>

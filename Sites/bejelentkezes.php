@@ -14,7 +14,7 @@
 </head>
 
 <body>
-  <?php include 'Modules/nav.php' ?>
+  <?php include 'Components/nav.php' ?>
   <?php
   include "./common.php";
   $fiokok = loadUsers("users.txt");
@@ -39,6 +39,7 @@
         if (($fiok["id"] === $id || $fiok["email"]===$id) && password_verify($jelszo, $fiok["jelszo"])) {
           $uzenet = "Sikeres belépés!";        // ekkor átírjuk a megjelenítendő üzenet szövegét
           $_SESSION["user"] = $fiok;
+          $_SESSION["Bejelentkezve"][1]["felhasznalo"] = $id;
           header("Location: /");                                // mivel találtunk illeszkedést, ezért a többi felhasználót nem kell megvizsgálnunk, kilépünk a ciklusból 
         }
       }
@@ -63,7 +64,7 @@
     </form>
   </main>
 
-  <?php include 'Modules/footer.php' ?>
+  <?php include 'Components/footer.php' ?>
   <script>
     function myFunction() {
       document.getElementById("reset").reset();
