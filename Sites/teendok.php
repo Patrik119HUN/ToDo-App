@@ -1,3 +1,12 @@
+<!--<?php  
+//a az allapot valtoztatast porbaltam megvalositani, hogy a maga a feladat allapota is megvaltozzon
+require "./Components/feladat.php";
+if(isset($_POST["submit"])){
+    $allapot = $_POST["cars"];
+    $feladat->setAllapot($allapot);
+}
+?>-->
+
 <!DOCTYPE html>
 <html lang="en">
 
