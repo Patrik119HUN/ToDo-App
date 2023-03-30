@@ -1,11 +1,4 @@
-<!--<?php  
-//a az allapot valtoztatast porbaltam megvalositani, hogy a maga a feladat allapota is megvaltozzon
-require "./Components/feladat.php";
-if(isset($_POST["submit"])){
-    $allapot = $_POST["cars"];
-    $feladat->setAllapot($allapot);
-}
-?>-->
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -25,6 +18,7 @@ if(isset($_POST["submit"])){
 <body>
     <?php include 'Components/nav.php' ?>
     <?php include 'Components/footer.php' ?>
+    <?php include 'Components/feladatok.php' ?>
     
 
     <div>
@@ -33,9 +27,21 @@ if(isset($_POST["submit"])){
         $feladat = new feladat("Séta", "Levinni a blökit", tipusok::Kesz, "2023-03-05");
         $feladat->render();
         
-        
         ?>
-
+    </div>
+    <div class="newTask">
+        <h2>Új feladat létrehozása</h2>
+        
+        <form action="" method="POST">
+            <label for="neve">Feladat neve: </label>
+            <input type="text" id="fnev" name="neve" value=""><br>
+            <label for="leiras">Feladat leírása: </label>
+            <input type="text" id="fnev" name="leiras" value="" ><br>
+            <label for="hatarIdo">Feladat határideje: </label>
+            <input type="date" id="fnev" name="hatarIdo"  value="">
+            <br>
+            <input type="submit" id="submit" value="Létrehozás">
+        </form>
     </div>
     
     

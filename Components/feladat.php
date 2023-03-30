@@ -87,7 +87,7 @@ class feladat
                 <h2>$this->neve</h2>
                 <p id=felso>Leírás : <br></p>
                 <p id=leiras>$this->leirasa</p>                
-                <form action=teendok.php method=POST>
+                <form action=../Components/select.php method=POST>
                     <p>Állapot: </p>
                     <select name=cars id=cars>
                         <option value=kesz>Kész</option>
@@ -101,14 +101,14 @@ class feladat
                 <p>Határidő: $this->hatarIdo</p>                
             </div>";
         //teszt
-        //$state = $this->getAllapot();
-        //if($state == "Kész"){
-           // echo "kész";
-        //}elseif($state == "Folyamatban"){
-          //  echo "folyamatban";
-        //}elseif($state == "Nincs"){
-         //   echo "nincs";
-        //}
+        $state = $this->getAllapot();
+        if($state == "Kész"){
+            echo "kész";
+        }elseif($state == "Folyamatban"){
+            echo "folyamatban";
+        }elseif($state == "Nincs"){
+            echo "nincs";
+        }
     }
 }
 ?>

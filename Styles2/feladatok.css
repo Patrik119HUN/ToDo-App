@@ -38,12 +38,10 @@
 #felso{
   padding-bottom: 0;
 }
-.task input[type="date"] {
-  background-color: transparent;
-  border: 0;
-}
+
 .task select {
-  width: 5rem;
+
+  width: 10rem;
   background-color: transparent;
   border: 0;
   font-family: Arial, Helvetica, sans-serif;
@@ -54,7 +52,43 @@
   outline: 0;
   
 }
+.task button[type="submit"]{
+  color: black;
+  background-color: blanchedalmond;
+  margin-top: 3px;
+}
+
 #leiras {
   font-size: 1rem;
   padding-top: 0.2rem;
+}
+
+.newTask{
+  padding: 1rem;
+  width: 30rem;
+  margin-left: 3rem;
+  color: white;
+  border: 2px solid white;
+}
+.newTask h2{
+  text-align: center;
+}
+#fnev{
+  margin-left: 2rem;
+  margin-bottom: 1rem;
+}
+.newTask input {
+  border-radius: 1cm;
+}
+.newTask input[type="date"] {
+  background-color: blanchedalmond;
+  border: 0;
+}
+.newTask input[type="submit"] {
+  font-family: monospace;
+  font-weight: 300;
+  float: right;
+  margin-bottom: 1rem;;
+  background-color: yellow;
+  border: 0;
 }
