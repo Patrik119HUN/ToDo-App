@@ -10,42 +10,85 @@
 
 .task {
   margin: 2rem;
+  font-family: monospace;
   display: flex;
   flex-direction: column;
-  background-color: brown;
-  border-style: solid;
-  border-width: 3px;
-  border-color: black;
+  background-color: blanchedalmond;
+  padding: 1rem;
   width: max-content;
 }
-.task h3 {
+.task h2 {
   font-family: monospace;
   font-weight: 600;
-  font-size: 1.75rem;
+  font-size: 2rem;
+  text-align: center;
   margin: 0;
   width: 100%;
-  border-style: solid;
+  border-style: none;
   padding: 1rem 3rem;
-  border-width: 0px 0px 3px 0px;
-  border-color: black;
 }
 .task p {
-  padding: 1rem;
+  padding: 0.8rem;
   margin: 0;
   font-family: monospace;
   font-weight: 500;
   font-size: 1.45rem;
   color: black;
 }
-.task input[type="date"] {
-  background-color: transparent;
-  border: 0;
+#felso{
+  padding-bottom: 0;
 }
+
 .task select {
-  width: 2rem;
+
+  width: 10rem;
   background-color: transparent;
   border: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: large;
+  
 }
 .task select:focus {
   outline: 0;
+  
+}
+.task button[type="submit"]{
+  color: black;
+  background-color: blanchedalmond;
+  margin-top: 3px;
+}
+
+#leiras {
+  font-size: 1rem;
+  padding-top: 0.2rem;
+}
+
+.newTask{
+  padding: 1rem;
+  width: 30rem;
+  margin-left: 3rem;
+  color: white;
+  border: 2px solid white;
+}
+.newTask h2{
+  text-align: center;
+}
+#fnev{
+  margin-left: 2rem;
+  margin-bottom: 1rem;
+}
+.newTask input {
+  border-radius: 1cm;
+}
+.newTask input[type="date"] {
+  background-color: blanchedalmond;
+  border: 0;
+}
+.newTask input[type="submit"] {
+  font-family: monospace;
+  font-weight: 300;
+  float: right;
+  margin-bottom: 1rem;;
+  background-color: yellow;
+  border: 0;
 }

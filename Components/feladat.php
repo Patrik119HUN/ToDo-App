@@ -13,6 +13,7 @@ class feladat
     private $leirasa;
     private $allapot;
     private $hatarIdo;
+    
 
     public function __construct($neve, $leirasa = " ",  tipusok $allapot = tipusok::Nincs, $hatarIdo)
     {     // konstruktor
@@ -57,6 +58,16 @@ class feladat
     {  
         $this->leirasa = $ertek;
     }
+    public function setAllapot($state)
+    {
+        if($state == "Kész"){
+            $this->allapot = tipusok::Kesz;
+        }elseif($state == "Folyamatban"){
+            $this->allapot = tipusok::Folyamatban;
+        }elseif($state == "Nincs"){
+            $this->allapot = tipusok::Nincs;
+        }
+    }
     //fuggvenyek
     public function kesz()
     {
@@ -68,13 +79,36 @@ class feladat
         if($this->getIdo() - date("Y-m-d",$t) < 3){
             echo "Márcsak 3 napod van hátra a határidő végéig!<br>";
         }
-        
     }
+    
     public function render()
     {
-        echo '<div id="Hello">'. $this->neve .'</div>';
-        $t="2023-05-04";
-        echo date("Y-m-d", $t);
+        echo "<div class=task>
+                <h2>$this->neve</h2>
+                <p id=felso>Leírás : <br></p>
+                <p id=leiras>$this->leirasa</p>                
+                <form action=../Components/select.php method=POST>
+                    <p>Állapot: </p>
+                    <select name=cars id=cars>
+                        <option value=kesz>Kész</option>
+                        <option value=folyamatban>Folyamatban</option>
+                        <option value=vege>Vége</option>
+                    </select>
+                    <div class=button>
+                        <button type=submit name=submit>Jóváhagy</button>
+                    </div>
+                </form>
+                <p>Határidő: $this->hatarIdo</p>                
+            </div>";
+        //teszt
+        $state = $this->getAllapot();
+        if($state == "Kész"){
+            echo "kész";
+        }elseif($state == "Folyamatban"){
+            echo "folyamatban";
+        }elseif($state == "Nincs"){
+            echo "nincs";
+        }
     }
 }
 ?>
