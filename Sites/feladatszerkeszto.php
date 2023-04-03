@@ -34,7 +34,7 @@
         <img src="../pics/minta.png" id="kep" alt="Feldattervező" style="width: 85%" />
     </main>
 
-    <?php include './Components/footer.php' ?>
+    <?php include './Components/Footer/footer.php' ?>
     <script src="../JS/nav.js"></script>
 </body>
 

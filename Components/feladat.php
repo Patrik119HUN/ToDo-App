@@ -88,12 +88,13 @@ class feladat
                 <p id=felso>Leírás : <br></p>
                 <p id=leiras>$this->leirasa</p>                
                 <form action=../Components/select.php method=POST>
-                    <p>Állapot: </p>
+                    <p>Állapot: 
                     <select name=cars id=cars>
                         <option value=kesz>Kész</option>
                         <option value=folyamatban>Folyamatban</option>
                         <option value=vege>Vége</option>
                     </select>
+                    </p>
                     <div class=button>
                         <button type=submit name=submit>Jóváhagy</button>
                     </div>

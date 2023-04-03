@@ -16,7 +16,7 @@
 
 <body>
 
-    <?php include '../Modules/nav.php' ?>
+    <?php include './Components/nav.php' ?>
     <?php
     include "./common.php";
     $fiokok =  loadUsers("users.txt");
@@ -40,30 +40,33 @@
     }
     ?>
     <div class="container">
+        <ul>
+            <h2>Adataid</h2>
+        </ul>
         <ul class="input_row">
-            <li>Felhasználó neved:</li>
-            <input type="text" value='<?php echo $_SESSION["user"]["id"] ?>' />
+            <label for="felnev">Felhasználó neved:</label>
+            <input type="text" name="felnev" value='<?php echo $_SESSION["user"]["id"] ?>' />
         </ul>
         <div class="name">
             <ul class="input_row">
-                <li>Kereszt neved:</li>
-                <input type="text" value='<?php echo $_SESSION["user"]["keresztnev"] ?>'>
+                <label for="knev" id="label">Kereszt  neved:</label><br>
+                <input type="text" name="knev" value='<?php echo $_SESSION["user"]["keresztnev"] ?>'>
             </ul>
             <ul class="input_row">
-                <li>Vezeték neved:</li>
-                <input type="text" value='<?php echo $_SESSION["user"]["vezeteknev"] ?>' />
+                <label for="vnev" id="label">Vezeték neved:</label><br>
+                <input type="text" name="vnev" value='<?php echo $_SESSION["user"]["vezeteknev"] ?>' />
             </ul>
         </div>
         <ul class="input_row">
-            <li>E-mail címed:</li>
-            <input type="text" value='<?php echo $_SESSION["user"]["email"] ?>' />
+            <label for="email">E-mail címed:</label>
+            <input type="text" name="email" value='<?php echo $_SESSION["user"]["email"] ?>' />
         </ul>
         <ul class="input_row">
-            <li>Születési dátumod:</li>
-            <input type="date" value='<?php echo $_SESSION["user"]["eletkor"] ?>' />
+            <label for="sznap">Születési dátumod:</label>
+            <input type="date" anme="sznap" value='<?php echo $_SESSION["user"]["eletkor"] ?>' />
         </ul>
     </div>
-    <?php include 'Modules/footer.php' ?>
+    <?php include './Components/Footer/footer.php' ?>
 </body>
 
 </html>

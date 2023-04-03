@@ -1,12 +1,18 @@
 .container {
-  background-color: #e3fc02;
+  background-color:blanchedalmond;
+  color: black;
   width: 50%;
-  padding: 5rem;
+  padding:3rem;
+  font-size: medium;
   margin-left: auto;
   margin-right: auto;
   margin-top: 2rem;
   display: flex;
   flex-direction: column;
+}
+.container h2{
+  text-align: center;
+  margin-right: 2rem;
 }
 .name {
   display: flex;
@@ -17,10 +23,10 @@
   display: block;
   text-align: start;
   text-decoration: none;
-  font-size: 1.5rem;
+  font-size: 1rem;
   font-family: monospace;
   font-weight: 500;
-  color: black !important;
+  
 }
 
 .input_row {
@@ -30,6 +36,7 @@
   display: flex;
   flex-direction: column;
 }
+
 input {
   position: relative;
   padding: 1rem;
