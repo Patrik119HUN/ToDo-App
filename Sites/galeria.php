@@ -52,7 +52,7 @@
         </table>
     </main>
 
-    <?php include './Components/footer.php' ?>
+    <?php include './Components/Footer/footer.php' ?>
 </body>
 
 </html>

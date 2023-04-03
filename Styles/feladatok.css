@@ -88,8 +88,14 @@ input[type="date"], input[type="submit"]{
 }
 .task button[type="submit"] {
   color: black;
-  background-color: blanchedalmond;
-  margin-top: 3px;
+  width: 90%;
+  align-content: center;
+  min-height: 1.5rem;
+ 
+  border: 1px solid black;
+  background-color: transparent;
+  margin-left: 1rem;
+  border-radius: 5ch;
 }
 
 #leiras {
@@ -100,6 +106,7 @@ input[type="date"], input[type="submit"]{
 
 .newTask {
   padding: 1rem;
+  min-height: 15rem;
   width: 30rem;
   margin-left: 3rem;
   color: white;
@@ -112,18 +119,41 @@ input[type="date"], input[type="submit"]{
   margin-left: 2rem;
   margin-bottom: 1rem;
 }
-.newTask input {
-  border-radius: 1cm;
-}
-.newTask input[type="date"] {
-  background-color: blanchedalmond;
-  border: 0;
-}
+
+
 .newTask input[type="submit"] {
   font-family: monospace;
+  width:100%;
   font-weight: 300;
-  float: right;
   margin-bottom: 1rem;
   background-color: yellow;
   border: 0;
+}
+.input_row {
+  width: 100%;
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+}
+
+input {
+  position: relative;
+  padding: 1rem;
+  font-family: monospace;
+  font-weight: 500;
+  font-size: 1rem;
+  border-width: 3px;
+  border-color: black;
+  background-color: transparent;
+  width: 100%;
+}
+.container {
+  font-size: medium;
+  text-align: center;
+  margin-left: auto;
+  margin-right: 8rem;
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
 }
