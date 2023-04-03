@@ -55,9 +55,13 @@ Route::add('/feladatszerkeszto', function () {
   include('./Sites/feladatszerkeszto.php');
 });
 Route::add('/teendok', function () {
-  session_start();
+  session_start(); 
+  if (!isset($_SESSION['Kijelentkezve']) || !isset($_SESSION['Bejelentkezve'])) {
+    $_SESSION['Kijelentkezve'] = $GLOBALS['Kijelentkezve'];
+    $_SESSION['Bejelentkezve'] = $GLOBALS['Bejelentkezve'];
+  }
   include('./Sites/teendok.php');
-});
+}, 'get');
 
 Route::add('/felhasznalo', function () {
   session_start();

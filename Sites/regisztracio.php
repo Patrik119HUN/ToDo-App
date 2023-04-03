@@ -126,7 +126,7 @@
 
   </main>
 
-  <?php include 'Components/footer.php' ?>
+  <?php include 'Components/Footer/footer.php' ?>
   <script>
     function myFunction() {
       document.getElementById("reset").reset();

@@ -13,7 +13,7 @@ class feladat
     private $leirasa;
     private $allapot;
     private $hatarIdo;
-    
+    private $id;
 
     public function __construct($neve, $leirasa = " ",  tipusok $allapot = tipusok::Nincs, $hatarIdo)
     {     // konstruktor
@@ -21,6 +21,7 @@ class feladat
         $this->leirasa = $leirasa;
         $this->allapot = $allapot;
         $this->hatarIdo = $hatarIdo;
+        $this->id = uniqid();
     }
     //getterek
     public function getNev()
@@ -47,24 +48,24 @@ class feladat
     }
     // setterek
     public function setNev($ertek)
-    {  
+    {
         $this->neve = $ertek;
     }
     public function setHatarIdo($ertek)
-    {  
+    {
         $this->hatarIdo = $ertek;
     }
     public function setLeirasa($ertek)
-    {  
+    {
         $this->leirasa = $ertek;
     }
     public function setAllapot($state)
     {
-        if($state == "Kész"){
+        if ($state == "Kész") {
             $this->allapot = tipusok::Kesz;
-        }elseif($state == "Folyamatban"){
+        } elseif ($state == "Folyamatban") {
             $this->allapot = tipusok::Folyamatban;
-        }elseif($state == "Nincs"){
+        } elseif ($state == "Nincs") {
             $this->allapot = tipusok::Nincs;
         }
     }
@@ -75,38 +76,46 @@ class feladat
     }
     public function figyelmeztet()
     {
-        $t=time();
-        if($this->getIdo() - date("Y-m-d",$t) < 3){
+        $t = time();
+        if ($this->getIdo() - date("Y-m-d", $t) < 3) {
             echo "Márcsak 3 napod van hátra a határidő végéig!<br>";
         }
     }
-    
+    public function getID(){
+        return $this->id;
+    }
     public function render()
     {
+        $tipusok = "";
+        foreach (feladatok::$name as $i) {
+            $tipusok .= "<option value=$i>$i</option>";
+        }
         echo "<div class=task>
-                <h2>$this->neve</h2>
-                <p id=felso>Leírás : <br></p>
-                <p id=leiras>$this->leirasa</p>                
-                <form action=../Components/select.php method=POST>
-                    <p>Állapot: </p>
-                    <select name=cars id=cars>
-                        <option value=kesz>Kész</option>
-                        <option value=folyamatban>Folyamatban</option>
-                        <option value=vege>Vége</option>
+                <form action=/teendok method=get>
+                <input type=hidden name=id value=$this->id></input>
+                <div class=inputs>
+                    <input type=text name=name value='$this->neve'></input>
+                    <input type=date name=date value='$this->hatarIdo'></input>                
+                    <input type=text id=leiras name=description value='$this->leirasa'></input>                
+                </div>
+                <div style='display: flex; flex-direction: row;justify-content: space-between; '>
+                    <select name=allapot id=allapot'>
+                        $tipusok
                     </select>
-                    <div class=button>
-                        <button type=submit name=submit>Jóváhagy</button>
-                    </div>
+                <div style='display:flex; flex-direction:row;gap:5px;'>
+                <button type=submit name=change>Jóváhagy</button>
+                <button type=submit name=delete>Törlés</button>
+                </div>
+                </div>
                 </form>
-                <p>Határidő: $this->hatarIdo</p>                
             </div>";
         //teszt
         $state = $this->getAllapot();
-        if($state == "Kész"){
+        if ($state == "Kész") {
             echo "kész";
-        }elseif($state == "Folyamatban"){
+        } elseif ($state == "Folyamatban") {
             echo "folyamatban";
-        }elseif($state == "Nincs"){
+        } elseif ($state == "Nincs") {
             echo "nincs";
         }
     }

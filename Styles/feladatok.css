@@ -7,20 +7,42 @@
 .folyamatban {
   background-color: blue;
 }
-
+.container{
+  background-color:white;
+  width: min-content;
+  padding: 1rem;
+  box-shadow: 1rem 1rem;
+  border-width: 2px;
+  border-color: black;
+  border-style: solid;
+}
+.container > h1{
+margin-left:auto;
+margin-right:auto;
+width:fit-content;
+}
 .task {
-  margin: 2rem;
+  margin: 1rem;
   font-family: monospace;
   display: flex;
   flex-direction: column;
   background-color: blanchedalmond;
   padding: 1rem;
   width: max-content;
+  box-shadow: 1rem 1rem;
+  border-width: 2px;
+  border-color: black;
+  border-style: solid;
+}
+.inputs {
+  width: min-content;
+  display: flex;
+  flex-direction: column;
 }
 .task h2 {
   font-family: monospace;
   font-weight: 600;
-  font-size: 2rem;
+  font-size: 1.25rem;
   text-align: center;
   margin: 0;
   width: 100%;
@@ -35,45 +57,58 @@
   font-size: 1.45rem;
   color: black;
 }
-#felso{
-  padding-bottom: 0;
+
+form input {
+  width: 50%;
+  border: 0;
+  background-color: transparent;
+  font-size: 2rem;
+  font-weight: 600;
 }
-
+.add{
+  box-shadow: 0.5rem 0.5rem;
+  border-width: 2px;
+  border-color: black;
+  border-style: solid;
+  color:black;
+  margin-left:2rem'
+}
+input[type="date"], input[type="submit"]{
+  width: fit-content;
+}
 .task select {
-
   width: 10rem;
   background-color: transparent;
   border: 0;
   font-family: Arial, Helvetica, sans-serif;
   font-size: large;
-  
 }
 .task select:focus {
   outline: 0;
-  
 }
-.task button[type="submit"]{
+.task button[type="submit"] {
   color: black;
   background-color: blanchedalmond;
   margin-top: 3px;
 }
 
 #leiras {
-  font-size: 1rem;
+  margin-top: 1rem;
+  font-size: 1.25rem;
   padding-top: 0.2rem;
 }
 
-.newTask{
+.newTask {
   padding: 1rem;
   width: 30rem;
   margin-left: 3rem;
   color: white;
   border: 2px solid white;
 }
-.newTask h2{
+.newTask h2 {
   text-align: center;
 }
-#fnev{
+#fnev {
   margin-left: 2rem;
   margin-bottom: 1rem;
 }
@@ -88,7 +123,7 @@
   font-family: monospace;
   font-weight: 300;
   float: right;
-  margin-bottom: 1rem;;
+  margin-bottom: 1rem;
   background-color: yellow;
   border: 0;
 }
