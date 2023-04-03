@@ -81,7 +81,8 @@ class feladat
             echo "Márcsak 3 napod van hátra a határidő végéig!<br>";
         }
     }
-    public function getID(){
+    public function getID()
+    {
         return $this->id;
     }
     public function render()
@@ -92,6 +93,7 @@ class feladat
         }
         echo "<div class=task>
                 <form action=/teendok method=get>
+                <button type=submit name=delete class=delete_button>X</button>
                 <input type=hidden name=id value=$this->id></input>
                 <div class=inputs>
                     <input type=text name=name value='$this->neve'></input>
@@ -104,7 +106,6 @@ class feladat
                     </select>
                 <div style='display:flex; flex-direction:row;gap:5px;'>
                 <button type=submit name=change>Jóváhagy</button>
-                <button type=submit name=delete>Törlés</button>
                 </div>
                 </div>
                 </form>

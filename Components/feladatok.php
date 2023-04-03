@@ -42,7 +42,7 @@ class feladatok
             }
         }
         echo "<div class=container>
-                <h1>$this->thisName<h1>";
+                <h1>$this->thisName</h1>";
         if ($this->feladatok == null) {
             echo "<h1>Nincs elem</h1>";
         } else {
@@ -52,7 +52,7 @@ class feladatok
         }
 
         echo "
-            <form method=get>
+            <form method=get style='margin-top:auto;'>
                 <input type=submit name=$this->thisName value='Hozzá adás' class=add></input>
             </form>";
         echo "</div>";

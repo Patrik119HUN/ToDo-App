@@ -11,7 +11,7 @@ nav ul {
   margin: 0;
 }
 .topnav {
-  position: fixed;
+  position: sticky;
   z-index: 100;
   display: flex;
   justify-content: space-between;
