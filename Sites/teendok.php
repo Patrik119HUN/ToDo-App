@@ -17,19 +17,14 @@
 <body>
     <?php include 'Components/nav.php' ?>
 
-    <?php include 'Components/feladatok.php' ?>
-
-
     <div style="min-height:100vh;max-height:fit-content; background-color: yellow; padding: 1rem;padding-bottom: 5rem; display:flex;flex-direction: row; gap:1rem;justify-content: space-between;">
         <?php
-        include 'Components/feladat.php';
-
-        $feladat = new feladat("Seta", "Levinni a blokit", tipusok::Kesz, "2023-03-05");
+        include 'Components/feladatokKezelo.php';
 
         //mkdir($_SESSION['user']['id'],0777,true);
-
-        $feladatok = new feladatok("Kész");
+        $feladatok = new feladatokKezelo();
         $feladatok->render();
+
         ?>
     </div>
     <!-- <div class="newTask">

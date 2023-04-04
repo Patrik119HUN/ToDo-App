@@ -9,13 +9,13 @@ enum tipusok
 }
 class feladat
 {
-    private $neve;
-    private $leirasa;
-    private $allapot;
+    private string $neve;
+    private string $leirasa;
+    private tipusok $allapot;
     private $hatarIdo;
     private $id;
 
-    public function __construct($neve, $leirasa = " ",  tipusok $allapot = tipusok::Nincs, $hatarIdo)
+    public function __construct(string $neve = "", string $leirasa = "",  tipusok $allapot = tipusok::Nincs, $hatarIdo)
     {     // konstruktor
         $this->neve = $neve;      // adattagok inicializálása a konstruktor paraméterei alapján
         $this->leirasa = $leirasa;
@@ -93,19 +93,19 @@ class feladat
         }
         echo "<div class=task>
                 <form action=/teendok method=get>
-                <button type=submit name=delete class=delete_button>X</button>
-                <input type=hidden name=id value=$this->id></input>
+                <button type=submit name=delete value=$this->id class=delete_button>X</button>
+                <input type=hidden name=taskId value=$this->id></input>
                 <div class=inputs>
-                    <input type=text name=name value='$this->neve'></input>
+                    <input type=text placeholder='Feladat neve' name=name value='$this->neve'></input>
+                    <input type=text placeholder='Leírása' id=leiras name=description value='$this->leirasa'></input>                
                     <input type=date name=date value='$this->hatarIdo'></input>                
-                    <input type=text id=leiras name=description value='$this->leirasa'></input>                
                 </div>
                 <div style='display: flex; flex-direction: row;justify-content: space-between; '>
                     <select name=allapot id=allapot'>
                         $tipusok
                     </select>
                 <div style='display:flex; flex-direction:row;gap:5px;'>
-                <button type=submit name=change>Jóváhagy</button>
+                <button type=submit name=change>Mentés</button>
                 </div>
                 </div>
                 </form>

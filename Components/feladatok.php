@@ -1,48 +1,65 @@
 <?php
 include './common.php';
-
+include 'feladat.php';
 class feladatok
 {
     public $feladatok = array();
     public static $name = array();
     private $thisName = "";
     public $path = "";
-    public function __construct($name = "name", $feladatok = null)
+    private $id;
+    public function __construct($path = "", $id, $name = "name", $feladatok = null)
     {
         $this->thisName = $name;
         array_push(feladatok::$name, $name);
-        $this->path = $_SESSION['user']['id'] . "/" . $name . ".txt";
+        if (strlen($path) > 0) {
+            $this->path = $path;
+        } else {
+            $this->path = "users/" . $_SESSION['user']['id'] . "/" . $id . ".txt";
+        }
         $this->feladatok = loadUsers($this->path);
+        $this->id = $id;
+    }
+    private function delete(string $id)
+    {
+        foreach ($this->feladatok as $key => $feladat) {
+            if ($feladat->getID() == $id) array_splice($this->feladatok, $key, 1);
+        }
+        saveUsers($this->path, $this->feladatok);
+        header("Location: /teendok");
+    }
+    private function add()
+    {
+        //$this->feladatok = loadUsers($this->path);
+        array_push($this->feladatok, new feladat("", "", tipusok::Nincs, "2003-01-11"));
+        saveUsers($this->path, $this->feladatok);
+        //header("Location: /teendok");
+    }
+    private function change(string $id, $name, $description, $date)
+    {
+        foreach ($this->feladatok as $key => $feladat) {
+            if ($feladat->getID() == $id) {
+                $feladat->setNev($name);
+                $feladat->setLeirasa($description);
+                $feladat->setHatarido($date);
+            }
+            saveUsers($this->path, $this->feladatok);
+        }
+        header("Location: /teendok");
     }
     public function render()
     {
-        if (array_key_exists($this->thisName, $_GET)) {
-            //$this->feladatok = loadUsers($this->path);
-            array_push($this->feladatok, new feladat("kutya", "", tipusok::Nincs, "2003-01-11"));
-            saveUsers($this->path, $this->feladatok);
-            header("Location: /teendok");
-        }
-        if (array_key_exists("delete", $_GET)) {
-            foreach ($this->feladatok as $key => $feladat) {
-                if ($feladat->getID() == $_GET["id"]) {
-                    array_splice($this->feladatok, $key, 1);
-                }
-            }
-            saveUsers($this->path, $this->feladatok);
-            // header("Location: /teendok");
-        }
-        if (array_key_exists("change", $_GET)) {
-            foreach ($this->feladatok as $key => $feladat) {
-                if ($feladat->getID() == $_GET["id"]) {
-                    $feladat->setNev($_GET["name"]);
-                    $feladat->setLeirasa($_GET["description"]);
-                    $feladat->setHatarido($_GET["date"]);
-                }
-                saveUsers($this->path, $this->feladatok);
-            }
-        }
-        echo "<div class=container>
-                <h1>$this->thisName</h1>";
+
+        if (array_key_exists("add", $_GET) && $_GET["add"] == $this->id) $this->add();
+        if (array_key_exists("delete", $_GET) && array_key_exists("taskId", $_GET)) $this->delete($_GET["taskId"]);
+        if (array_key_exists("change", $_GET) && array_key_exists("taskId", $_GET)) $this->change($_GET["taskId"], $_GET["name"], $_GET["description"], $_GET["date"]);
+        echo
+        "<div class=container>
+            <form method=get style='margin-top:auto;'>
+            <button type=submit name=delete value=$this->id class=delete_button>X</button>
+            <input type=hidden name=taskListId value=$this->id></input>
+            <h1>$this->thisName</h1>
+            </form>";
         if ($this->feladatok == null) {
             echo "<h1>Nincs elem</h1>";
         } else {
@@ -50,11 +67,10 @@ class feladatok
                 $feladat->render();
             }
         }
-
         echo "
             <form method=get style='margin-top:auto;'>
-                <input type=submit name=$this->thisName value='Hozzá adás' class=add></input>
-            </form>";
-        echo "</div>";
+                    <button type=submit name=add value=$this->id class=add>Hozzá adás</button>
+                </form>
+            </div>";
     }
 }

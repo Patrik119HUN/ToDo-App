@@ -17,6 +17,7 @@
   border-style: solid;
   border-radius: 5px;
   height: fit-content;
+  position: relative;
 }
 .container > h1{
 margin-left:auto;
@@ -63,13 +64,17 @@ width:fit-content;
 }
 
 form input {
-  width: 50%;
+  width: 100%;
+  padding: 5px;
   border: 0;
   background-color: transparent;
   font-size: 2rem;
   font-weight: 600;
+  outline: none;
 }
 .add{
+  border-radius: 5px;
+  background-color: white;
   box-shadow: 0.5rem 0.5rem;
   border-width: 2px;
   border-color: black;
@@ -77,13 +82,16 @@ form input {
   color:black;
   margin-left:2rem'
 }
+.add:hover{
+  top:5px;
+  cursor: pointer;
+}
 input[type="date"], input[type="submit"]{
   outline: 0;
   width: fit-content;
 }
-input[type="date"]:target{
-  border-bottom: 2px;
-  border-color: black;
+input[type="text"]:focus{
+    filter: brightness(80%);
 }
 .task select {
   width: 10rem;
@@ -161,8 +169,6 @@ input {
   font-size: medium;
   text-align: center;
   margin-left: auto;
-  margin-right: 8rem;
-  margin-top: 2rem;
   display: flex;
   flex-direction: column;
 }

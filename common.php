@@ -7,12 +7,12 @@ function loadUsers($path)
 {
   $users = [];                  // ez a tömb fogja tartalmazni a regisztrált felhasználókat
 
-  $file = fopen($path, "r");    // fájl megnyitása olvasásra
-  if ($file === FALSE) {
+  //$file = fopen($path, "r");    // fájl megnyitása olvasásra
+  if (file_exists($path) === FALSE) {
     $file = fopen($path, "w");
     fclose($file);
-    $file = fopen($path, "r");
   }
+  $file = fopen($path, "r");
 
   while (($line = fgets($file)) !== FALSE) {  // fájl tartalmának beolvasása soronként
     $user = unserialize($line);  // a sor deszerializálása (visszaalakítása az adott felhasználót reprezentáló asszociatív tömbbé)
