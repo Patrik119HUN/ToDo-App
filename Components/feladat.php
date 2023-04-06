@@ -11,11 +11,11 @@ class feladat
 {
     private string $neve;
     private string $leirasa;
-    private tipusok $allapot;
+    private string $allapot;
     private $hatarIdo;
     private $id;
 
-    public function __construct(string $neve = "", string $leirasa = "",  tipusok $allapot = tipusok::Nincs, $hatarIdo)
+    public function __construct(string $neve = "", string $leirasa = "",  string $allapot = "", $hatarIdo)
     {     // konstruktor
         $this->neve = $neve;      // adattagok inicializálása a konstruktor paraméterei alapján
         $this->leirasa = $leirasa;
@@ -34,13 +34,7 @@ class feladat
     }
     public function getAllapot()
     {
-        $valasz = "";
-        match ($this->allapot) {
-            tipusok::Kesz => $valasz = "kesz",
-            tipusok::Nincs => $valasz = "nincs",
-            tipusok::Folyamatban => $valasz = "folyamatban",
-        };
-        return $valasz;
+        return $this->allapot;
     }
     public function getIdo()
     {
@@ -61,13 +55,7 @@ class feladat
     }
     public function setAllapot($state)
     {
-        if ($state == "Kész") {
-            $this->allapot = tipusok::Kesz;
-        } elseif ($state == "Folyamatban") {
-            $this->allapot = tipusok::Folyamatban;
-        } elseif ($state == "Nincs") {
-            $this->allapot = tipusok::Nincs;
-        }
+        $this->allapot = $state;
     }
     //fuggvenyek
     public function kesz()
@@ -89,7 +77,11 @@ class feladat
     {
         $tipusok = "";
         foreach (feladatok::$name as $i) {
-            $tipusok .= "<option value=$i>$i</option>";
+            if ($i == $this->allapot) {
+                $tipusok .= "<option value='$i' selected>$i</option>";
+            } else {
+                $tipusok .= "<option value='$i'>$i</option>";
+            }
         }
         echo "<div class=task>
                 <form action=/teendok method=get>
@@ -105,20 +97,11 @@ class feladat
                         $tipusok
                     </select>
                 <div style='display:flex; flex-direction:row;gap:5px;'>
-                <button type=submit name=change>Mentés</button>
+                <button type=submit name=change class='save_button'>Mentés</button>
                 </div>
                 </div>
                 </form>
             </div>";
-        //teszt
-        $state = $this->getAllapot();
-        if ($state == "Kész") {
-            echo "kész";
-        } elseif ($state == "Folyamatban") {
-            echo "folyamatban";
-        } elseif ($state == "Nincs") {
-            echo "nincs";
-        }
     }
 }
 ?>

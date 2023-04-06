@@ -22,8 +22,8 @@
         include 'Components/feladatokKezelo.php';
 
         //mkdir($_SESSION['user']['id'],0777,true);
-        $feladatok = new feladatokKezelo();
-        $feladatok->render();
+        $taskManager = new feladatokKezelo();
+        $taskManager->render();
 
         ?>
     </div>

@@ -102,3 +102,12 @@
   top: -1.3rem;
   cursor: pointer;
 }
+.save_button{
+  color:black;
+  box-shadow: 0.5rem 0.5rem;
+  border-width: 2px;
+  border-color: black;
+  border-style: solid;
+  border-radius: 5px;
+  cursor:pointer;
+}

@@ -9,7 +9,7 @@
 }
 .container{
   background-color:white;
-  width: min-content;
+  width: max-content;
   padding: 1rem;
   box-shadow: 1rem 1rem;
   border-width: 2px;
