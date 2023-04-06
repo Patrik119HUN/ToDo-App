@@ -66,6 +66,13 @@
             <input type="date" anme="sznap" value='<?php echo $_SESSION["user"]["eletkor"] ?>' />
         </ul>
     </div>
+    <div>
+        <form action="process.php" method="POST" enctype="multipart/form-data">
+            <label for="file-upload">Profilkép:</label>
+            <input type="file" id="file-upload" name="profile-pic" accept="image/*"/> <br/>
+            <input type="submit" name="upload-btn" value="Feltöltés"/>
+        </form>
+    </div>
     <?php include './Components/Footer/footer.php' ?>
 </body>
 
