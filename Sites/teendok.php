@@ -27,20 +27,6 @@
 
         ?>
     </div>
-    <!-- <div class="newTask">
-        <h2>Új feladat létrehozása</h2>
-
-        <form action="" method="POST">
-            <label for="neve">Feladat neve: </label>
-            <input type="text" id="fnev" name="neve" value=""><br>
-            <label for="leiras">Feladat leírása: </label>
-            <input type="text" id="fnev" name="leiras" value=""><br>
-            <label for="hatarIdo">Feladat határideje: </label>
-            <input type="date" id="fnev" name="hatarIdo" value="">
-            <br>
-            <input type="submit" id="submit" value="Létrehozás">
-        </form>
-    </div> -->
 
     <?php include 'Components/Footer/footer.php' ?>
 </body>

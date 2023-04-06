@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>ToDo App</title>
     <link rel="stylesheet" href="../Styles/style.css" />
-    <link rel="stylesheet" href="../Styles/nav.css" />
     <link rel="stylesheet" href="../Styles/footer.css" />
     <link rel="stylesheet" href="../Styles/galeria.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>

@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="../Styles/footer.css" />
+<link rel="stylesheet" href="footer.css" />
 <footer class="footer">
     <div class="name" style="margin-right:auto">
         <p>Made by Tukacs Patrik, Szegedi Bence</p>

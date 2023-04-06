@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>ToDo App</title>
     <link rel="stylesheet" href="../Styles/style.css" />
-    <link rel="stylesheet" href="../Styles/nav.css" />
     <link rel="stylesheet" href="../Styles/cards.css" />
     <link rel="stylesheet" href="../Styles/hero.css" />
     <link rel="stylesheet" href="../Styles/footer.css" />

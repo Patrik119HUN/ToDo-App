@@ -65,13 +65,13 @@
             <label for="sznap">Születési dátumod:</label>
             <input type="date" anme="sznap" value='<?php echo $_SESSION["user"]["eletkor"] ?>' />
         </ul>
-    </div>
-    <div>
-        <form action="process.php" method="POST" enctype="multipart/form-data">
-            <label for="file-upload">Profilkép:</label>
-            <input type="file" id="file-upload" name="profile-pic" accept="image/*"/> <br/>
-            <input type="submit" name="upload-btn" value="Feltöltés"/>
-        </form>
+        <ul class="profilkep">
+            <form action="Components/process.php" method="POST" enctype="multipart/form-data">
+                <label for="file-upload">Töltsd fel a profilképed:</label>
+                <span><input type="file" id="file-upload" name="profile-pic" accept="image/*"/></span> <br/>
+                <input type="submit" name="upload-btn" value="Feltöltés"/>
+            </form>
+        </ul>
     </div>
     <?php include './Components/Footer/footer.php' ?>
 </body>
