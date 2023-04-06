@@ -7,7 +7,7 @@
 <?php require 'item.php' ?>
 
 <div>
-    <a href="../Sites/index.html" class="logo">ToDo APP</a>
+    <a href="Sites/index.php" class="logo">ToDo APP</a>
     <button class="ham" id="myBtn">
         <img src="../SVG/menu.svg" alt="" style="width: 2rem" />
     </button>
