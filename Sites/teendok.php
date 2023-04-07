@@ -9,22 +9,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Teendők</title>
     <link rel="stylesheet" href="../Styles/style.css" />
+    <link rel="stylesheet" href="../Components/TaskManager/Task/Task.css" />
+    <link rel="stylesheet" href="../Components/TaskManager/TaskList/TaskList.css" />
     <link rel="stylesheet" href="../Styles/feladatok.css" />
-    <link rel="stylesheet" href="../Styles/feladat.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 </head>
 
 <body>
-    <?php include 'Components/nav.php' ?>
+    <?php include('Components/nav.php') ?>
 
     <div style="min-height:100vh;max-height:fit-content; background-color: yellow; padding: 1rem;padding-bottom: 5rem; display:flex;flex-direction: row; gap:1rem;justify-content: space-between;">
         <?php
-        include 'Components/feladatokKezelo.php';
-
-        //mkdir($_SESSION['user']['id'],0777,true);
-        $taskManager = new feladatokKezelo();
+        include 'Components/TaskManager/TaskManager.php';
+        $taskManager = new TaskManager();
         $taskManager->render();
-
         ?>
     </div>
 

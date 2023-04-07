@@ -17,7 +17,7 @@
   <?php include 'Components/nav.php' ?>
   <?php
   include "./common.php";
-  $fiokok = loadUsers("users.txt");
+  $fiokok = loadFile("users.txt");
 
   $uzenet = "";                     // az űrlap feldolgozása után kiírandó üzenet
 

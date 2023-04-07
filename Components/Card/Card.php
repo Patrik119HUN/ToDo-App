@@ -5,7 +5,6 @@ class Card
     private $alt_pic;
     private $description;
 
-
     public function __construct($path, $desc, $alt)
     {
         $this->path_to_pic = $path;

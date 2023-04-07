@@ -1,40 +1,37 @@
 <?php
-include 'feladatok.php';
+include 'TaskList/TaskList.php';
 
 
-class feladatokKezelo
+class TaskManager
 {
     static $taskList = array();
     private $path = "";
-    static $asd = array();
+    static $TaskNames = array();
     public function __construct()
     {
-        //array_push($this->feladatok,$feladat);
         $files = array_diff(scandir("users/" . $_SESSION['user']['id'] . "/"), array('.', '..', 'tasks.txt'));
         $this->path =  "users/" . $_SESSION['user']['id'] . "/tasks.txt";
-        feladatokKezelo::$asd = loadUsers($this->path);
+        TaskManager::$TaskNames = loadFile($this->path);
         foreach ($files as $file) {
             $folderPath = "users/" . $_SESSION['user']['id'] . "/" . $file;
             $name = "name";
             if ($this->searchInTasksByKey(substr($file, 0, -4)) != -1) {
-                $name = feladatokKezelo::$asd[$this->searchInTasksByKey(substr($file, 0, -4))][1];
+                $name = TaskManager::$TaskNames[$this->searchInTasksByKey(substr($file, 0, -4))][1];
             }
-            array_push(feladatokKezelo::$taskList, new feladatok($folderPath, substr($file, 0, -4), $name));
+            array_push(TaskManager::$taskList, new TaskList($folderPath, substr($file, 0, -4), $name));
         }
     }
-    public function searchInTasksByKey($id)
+    public function searchInTasksByKey($val)
     {
-        foreach (feladatokKezelo::$asd as $key => $task) {
-            if ($task[0] == $id) {
-                return $key;
-            }
-        }
-        return -1;
+        return TaskManager::searchInTasks(0,$val);
     }
     public static function searchInTasksByValue($val)
     {
-        foreach (feladatokKezelo::$asd as $key => $task) {
-            if ($task[1] == $val) {
+        return TaskManager::searchInTasks(1,$val);
+    }
+    private static function searchInTasks($index,$val){
+        foreach (TaskManager::$TaskNames as $key => $task) {
+            if ($task[$index] == $val) {
                 return $key;
             }
         }
@@ -44,25 +41,22 @@ class feladatokKezelo
     {
         $id = uniqid("tasks");
         $name = "";
-        array_push(feladatokKezelo::$taskList, new feladatok("", $id, $name));
-        array_push(feladatokKezelo::$asd, array($id, $name));
-        saveUsers($this->path, feladatokKezelo::$asd);
-        header("Location: /teendok");
+        array_push(TaskManager::$taskList, new TaskList("", $id, $name));
+        array_push(TaskManager::$TaskNames, array($id, $name));
+        saveToFile($this->path, TaskManager::$TaskNames);
     }
     public function delete($id)
     {
         $path = "users/" . $_SESSION['user']['id'] . "/" . $id . ".txt";
         unlink($path);
         $key = $this->searchInTasksByKey($id);
-        unset(feladatokKezelo::$asd[$key]);
-        saveUsers($this->path, feladatokKezelo::$asd);
-        header("Location: /teendok");
+        unset(TaskManager::$TaskNames[$key]);
+        saveToFile($this->path, TaskManager::$TaskNames);
     }
     private function change($id)
     {
-        feladatokKezelo::$asd[$this->searchInTasksByKey($id)][1] = $_GET["taskName"];
-        saveUsers($this->path, feladatokKezelo::$asd);
-        header("Location: /teendok");
+        TaskManager::$TaskNames[$this->searchInTasksByKey($id)][1] = $_GET["taskName"];
+        saveToFile($this->path, TaskManager::$TaskNames);
     }
     public function render()
     {
@@ -71,8 +65,8 @@ class feladatokKezelo
         if (array_key_exists("change", $_GET) && array_key_exists("taskListId", $_GET)) $this->change($_GET["taskListId"]);
         echo "<div style='display:flex; flex-direction:row; width:min-content; margin-top: 2rem;gap:1.25rem;'>";
 
-        foreach (feladatokKezelo::$taskList as $feladat) {
-            $feladat->render();
+        foreach (TaskManager::$taskList as $tasks) {
+            $tasks->render();
         }
         echo "
         

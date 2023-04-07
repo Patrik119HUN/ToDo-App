@@ -10,9 +10,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>ToDo App</title>
     <link rel="stylesheet" href="../Styles/style.css" />
-    <link rel="stylesheet" href="../Styles/cards.css" />
-    <link rel="stylesheet" href="../Styles/hero.css" />
-    <link rel="stylesheet" href="../Styles/footer.css" />
+    <link rel="stylesheet" href="../Components/Card/Card.css" />
+    <link rel="stylesheet" href="../Components/Hero/Hero.css" />
+    <link rel="stylesheet" href="../Components/Footer/Footer.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 </head>
 
@@ -22,7 +22,7 @@
     include 'Components/nav.php';
     include 'Components/Card/Card.php';
     include 'Components/Hero/Hero.php';
-    
+
     $kartya = new Card("../pics/bike.jpg", "Átlátható heti naptár", "Kerékpár");
     $kartya1 = new Card("../pics/coffee-gc0ac3039f_1920.jpg", "Jegyzeteket írhatsz a teendők mellé", "Kávé");
     $kartya2 = new Card("../pics/guggolas.jpg", "Személyre szabhatod a megjelenítést", "Guggolás");

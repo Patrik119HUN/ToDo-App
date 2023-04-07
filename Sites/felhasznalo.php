@@ -19,7 +19,7 @@
     <?php include './Components/nav.php' ?>
     <?php
     include "./common.php";
-    $fiokok =  loadUsers("users.txt");
+    $fiokok =  loadFile("users.txt");
     $hibak = [];
     if (isset($_GET["register"])) {   // csak azután dolgozzuk fel az űrlapot, miután az el lett küldve
 

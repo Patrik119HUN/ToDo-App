@@ -1,2 +1,3 @@
 a:6:{s:2:"id";s:9:"patrik119";s:10:"vezeteknev";s:6:"Tukacs";s:10:"keresztnev";s:6:"Patrik";s:6:"jelszo";s:60:"$2y$10$IpYcyWtyiayxy0S55Lcov.U324ESlYNRz0GOei0ebIBR0ERqgEaT6";s:7:"eletkor";s:10:"2023-03-15";s:5:"email";s:25:"tukacs.patrik77@gmail.com";}
 a:6:{s:2:"id";s:4:"lalo";s:10:"vezeteknev";s:7:"Szegedi";s:10:"keresztnev";s:5:"Bence";s:6:"jelszo";s:60:"$2y$10$W2Fo2r3rpQCo6isdQCniqOha7Z8eYst9tbBb5h6oCguqcbOQwiCk.";s:7:"eletkor";s:10:"2003-01-05";s:5:"email";s:24:"benceszegedi43@gmail.com";}
+a:6:{s:2:"id";s:10:"gigganigga";s:10:"vezeteknev";s:7:"Bálint";s:10:"keresztnev";s:6:"Péter";s:6:"jelszo";s:60:"$2y$10$f3ErIi/OIWLE2oZIEAY7O.lDV8wIki5WNM6Za5WOxW5v3.JXEwtJS";s:7:"eletkor";s:10:"2023-04-08";s:5:"email";s:22:"gigganigga69@gmail.com";}

@@ -1,0 +1,108 @@
+
+.task {
+  margin: 1rem;
+  font-family: monospace;
+  display: flex;
+  flex-direction: column;
+  background-color: blanchedalmond;
+  padding: 1rem;
+  width: max-content;
+  box-shadow: 1rem 1rem;
+  border-width: 2px;
+  border-color: black;
+  border-style: solid;
+  border-radius: 5px;
+  position: relative;
+}
+.task h2 {
+  font-family: monospace;
+  font-weight: 600;
+  font-size: 1.25rem;
+  text-align: center;
+  margin: 0;
+  width: 100%;
+  border-style: none;
+  padding: 1rem 3rem;
+}
+.task p {
+  padding: 0.8rem;
+  margin: 0;
+  font-family: monospace;
+  font-weight: 500;
+  font-size: 1.45rem;
+  color: black;
+}
+
+.delete_button {
+  position: absolute;
+  background-color: blanchedalmond;
+  border-width: 3px;
+  color: black;
+  padding: 4px;
+  font-size: 25px;
+  height: 2.75rem;
+  width: 2.75rem;
+  border-radius: 50%;
+  top: -1.4rem;
+  right: -1.3rem;
+}
+.delete_button:hover{
+  top: -1.3rem;
+  cursor: pointer;
+}
+.save_button{
+  color:black;
+  box-shadow: 0.5rem 0.5rem;
+  border-width: 2px;
+  border-color: black;
+  border-style: solid;
+  border-radius: 5px;
+  cursor:pointer;
+}
+form input {
+  width: 100%;
+  padding: 5px;
+  border: 0;
+  background-color: transparent;
+  font-size: 2rem;
+  font-weight: 600;
+  outline: none;
+}
+input {
+  position: relative;
+  padding: 1rem;
+  font-family: monospace;
+  font-weight: 500;
+  font-size: 1rem;
+  border-width: 3px;
+  border-color: black;
+  background-color: transparent;
+  width: 100%;
+}
+input[type="date"], input[type="submit"]{
+  outline: 0;
+  width: fit-content;
+}
+input[type="text"]:focus{
+    filter: brightness(80%);
+}
+.task select {
+  width: 10rem;
+  background-color: transparent;
+  border: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: large;
+}
+.task select:focus {
+  outline: 0;
+}
+#leiras {
+  margin-top: 1rem;
+  font-size: 1.25rem;
+  padding-top: 0.2rem;
+}
+.inputs {
+  width: min-content;
+  display: flex;
+  flex-direction: column;
+}

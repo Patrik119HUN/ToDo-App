@@ -84,30 +84,3 @@
     color: black;
   }
 }
-
-.delete_button {
-  position: absolute;
-  background-color: blanchedalmond;
-  border-width: 3px;
-  color: black;
-  padding: 4px;
-  font-size: 25px;
-  height: 2.75rem;
-  width: 2.75rem;
-  border-radius: 50%;
-  top: -1.4rem;
-  right: -1.3rem;
-}
-.delete_button:hover{
-  top: -1.3rem;
-  cursor: pointer;
-}
-.save_button{
-  color:black;
-  box-shadow: 0.5rem 0.5rem;
-  border-width: 2px;
-  border-color: black;
-  border-style: solid;
-  border-radius: 5px;
-  cursor:pointer;
-}

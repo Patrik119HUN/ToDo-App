@@ -1,61 +1,54 @@
-
 <?php
 
-enum tipusok
+class Task
 {
-    case Kesz;
-    case Folyamatban;
-    case Nincs;
-}
-class feladat
-{
-    private string $neve;
-    private string $leirasa;
-    private string $allapot;
+    private string $name;
+    private string $description;
+    private string $state;
     private $hatarIdo;
     private $id;
 
-    public function __construct(string $neve = "", string $leirasa = "",  string $allapot = "", $hatarIdo)
-    {     // konstruktor
-        $this->neve = $neve;      // adattagok inicializálása a konstruktor paraméterei alapján
-        $this->leirasa = $leirasa;
-        $this->allapot = $allapot;
+    public function __construct(string $name = "", string $description = "",  string $state = "", $hatarIdo)
+    {
+        $this->name = $name;
+        $this->description = $description;
+        $this->state = $state;
         $this->hatarIdo = $hatarIdo;
         $this->id = uniqid();
     }
     //getterek
     public function getNev()
     {
-        return $this->neve;
+        return $this->name;
     }
     public function getLeiras()
     {
-        return $this->leirasa;
+        return $this->description;
     }
-    public function getAllapot()
+    public function getState()
     {
-        return $this->allapot;
+        return $this->state;
     }
     public function getIdo()
     {
         return $this->hatarIdo;
     }
     // setterek
-    public function setNev($ertek)
+    public function setName($ertek)
     {
-        $this->neve = $ertek;
+        $this->name = $ertek;
     }
-    public function setHatarIdo($ertek)
+    public function setTime($ertek)
     {
         $this->hatarIdo = $ertek;
     }
-    public function setLeirasa($ertek)
+    public function setDescription($ertek)
     {
-        $this->leirasa = $ertek;
+        $this->description = $ertek;
     }
-    public function setAllapot($state)
+    public function setState($state)
     {
-        $this->allapot = $state;
+        $this->state = $state;
     }
     //fuggvenyek
     public function kesz()
@@ -76,8 +69,8 @@ class feladat
     public function render()
     {
         $tipusok = "";
-        foreach (feladatok::$name as $i) {
-            if ($i == $this->allapot) {
+        foreach (TaskList::$name as $i) {
+            if ($i == $this->state) {
                 $tipusok .= "<option value='$i' selected>$i</option>";
             } else {
                 $tipusok .= "<option value='$i'>$i</option>";
@@ -88,12 +81,12 @@ class feladat
                 <button type=submit name=delete value=$this->id class=delete_button>X</button>
                 <input type=hidden name=taskId value=$this->id></input>
                 <div class=inputs>
-                    <input type=text placeholder='Feladat neve' name=name value='$this->neve'></input>
-                    <input type=text placeholder='Leírása' id=leiras name=description value='$this->leirasa'></input>                
+                    <input type=text placeholder='Feladat neve' name=name value='$this->name'></input>
+                    <input type=text placeholder='Leírása' id=leiras name=description value='$this->description'></input>                
                     <input type=date name=date value='$this->hatarIdo'></input>                
                 </div>
                 <div style='display: flex; flex-direction: row;justify-content: space-between; '>
-                    <select name=allapot id=allapot'>
+                    <select name=state id=state'>
                         $tipusok
                     </select>
                 <div style='display:flex; flex-direction:row;gap:5px;'>

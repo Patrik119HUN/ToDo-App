@@ -1,9 +1,9 @@
 <?php
 
 
-
-
-function loadUsers($path)
+define('ROOT_DIR', dirname(__FILE__));
+$root = $_SERVER['DOCUMENT_ROOT'];
+function loadFile($path)
 {
   $users = [];                  // ez a tömb fogja tartalmazni a regisztrált felhasználókat
 
@@ -25,7 +25,7 @@ function loadUsers($path)
 
 // a regisztrált felhasználók adatait fájlba író függvény
 
-function saveUsers($path, $users)
+function saveToFile($path, $users)
 {
   $file = fopen($path, "w");    // fájl megnyitása írásra
   if ($file === FALSE)          // hibakezelés
