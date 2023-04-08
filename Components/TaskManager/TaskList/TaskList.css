@@ -10,11 +10,6 @@
   background-color:white;
   width: max-content;
   padding: 1rem;
-  box-shadow: 1rem 1rem;
-  border-width: 2px;
-  border-color: black;
-  border-style: solid;
-  border-radius: 5px;
   height: fit-content;
   position: relative;
 }
@@ -24,12 +19,8 @@ margin-right:auto;
 width:fit-content;
 }
 .add{
-  border-radius: 5px;
   background-color: white;
   box-shadow: 0.5rem 0.5rem;
-  border-width: 2px;
-  border-color: black;
-  border-style: solid;
   color:black;
   margin-left:2rem'
 }

@@ -18,13 +18,13 @@
   margin-top: 4rem;
   margin-bottom: 5rem;
   margin-right: 1.3rem;
-  max-width: 350px;
-  padding: 10px;
+  min-width: min-content;
+  max-width: 25vw;
   background-color: #1f1f21;
   font-family: monospace;
   color: #e3fc02;
+  
 }
-
 @media screen and (max-width: 700px) {
 
   .form{
@@ -37,7 +37,7 @@
     padding: 16px;
     background-color: #1f1f21;
     font-family: monospace;
-    color: #e3fc02;
+    color:black;
   }
 
 }

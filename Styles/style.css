@@ -16,7 +16,13 @@ body button {
   font-weight: bold;
   font-size: 17px;
 }
-
+.shadow{
+  box-shadow: 1rem 1rem black;
+  border-width: 2px;
+  border-color: black;
+  border-style: solid;
+  border-radius: 5px;
+}
 .gomb {
   background-color: #1f1f21;
   color: #e3fc02;

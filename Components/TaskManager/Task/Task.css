@@ -7,11 +7,6 @@
   background-color: blanchedalmond;
   padding: 1rem;
   width: max-content;
-  box-shadow: 1rem 1rem;
-  border-width: 2px;
-  border-color: black;
-  border-style: solid;
-  border-radius: 5px;
   position: relative;
 }
 .task h2 {
@@ -35,7 +30,6 @@
 
 .delete_button {
   position: absolute;
-  background-color: blanchedalmond;
   border-width: 3px;
   color: black;
   padding: 4px;

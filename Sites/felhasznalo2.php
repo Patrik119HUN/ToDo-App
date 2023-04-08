@@ -1,3 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="author" content="Szegedi Bence, Tukacs Patrik" />
+    <link rel="icon" type="image/x-icon" href="../pics/pipa%20favicon.ico" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>ToDo App</title>
+    <link rel="stylesheet" href="Styles/style.css" />
+    <link rel="stylesheet" href="Styles/felhasznalo.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+</head>
+
+<body>
+
+    <?php include './Components/nav.php' ?>
     <?php
     include "./common.php";
     $fiokok =  loadFile("users.txt");
@@ -30,7 +49,7 @@
         </ul>
         <div class="name">
             <ul class="input_row">
-                <label for="knev" id="label">Kereszt neved:</label><br>
+                <label for="knev" id="label">Kereszt  neved:</label><br>
                 <input type="text" name="knev" value='<?php echo $_SESSION["user"]["keresztnev"] ?>'>
             </ul>
             <ul class="input_row">
@@ -49,8 +68,12 @@
         <ul class="profilkep">
             <form action="Components/process.php" method="POST" enctype="multipart/form-data">
                 <label for="file-upload">Töltsd fel a profilképed:</label>
-                <span><input type="file" id="file-upload" name="profile-pic" accept="image/*" /></span> <br />
-                <input type="submit" name="upload-btn" value="Feltöltés" />
+                <span><input type="file" id="file-upload" name="profile-pic" accept="image/*"/></span> <br/>
+                <input type="submit" name="upload-btn" value="Feltöltés"/>
             </form>
         </ul>
     </div>
+    <?php include './Components/Footer/footer.php' ?>
+</body>
+
+</html>

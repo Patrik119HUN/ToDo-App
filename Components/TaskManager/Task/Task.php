@@ -76,9 +76,9 @@ class Task
                 $tipusok .= "<option value='$i'>$i</option>";
             }
         }
-        echo "<div class=task>
+        echo "<div class='task shadow'>
                 <form action=/teendok method=get>
-                <button type=submit name=delete value=$this->id class=delete_button>X</button>
+                <button type=submit name=delete value=$this->id class=delete_button style='background-color:blanchedalmond;'>X</button>
                 <input type=hidden name=taskId value=$this->id></input>
                 <div class=inputs>
                     <input type=text placeholder='Feladat neve' name=name value='$this->name'></input>

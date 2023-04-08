@@ -1,6 +1,7 @@
 <?php
 include 'Route.php';
 
+include 'Components/PageBuilder/PageBuilder.php';
 use Steampixel\Route;
 
 $kijelentkezve = [
@@ -24,48 +25,82 @@ $bejelentkezve = [
     "kijelentkezes" => "Kijelentkezés",
   ]
 ];
-$GLOBALS['Bejelentkezve'] = $bejelentkezve;
-$GLOBALS['Kijelentkezve'] = $kijelentkezve;
+
+$links = [$bejelentkezve, $kijelentkezve];
 
 Route::add('/', function () {
+  global $links;
   session_start();
+  $page = new PageBuilder($links);
+  $page->getHeader()->addCss("../Components/Card/Card.css");
+  $page->getHeader()->addCss("../Components/Hero/Hero.css");
+  $page->getHeader()->setTitle("ToDo App");
+  $page->pageContent('Sites/index.php');
 
-  if (!isset($_SESSION['Kijelentkezve']) || !isset($_SESSION['Bejelentkezve'])) {
-    $_SESSION['Kijelentkezve'] = $GLOBALS['Kijelentkezve'];
-    $_SESSION['Bejelentkezve'] = $GLOBALS['Bejelentkezve'];
-  }
-  include('./Sites/index.php');
+  $page->render();
 });
-
 Route::add('/galeria', function () {
+  global $links;
   session_start();
-  include('./Sites/galeria.php');
+  $page = new PageBuilder($links);
+  $page->getHeader()->addCss("../Styles/galeria.css");
+  $page->getHeader()->setTitle("Galeria");
+  $page->pageContent('Sites/galeria.php');
+
+  $page->render();
 });
 Route::add('/regisztracio', function () {
+  global $links;
   session_start();
-  include('./Sites/regisztracio.php');
+  $page = new PageBuilder($links);
+  $page->getHeader()->addCss("../Styles/form.css");
+  $page->getHeader()->setTitle("Regisztráció");
+  $page->pageContent('Sites/regisztracio.php');
+
+  $page->render();
 }, 'get');
 Route::add('/bejelentkezes', function () {
+  global $links;
   session_start();
-  include('./Sites/bejelentkezes.php');
-}, 'get');
+  $page = new PageBuilder($links);
+  $page->getHeader()->addCss("../Styles/form.css");
+  $page->getHeader()->setTitle("Bejelentkezés");
+  $page->pageContent('Sites/bejelentkezes.php');
 
+  $page->render();
+}, 'get');
 Route::add('/feladatszerkeszto', function () {
+  global $links;
   session_start();
-  include('./Sites/feladatszerkeszto.php');
+  $page = new PageBuilder($links);
+  $page->getHeader()->setTitle("Feladatszerkesztő");
+  $page->getHeader()->addCss("../Styles/feladat.css");
+  $page->pageContent('Sites/feladatszerkeszto.php');
+
+  $page->render();
 });
 Route::add('/teendok', function () {
-  session_start(); 
-  if (!isset($_SESSION['Kijelentkezve']) || !isset($_SESSION['Bejelentkezve'])) {
-    $_SESSION['Kijelentkezve'] = $GLOBALS['Kijelentkezve'];
-    $_SESSION['Bejelentkezve'] = $GLOBALS['Bejelentkezve'];
-  }
-  include('./Sites/teendok.php');
+  global $links;
+  session_start();
+  $page = new PageBuilder($links);
+  $page->getHeader()->setTitle("Teendők");
+  $page->getHeader()->addCss("../Components/TaskManager/Task/Task.css");
+  $page->getHeader()->addCss("../Components/TaskManager/TaskList/TaskList.css");
+  $page->getHeader()->addCss("../Styles/feladatok.css");
+  $page->pageContent('Sites/teendok.php');
+
+  $page->render();
 }, 'get');
 
 Route::add('/felhasznalo', function () {
+  global $links;
   session_start();
-  include('./Sites/felhasznalo.php');
+  $page = new PageBuilder($links);
+  $page->getHeader()->addCss("../Styles/felhasznalo.css");
+  $page->getHeader()->setTitle("Felhasználó");
+  $page->pageContent('Sites/felhasznalo.php');
+
+  $page->render();
 });
 
 Route::add('/kijelentkezes', function () {
@@ -74,10 +109,6 @@ Route::add('/kijelentkezes', function () {
   session_destroy();
 
   session_start();
-  if (!isset($_SESSION['Kijelentkezve']) || !isset($_SESSION['Bejelentkezve'])) {
-    $_SESSION['Kijelentkezve'] = $GLOBALS['Kijelentkezve'];
-    $_SESSION['Bejelentkezve'] = $GLOBALS['Bejelentkezve'];
-  }
   header("Location: /bejelentkezes");    // átirányítás
 });
 Route::pathNotFound(function ($path) {

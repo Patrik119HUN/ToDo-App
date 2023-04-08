@@ -1,20 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8" />
-  <meta name="author" content="Szegedi Bence, Tukacs Patrik" />
-  <link rel="icon" type="image/x-icon" href="../pics/pipa%20favicon.ico" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Bejelentkezés</title>
-  <link rel="stylesheet" href="../Styles/style.css" />
-  <link rel="stylesheet" href="../Styles/form.css" />
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-</head>
-
-<body>
-  <?php include 'Components/nav.php' ?>
   <?php
   include "./common.php";
   $fiokok = loadFile("users.txt");
@@ -36,7 +19,7 @@
       foreach ($fiokok as $fiok) {              // végigmegyünk a regisztrált felhasználókon
         // a bejelentkezés pontosan akkor sikeres, ha az űrlapon megadott felhasználónév-jelszó páros megegyezik egy regisztrált felhasználó belépési adataival
         // a jelszavakat hash alapján, a password_verify() függvénnyel hasonlítjuk össze
-        if (($fiok["id"] === $id || $fiok["email"]===$id) && password_verify($jelszo, $fiok["jelszo"])) {
+        if (($fiok["id"] === $id || $fiok["email"] === $id) && password_verify($jelszo, $fiok["jelszo"])) {
           $uzenet = "Sikeres belépés!";        // ekkor átírjuk a megjelenítendő üzenet szövegét
           $_SESSION["user"] = $fiok;
           $_SESSION["Bejelentkezve"][1]["felhasznalo"] = $id;
@@ -64,12 +47,8 @@
     </form>
   </main>
 
-  <?php include 'Components/Footer/footer.php' ?>
   <script>
     function myFunction() {
       document.getElementById("reset").reset();
     }
   </script>
-</body>
-
-</html>
