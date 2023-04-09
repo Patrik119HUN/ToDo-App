@@ -23,13 +23,14 @@ class TaskManager
     }
     public function searchInTasksByKey($val)
     {
-        return TaskManager::searchInTasks(0,$val);
+        return TaskManager::searchInTasks(0, $val);
     }
     public static function searchInTasksByValue($val)
     {
-        return TaskManager::searchInTasks(1,$val);
+        return TaskManager::searchInTasks(1, $val);
     }
-    private static function searchInTasks($index,$val){
+    private static function searchInTasks($index, $val)
+    {
         foreach (TaskManager::$TaskNames as $key => $task) {
             if ($task[$index] == $val) {
                 return $key;
@@ -63,16 +64,7 @@ class TaskManager
         if (array_key_exists("add", $_GET) && $_GET["add"] == "tasklist") $this->add();
         if (array_key_exists("delete", $_GET) && array_key_exists("taskListId", $_GET)) $this->delete($_GET["taskListId"]);
         if (array_key_exists("change", $_GET) && array_key_exists("taskListId", $_GET)) $this->change($_GET["taskListId"]);
-        echo "<div style='display:flex; flex-direction:row; width:min-content; margin-top: 2rem;gap:1.25rem;'>";
 
-        foreach (TaskManager::$taskList as $tasks) {
-            $tasks->render();
-        }
-        echo "
-        
-                <form method=get>
-                    <button type=submit name=add value=tasklist class=add>Hozzá adás</button>
-                </form>
-            </div>";
+        include('Components/TaskManager/TaskManagerTemplate.php');
     }
 }
