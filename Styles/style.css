@@ -17,7 +17,7 @@ body button {
   font-size: 17px;
 }
 .shadow{
-  box-shadow: 1rem 1rem black;
+  box-shadow: 0.6rem 0.6rem black;
   border-width: 2px;
   border-color: black;
   border-style: solid;

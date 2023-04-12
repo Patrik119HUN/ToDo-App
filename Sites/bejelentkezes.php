@@ -30,19 +30,19 @@
   }
   ?>
   <main class="bg-img" id="bejelentkezes">
-    <form action="/bejelentkezes" class="form" id="reset" method="GET">
-      <fieldset>
+    <form action="/bejelentkezes" class="form shadow" id="reset" method="GET">
+    <fieldset style="padding:2rem; border:none">
         <h1>Bejelentkezés</h1>
 
         <label for="username"><b>Felhasználónév vagy E-mail cím</b></label>
-        <input type="text" placeholder="'jankópityu129' vagy 'jankopisti@valami.com'" name="username" required />
+        <input class="shadow" type="text" placeholder="'jankópityu129' vagy 'jankopisti@valami.com'" name="username" required />
 
         <label for="psw"><b>Password</b></label>
-        <input type="password" placeholder="Adj meg egy jelszót" name="psw" required />
+        <input class="shadow" type="password" placeholder="Adj meg egy jelszót" name="psw" required />
 
-        <button type="submit" class="login" name="login">Belépek</button>
+        <button type="submit" class="login shadow" name="login">Belépek</button>
         <?php echo "<p style='font-size:1rem;'>" . $uzenet . "</p>"; ?>
-        <input class="rButton" type="reset" onclick="myFunction()" value="Törlés">
+        <input class="rButton shadow" type="reset" onclick="myFunction()" value="Törlés">
       </fieldset>
     </form>
   </main>
