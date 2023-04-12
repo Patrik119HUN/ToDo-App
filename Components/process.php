@@ -10,9 +10,7 @@ if (isset($_FILES["profile-pic"])) {
                 $cel = "pics/ProfilPics/" . $_FILES["profile-pic"]["name"];
                 if (file_exists($cel)) {
                     echo "<strong>Figyelem:</strong> A régebbi fájl felülírásra kerül! <br/>";
-                }
-
-                if (move_uploaded_file($_FILES["profile-pic"]["tmp_name"], $cel)) {
+                }else if (move_uploaded_file($_FILES["profile-pic"]["tmp_name"], $cel)) {
                     echo "Sikeres fájlfeltöltés! <br/>";
                 } else {
                     echo "<strong>Hiba:</strong> A fájl átmozgatása nem sikerült! <br/>";

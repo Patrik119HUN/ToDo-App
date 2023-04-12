@@ -84,7 +84,7 @@
         <label for="psw_n"><b>Jelszó újra</b></label>
         <input class="shadow" type="password" placeholder="Adj meg egy jelszót" name="psw_n" />
 
-        <button type="submit" class="login" name="register">Regisztrálok</button>
+        <button type="submit" class="login shadow" name="register">Regisztrálok</button>
         <?php
         if (isset($siker) && $siker === TRUE) {  // ha nem volt hiba, akkor a regisztráció sikeres
           echo "<p style='color:green; font-size:1rem;'>Sikeres regisztráció!</p>";
@@ -94,7 +94,7 @@
           }
         }
         ?>
-        <button type="reset" class="rButton" onclick="myFunction()"> Törlés </button>
+        <button type="reset" class="rButton shadow" onclick="myFunction()"> Törlés </button>
       </fieldset>
     </form>
 
