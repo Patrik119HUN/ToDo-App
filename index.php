@@ -86,6 +86,7 @@ Route::add('/teendok', function () {
   $page->getHeader()->setTitle("Teendők");
   $page->getHeader()->addCss("../Components/TaskManager/Task/Task.css");
   $page->getHeader()->addCss("../Components/TaskManager/TaskList/TaskList.css");
+  $page->getHeader()->addCss("../Components/TaskManager/TaskManager.css");
   $page->getHeader()->addCss("../Styles/feladatok.css");
   $page->pageContent('Sites/teendok.php');
 

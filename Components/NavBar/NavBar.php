@@ -37,15 +37,6 @@ class NavBar
   }
   public function render()
   {
-    echo "<nav class=topnav>
-          <div>
-            <a href='Sites/index.php' class='logo'>ToDo APP</a>
-            <button class='ham' id='myBtn'>
-              <img src='../SVG/menu.svg' alt= style='width: 2rem' />
-            </button>
-          </div>";
-    isset($_SESSION["user"]) ? $this->loggedIn() : $this->base();
-    echo "</nav>
-            <script src='../JS/nav.js'></script>";
+    include('Components/NavBar/NavBarTemplate.php');
   }
 }
