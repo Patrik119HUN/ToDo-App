@@ -1,6 +1,6 @@
 .bg-img {
-  background-image: url(../pics/lightbulb-g16c95b97f_1920.jpg);
-  min-height: 110vh;
+  background-image: url(../pics/parafa.png);
+  min-height: 140vh;
   width: 100%;
   background-position: center;
   background-repeat: no-repeat;
@@ -14,12 +14,13 @@
   margin-right: auto;
   position: relative;
   border-radius: 2%;
-  top: 18rem;
+  top: 11rem;
 }
 
 .hero {
   display: block;
   position: relative;
+  
 }
 .hero-text {
   font-family: monospace;
@@ -28,12 +29,13 @@
   position: absolute;
   color: black;
   padding-left: 5px;
-  background-color: rgba(242, 216, 0, 1);
+  background-color: rgba(228, 216, 0, 1);
   width: 80%;
   margin-left: auto;
   margin-right: auto;
   transform-origin: 0 0;
-  top: 7rem;
+  
+  top: 3rem;
   animation-name: myMove;
   animation-duration: 2s;
   animation-iteration-count: 1;
@@ -44,11 +46,10 @@
   margin-left: 30px;
   font-weight: bold;
 }
-.hero-text p {
+.hero-text li {
   margin-left: 25px;
-
   font-family: monospace;
-  font-size: 1.2rem;
+  font-size: 1rem;
   color: black;
 }
 
