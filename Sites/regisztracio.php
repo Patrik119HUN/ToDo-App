@@ -3,15 +3,15 @@
   $fiokok =  loadFile("users.txt");
   $hibak = [];
 
-  if (isset($_POST["register"])) {   // csak azután dolgozzuk fel az űrlapot, miután az el lett küldve
+  if (isset($_GET["register"])) {   // csak azután dolgozzuk fel az űrlapot, miután az el lett küldve
 
-    $id = $_POST["id"];
-    $vezeteknev = $_POST["surname"];
-    $keresztnev = $_POST["forname"];
-    $email = $_POST["email"];
-    $jelszo = $_POST["psw"];
-    $jelszo2 = $_POST["psw_n"];
-    $eletkor = $_POST["birthday"];
+    $id = $_GET["id"];
+    $vezeteknev = $_GET["surname"];
+    $keresztnev = $_GET["forname"];
+    $email = $_GET["email"];
+    $jelszo = $_GET["psw"];
+    $jelszo2 = $_GET["psw_n"];
+    $eletkor = $_GET["birthday"];
 
     
     if (!isset($vezeteknev) || trim($vezeteknev) === "")
@@ -49,7 +49,6 @@
       $fiokok[] = ["id" => $id, "vezeteknev" => $vezeteknev, "keresztnev" => $keresztnev, "jelszo" => $jelszo, "eletkor" => $eletkor, "email" => $email];
       saveToFile("users.txt", $fiokok);
       $siker = TRUE;
-      header("Location /bejelentkezes");
     } else {
       $siker = FALSE;
     }
@@ -57,26 +56,26 @@
   ?>
 
   <main class="bg-signup" id="bejelentkezes">
-    <form action="/regisztracio" class="form shadow" id="reset" method="POST">
+    <form action="/regisztracio" class="form shadow" id="reset" method="GET">
       <fieldset style="padding:2rem; border:none">
         <h1>Regisztráció</h1>
         <div style="display:flex; gap:2rem">
           <div>
             <label for="surname"><b>Vezetéknév</b></label>
-            <input class="shadow" type="text" placeholder="Jankó" name="surname" value="<?php if (isset($_POST['surname'])) echo $_POST['surname']; ?>" />
+            <input class="shadow" type="text" placeholder="Jankó" name="surname" value="<?php if (isset($_GET['surname'])) echo $_GET['surname']; ?>" />
           </div>
           <div>
             <label for="forname"><b>Keresztnév</b></label>
-            <input class="shadow" type="text" placeholder="Pista" name="forname" value="<?php if (isset($_POST['forname'])) echo $_POST['forname']; ?>" />
+            <input class="shadow" type="text" placeholder="Pista" name="forname" value="<?php if (isset($_GET['forname'])) echo $_GET['forname']; ?>" />
           </div>
         </div>
         <label for="id"><b>Felhasználónév</b></label>
-        <input class="shadow" type="text" placeholder="jankópityu129" name="id" value="<?php if (isset($_POST['id'])) echo $_POST['id']; ?>" />
+        <input class="shadow" type="text" placeholder="jankópityu129" name="id" value="<?php if (isset($_GET['id'])) echo $_GET['id']; ?>" />
         <label for="birthday"><b>Születési dátum: </b></label>
-        <input class="shadow" type="date" id="birthday" name="birthday" value="<?php if (isset($_POST['birthday'])) echo $_POST['birthday']; ?>" />
+        <input class="shadow" type="date" id="birthday" name="birthday" value="<?php if (isset($_GET['birthday'])) echo $_GET['birthday']; ?>" />
         <br>
         <label for="email"><b>Email</b></label>
-        <input class="shadow" type="text" placeholder="jankopisti@valami.com" name="email" value="<?php if (isset($_POST['email'])) echo $_POST['email']; ?>" />
+        <input class="shadow" type="text" placeholder="jankopisti@valami.com" name="email" value="<?php if (isset($_GET['email'])) echo $_GET['email']; ?>" />
 
         <label for="psw"><b>Jelszó</b></label>
         <input class="shadow" type="password" placeholder="Adj meg egy jelszót" name="psw" />

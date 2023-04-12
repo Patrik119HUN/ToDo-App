@@ -49,7 +49,7 @@ function uploadProfilePicture($username) {
       if (in_array($extension, $allowed_extensions)) {      // ha a fájl kiterjesztése megfelelő...
         if ($_FILES["profile-pic"]["error"] === 0) {        // ha a fájl feltöltése sikeres volt...
           if ($_FILES["profile-pic"]["size"] <= 31457280) { // ha a fájlméret nem nagyobb 30 MB-nál
-            $path = "images/" . $username . "." . $extension;   // a cél útvonal összeállítása
+            $path = "pics/ProfilPics/" . $username . "." . $extension;   // a cél útvonal összeállítása
 
             if (!move_uploaded_file($_FILES["profile-pic"]["tmp_name"], $path)) { // fájl átmozgatása a cél útvonalra
               $fajlfeltoltes_hiba = "A fájl átmozgatása nem sikerült!";
