@@ -55,7 +55,7 @@
         <?php
         // a profilkép elérési útvonalának eltárolása egy változóban
 
-        $profilkep = "pics/ProfilPics/morgandefault.png";      // alapértelmezett kép, amit akkor jelenítünk meg, ha valakinek nincs feltöltött profilképe
+        $profilkep = "pics/ProfilPics/default.png";      // alapértelmezett kép, amit akkor jelenítünk meg, ha valakinek nincs feltöltött profilképe
         $utvonal = "pics/ProfilPics/" . $_SESSION["user"]["id"]; // a kép neve a felhasználó nevével egyezik meg
 
         $kiterjesztesek = ["png", "jpg", "jpeg"];     // a lehetséges kiterjesztések, amivel egy profilkép rendelkezhet
