@@ -77,19 +77,18 @@ input:focus {
   margin-right: auto;
 }
 
-
-.profilkep input[type="submit"]{
-  width: 100%;
+#submit{
+  width: 80%;
   color: black;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
   box-shadow: 0.5rem 0.5rem;
   border-width: 2px;
   border-color: black;
   border-style: solid;
   border-radius: 5px;
-  
 }
-
-
 
 @media screen and (max-width: 700px) {
   .container {

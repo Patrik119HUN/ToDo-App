@@ -3,16 +3,16 @@
     $fiokok =  loadFile("users.txt");
     $hibak = [];
 
-    if (isset($_GET["modosit"])) {   // csak azután dolgozzuk fel az űrlapot, miután az el lett küldve
+    if (isset($_POST["adatotModosit"])) {   // csak azután dolgozzuk fel az űrlapot, miután az el lett küldve
 
-        /*$id = $_GET["id"];
-        $vezeteknev = $_GET["surname"];
-        $keresztnev = $_GET["forname"];
-        $email = $_GET["email"];
-        $eletkor = $_GET["eletkor"];
+        $id = $_POST["id"];
+        $vezeteknev = $_POST["surname"];
+        $keresztnev = $_POST["forname"];
+        $email = $_POST["email"];
+        $eletkor = $_POST["eletkor"];
 
-        //if (!isset($id) || trim($id) === "")
-          //  $hibak[] = "A felhasználó név megadása kötelező!";
+        if (!isset($id) || trim($id) === "")
+            $hibak[] = "A felhasználó név megadása kötelező!";
 
         if (!isset($vezeteknev) || trim($vezeteknev) === "")
             $hibak[] = "A vezetéknév megadása kötelező!";
@@ -28,26 +28,25 @@
         if (!isset($eletkor) || trim($eletkor) === "")
             $hibak[] = "Az születésidátum megadása kötelező!";
         
-        /*foreach ($fiokok as $fiok) {
-            if ($fiok["id"] === $id)
+        foreach ($fiokok as $fiok) {
+            if ($fiok["id"] === $id && $_SESSION["user"]["id"] !== $id)
                 $hibak[] = "A felhasználónév már foglalt!";
         }
 
-        $fajlfeltoltes_hiba = "";               // változó a fájlfeltöltés során adódó esetleges hibaüzenet tárolására
-        uploadProfilePicture($_SESSION["user"]["id"]);  // a kozos.php-ban definiált profilkép feltöltést végző függvény meghívása
-    
-        if ($fajlfeltoltes_hiba !== "")
-            $hibak[] = $fajlfeltoltes_hiba;
-
-        /*if (count($hibak) === 0) {   // sikeres regisztráció
+        if (count($hibak) === 0) {   // sikeres módosítás
             $jelszo = password_hash($jelszo, PASSWORD_DEFAULT);
-            $fiokok[] = ["id" => $id, "vezeteknev" => $vezeteknev, "keresztnev" => $keresztnev, "jelszo" => $jelszo,  "eletkor" => $eletkor, "email" => $email];
+            $modositottAdatok[] = ["id" => $id, "vezeteknev" => $vezeteknev, "keresztnev" => $keresztnev, "jelszo" => $jelszo,  "eletkor" => $eletkor, "email" => $email];
+            foreach ($fiokok as $fiok){
+                if ($fiok["id"] === $_SESSION["user"]["id"]){
+                    $fiok = $modositottAdatok;
+                }
+            }
             saveToFile("users.txt", $fiokok);
             $siker = TRUE;
             header("Location: /felhasznalo");
             } else {                    // sikertelen regisztráció
                 $siker = FALSE;
-            }*/
+            }
     }
     ?>
     <section class="container">
@@ -71,37 +70,41 @@
         <ul>
             <h2>Adataid</h2>
         </ul>
-
-        <ul class="input_row">
-            <label for="id">Felhasználó neved:</label>
-            <input type="text" name="id" value='<?php echo $_SESSION["user"]["id"] ?>' />
-        </ul>
-
-        <div class="name">
+        <form method="POST">
             <ul class="input_row">
-                <label for="surname" id="label">Vezetékneved:</label><br>
-                <input type="text" name="surname" value='<?php echo $_SESSION["user"]["vezeteknev"] ?>' />
+                <label for="id">Felhasználó neved:</label>
+                <input type="text" name="id" value='<?php echo $_SESSION["user"]["id"] ?>' />
+            </ul>
+
+            <div class="name">
+                <ul class="input_row">
+                    <label for="surname" id="label">Vezetékneved:</label><br>
+                    <input type="text" name="surname" value='<?php echo $_SESSION["user"]["vezeteknev"] ?>' />
+                </ul>
+                <ul class="input_row">
+                    <label for="forname" id="label">Keresztneved:</label><br>
+                    <input type="text" name="forname" value='<?php echo $_SESSION["user"]["keresztnev"] ?>'>
+                </ul>
+            </div>
+            <ul class="input_row">
+                <label for="email">E-mail címed:</label>
+                <input type="text" name="email" value='<?php echo $_SESSION["user"]["email"] ?>' />
             </ul>
             <ul class="input_row">
-                <label for="forname" id="label">Keresztneved:</label><br>
-                <input type="text" name="forname" value='<?php echo $_SESSION["user"]["keresztnev"] ?>'>
+                <label for="eletkor">Születési dátumod:</label>
+                <input type="date" name="eletkor" value='<?php echo $_SESSION["user"]["eletkor"] ?>' />
             </ul>
-        </div>
-        <ul class="input_row">
-            <label for="email">E-mail címed:</label>
-            <input type="text" name="email" value='<?php echo $_SESSION["user"]["email"] ?>' />
-        </ul>
-        <ul class="input_row">
-            <label for="eletkor">Születési dátumod:</label>
-            <input type="date" name="eletkor" value='<?php echo $_SESSION["user"]["eletkor"] ?>' />
-        </ul>
+            <ul class="input_row">
+                <input type="submit" id="submit" name="adatotModosit" value="Adatok módosítása" />
+            </ul>
+        </form>
         <form method="POST" enctype="multipart/form-data">
             <ul class="profilkep">
                 <img src="<?php echo $profilkep; ?>" alt="Profilkép" height="250" />
                 <br><br>
                 <label for="profile-pic">Töltsd fel a profilképed:</label>
                 <input type="file" id="file-upload" name="profile-pic" accept="image/*" />
-                <input type="submit" name="modosit" value="Adatok módosítása" />
+                <input type="submit" id="submit" name="modosit" value="Profilkép feltöltés" />
             </ul>
             <?php
             if (isset($siker) && $siker === TRUE) {  // ha nem volt hiba, akkor a regisztráció sikeres
