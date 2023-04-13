@@ -1,6 +1,6 @@
 <?php
 include './common.php';
-include 'Components/TaskManager/Task/Task.php'; 
+include 'Components/TaskManager/Task/Task.php';
 class TaskList
 {
     public $TaskList = array();
@@ -47,6 +47,7 @@ class TaskList
             }
             saveToFile($this->path, $this->TaskList);
         }
+        header("Location: /teendok");
     }
     public function render()
     {
