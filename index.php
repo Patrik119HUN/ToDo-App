@@ -62,7 +62,7 @@ Route::add('/regisztracio', function () {
   $page->pageContent('Sites/regisztracio.php');
 
   $page->render();
-}, 'get');
+},  ['get', 'post']);
 Route::add('/bejelentkezes', function () {
   global $links;
   session_start();
@@ -73,7 +73,7 @@ Route::add('/bejelentkezes', function () {
   $page->pageContent('Sites/bejelentkezes.php');
 
   $page->render();
-}, 'get');
+}, ['get', 'post']);
 Route::add('/feladatszerkeszto', function () {
   global $links;
   session_start();
@@ -111,7 +111,7 @@ Route::add('/felhasznalo', function () {
   $page->pageContent('Sites/felhasznalo.php');
 
   $page->render();
-}, ['get','post']);
+}, ['get', 'post']);
 
 Route::add('/kijelentkezes', function () {
   session_start();
