@@ -1,12 +1,16 @@
-footer{
-    font-family: monospace;
-    font-size: 15px;
-    color:#e3fc02;
-    padding-right: 2rem;
-    display: flex;  
-    margin-bottom: 5rem;
-    margin-left: 2rem;
+footer div{
+  font-family: monospace;
+  font-size: 1.6rem;
+  color:#e3fc02;
+  padding-right: 2rem;
+  
+  padding-bottom: 1.5rem;
   }
+
+#copy{
+  text-align: center;
+  font-size: 1.1rem;
+}
 
 @media print {
   footer{
