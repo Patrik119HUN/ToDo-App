@@ -23,7 +23,7 @@
           $uzenet = "Sikeres belépés!";        // ekkor átírjuk a megjelenítendő üzenet szövegét
           $_SESSION["user"] = $fiok;
           $_SESSION["Bejelentkezve"][1]["felhasznalo"] = $id;
-          header("Location: /");                                // mivel találtunk illeszkedést, ezért a többi felhasználót nem kell megvizsgálnunk, kilépünk a ciklusból 
+          header("Location: /kezdolap");                                // mivel találtunk illeszkedést, ezért a többi felhasználót nem kell megvizsgálnunk, kilépünk a ciklusból 
         }
       }
     }

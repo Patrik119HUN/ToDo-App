@@ -2,11 +2,12 @@
 include 'Route.php';
 
 include 'Components/PageBuilder/PageBuilder.php';
+
 use Steampixel\Route;
 
 $kijelentkezve = [
   [
-    "/" => "Kezdőlap",
+    "kezdolap" => "Kezdőlap",
     "galeria" => "Galéria",
     "feladatszerkeszto" => "Feladatszerkesztő",
   ],
@@ -28,12 +29,15 @@ $bejelentkezve = [
 
 $links = [$bejelentkezve, $kijelentkezve];
 
-Route::add('/', function () {
+Route::add('/kezdolap', function () {
   global $links;
   session_start();
+  if (isset($_SESSION["user"]["id"])) {
+    $links[0][1]["felhasznalo"] = $_SESSION["user"]["id"];
+  }
   $page = new PageBuilder($links);
-  $page->getHeader()->addCss("../Components/Card/Card.css");
-  $page->getHeader()->addCss("../Components/Hero/Hero.css");
+  $page->getHeader()->addCss("Components/Card/Card.css");
+  $page->getHeader()->addCss("Components/Hero/Hero.css");
   $page->getHeader()->setTitle("ToDo App");
   $page->pageContent('Sites/index.php');
 
@@ -62,7 +66,7 @@ Route::add('/regisztracio', function () {
 Route::add('/bejelentkezes', function () {
   global $links;
   session_start();
-  
+
   $page = new PageBuilder($links);
   $page->getHeader()->addCss("../Styles/form.css");
   $page->getHeader()->setTitle("Bejelentkezés");
@@ -83,7 +87,9 @@ Route::add('/feladatszerkeszto', function () {
 Route::add('/teendok', function () {
   global $links;
   session_start();
-  $links[0][1]["felhasznalo"] = $_SESSION["user"]["id"];
+  if (isset($_SESSION["user"]["id"])) {
+    $links[0][1]["felhasznalo"] = $_SESSION["user"]["id"];
+  }
   $page = new PageBuilder($links);
   $page->getHeader()->setTitle("Teendők");
   $page->getHeader()->addCss("../Components/TaskManager/Task/Task.css");
@@ -105,7 +111,7 @@ Route::add('/felhasznalo', function () {
   $page->pageContent('Sites/felhasznalo.php');
 
   $page->render();
-});
+}, ['get','post']);
 
 Route::add('/kijelentkezes', function () {
   session_start();

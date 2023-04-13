@@ -15,7 +15,7 @@ class PageBuilder
         $this->navbar = new NavBar($links);
         $this->footer = new Footer($links[1]);
         $this->header->addCss("../Styles/style.css");
-        $this->header->addCss("../Components/Footer/Footer.css");
+        $this->header->addCss("Components/Footer/Footer.css");
         $this->header->addCss("Components/NavBar/nav.css");
     }
     public function getHeader(){
