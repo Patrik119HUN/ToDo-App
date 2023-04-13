@@ -23,6 +23,9 @@ width:fit-content;
   color:black;
   margin-left:2rem'
 }
+.check{
+  color:black; border:none; background-color: transparent; font-size: 2rem;cursor: pointer;
+}
 .add:hover{
   top:5px;
   cursor: pointer;

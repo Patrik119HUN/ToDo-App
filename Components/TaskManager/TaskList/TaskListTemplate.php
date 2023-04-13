@@ -4,7 +4,7 @@
         <input type=hidden name=taskListId value=<?= $this->id ?>></input>
         <div style="display:flex;flex-direction:row; padding:1rem;">
             <input type=text name=taskName placeholder="Lista neve" value='<?= $this->thisName ?>'></input>
-            <button type=submit name=change value=<?= $this->id ?> class="add shadow">pipa</button>
+            <button type=submit name=change value=<?= $this->id ?> class="check">✓</button>
         </div>
     </form>
     <?php
