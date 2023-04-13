@@ -21,7 +21,7 @@ $bejelentkezve = [
     "teendok" => "Teendők",
   ],
   [
-    "felhasznalo" => "alma",
+    "felhasznalo" => "asd",
     "kijelentkezes" => "Kijelentkezés",
   ]
 ];
@@ -62,6 +62,7 @@ Route::add('/regisztracio', function () {
 Route::add('/bejelentkezes', function () {
   global $links;
   session_start();
+  
   $page = new PageBuilder($links);
   $page->getHeader()->addCss("../Styles/form.css");
   $page->getHeader()->setTitle("Bejelentkezés");
@@ -82,6 +83,7 @@ Route::add('/feladatszerkeszto', function () {
 Route::add('/teendok', function () {
   global $links;
   session_start();
+  $links[0][1]["felhasznalo"] = $_SESSION["user"]["id"];
   $page = new PageBuilder($links);
   $page->getHeader()->setTitle("Teendők");
   $page->getHeader()->addCss("../Components/TaskManager/Task/Task.css");
@@ -96,6 +98,7 @@ Route::add('/teendok', function () {
 Route::add('/felhasznalo', function () {
   global $links;
   session_start();
+  $links[0][1]["felhasznalo"] = $_SESSION["user"]["id"];
   $page = new PageBuilder($links);
   $page->getHeader()->addCss("../Styles/felhasznalo.css");
   $page->getHeader()->setTitle("Felhasználó");
