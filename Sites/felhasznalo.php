@@ -11,21 +11,15 @@ $hibak = [];
         $email = $_GET["email"];
         $eletkor = $_GET["dateOfBirth"];
 
-        if (!isset($id) || trim($id) === ""){
+        if (!isset($id) || trim($id) === "")
             $hibak[] = "A felhasználó név megadása kötelező!";
-        }else{
-            echo $id."\n";
-        }
-        if (!isset($vezeteknev) || trim($vezeteknev) === ""){
+        
+        if (!isset($vezeteknev) || trim($vezeteknev) === "")
             $hibak[] = "A vezetéknév megadása kötelező!";
-        }else{
-            echo $vezeteknev."\n";
-        }
-        if (!isset($keresztnev) || trim($keresztnev) === ""){
+        
+        if (!isset($keresztnev) || trim($keresztnev) === "")
             $hibak[] = "A keresztnév megadása kötelező!";
-        }else{
-            echo $keresztnev."\n";
-        }
+        
         if (!isset($email) || trim($email) === ""){
             $hibak[] = "A e-mail cím megadása kötelező!";
         }else if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
@@ -45,15 +39,20 @@ $hibak = [];
             $modositottAdatok = array("id" => $id, "vezeteknev" => $vezeteknev, "keresztnev" => $keresztnev, "jelszo" => $jelszo,  "eletkor" => $eletkor, "email" => $email);
             foreach ($fiokok as $fiok){
                 if ($fiok["id"] === $_SESSION["user"]["id"]){
-                    $fiok = $modositottAdatok;
+                    print_r($modositottAdatok);
+                    echo "<br>";
+                    print_r($fiok);
+                    echo "<br>";
+                    array_replace($fiok,$modositottAdatok);
+                    print_r($fiok);
                 }
             }
             saveToFile("users.txt", $fiokok);
             $siker = TRUE;
             //header("Location: /felhasznalo");
-            } else {                   
-                $siker = FALSE;
-            }
+        } else {                   
+            $siker = FALSE;
+        }
     }
     
     $profilPicture = "pics/ProfilPics/default.png";      

@@ -45,7 +45,7 @@
     }
     if (count($hibak) === 0) {
       $jelszo = password_hash($jelszo, PASSWORD_DEFAULT);
-      $fiokok[] = ["id" => $id, "vezeteknev" => $vezeteknev, "keresztnev" => $keresztnev, "jelszo" => $jelszo, "eletkor" => $eletkor, "email" => $email];
+      array_push($fiokok, ["id" => $id, "vezeteknev" => $vezeteknev, "keresztnev" => $keresztnev, "jelszo" => $jelszo, "eletkor" => $eletkor, "email" => $email]);
       saveToFile("users.txt", $fiokok);
       $path = "users/" . $fiok["id"];
       mkdir($path);
