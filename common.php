@@ -16,9 +16,10 @@ function loadFile($path)
 
   while (($line = fgets($file)) !== FALSE) {  
     $user = unserialize($line);  
-    $users[] = $user;            
+    $users[] = $user;          
   }
 
+  
   fclose($file);
   return $users;                 
 }

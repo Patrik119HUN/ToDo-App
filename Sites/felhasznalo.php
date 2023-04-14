@@ -1,30 +1,31 @@
-    <?php
-    include "./common.php";
-    $fiokok =  loadFile("users.txt");
-    $hibak = [];
+<?php
+ include "./common.php";
+$fiokok =  loadFile("users.txt");
+$hibak = [];
 
-    echo "minden elott";
-
-    if (isset($_POST["adatotModosit"])) {   
-        echo "valamit irj mar ki";
-        $id = $_POST["id"];
-        $vezeteknev = $_POST["surname"];
-        $keresztnev = $_POST["forname"];
-        $email = $_POST["email"];
-        $eletkor = $_POST["dateOfBirth"];
+    if (isset($_GET["adatotModosit"])) {   
+       
+        $id = $_GET["id"];
+        $vezeteknev = $_GET["surname"];
+        $keresztnev = $_GET["forname"];
+        $email = $_GET["email"];
+        $eletkor = $_GET["dateOfBirth"];
 
         if (!isset($id) || trim($id) === ""){
             $hibak[] = "A felhasználó név megadása kötelező!";
         }else{
-            echo $id;
+            echo $id."\n";
         }
         if (!isset($vezeteknev) || trim($vezeteknev) === ""){
             $hibak[] = "A vezetéknév megadása kötelező!";
-            echo $vezeteknev;
+        }else{
+            echo $vezeteknev."\n";
         }
-        if (!isset($keresztnev) || trim($keresztnev) === "")
+        if (!isset($keresztnev) || trim($keresztnev) === ""){
             $hibak[] = "A keresztnév megadása kötelező!";
-
+        }else{
+            echo $keresztnev."\n";
+        }
         if (!isset($email) || trim($email) === ""){
             $hibak[] = "A e-mail cím megadása kötelező!";
         }else if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
@@ -38,9 +39,10 @@
                 $hibak[] = "A felhasználónév már foglalt!";
         }
 
+        
         if (count($hibak) === 0) {   
-            $jelszo = password_hash($jelszo, PASSWORD_DEFAULT);
-            $modositottAdatok[] = ["id" => $id, "vezeteknev" => $vezeteknev, "keresztnev" => $keresztnev, "jelszo" => $jelszo,  "eletkor" => $eletkor, "email" => $email];
+            $jelszo = password_hash($_SESSION["user"]["jelszo"], PASSWORD_DEFAULT);
+            $modositottAdatok = array("id" => $id, "vezeteknev" => $vezeteknev, "keresztnev" => $keresztnev, "jelszo" => $jelszo,  "eletkor" => $eletkor, "email" => $email);
             foreach ($fiokok as $fiok){
                 if ($fiok["id"] === $_SESSION["user"]["id"]){
                     $fiok = $modositottAdatok;
@@ -48,7 +50,7 @@
             }
             saveToFile("users.txt", $fiokok);
             $siker = TRUE;
-            header("Location: /felhasznalo");
+            //header("Location: /felhasznalo");
             } else {                   
                 $siker = FALSE;
             }
@@ -88,7 +90,7 @@
         <ul>
             <h2>Adataid</h2>
         </ul>
-        <form action="/felhasznalo" method="post">
+        <form action="/felhasznalo" method="GET">
             <ul class="input_row">
                 <label for="id">Felhasználó neved:</label>
                 <input type="text" name="id" value='<?php echo $_SESSION["user"]["id"] ?>' />
