@@ -5,53 +5,53 @@ define('ROOT_DIR', dirname(__FILE__));
 $root = $_SERVER['DOCUMENT_ROOT'];
 function loadFile($path)
 {
-  $users = [];                  // ez a tömb fogja tartalmazni a regisztrált felhasználókat
+  $users = [];          
 
-  //$file = fopen($path, "r");    // fájl megnyitása olvasásra
+  
   if (file_exists($path) === FALSE) {
     $file = fopen($path, "w");
     fclose($file);
   }
   $file = fopen($path, "r");
 
-  while (($line = fgets($file)) !== FALSE) {  // fájl tartalmának beolvasása soronként
-    $user = unserialize($line);  // a sor deszerializálása (visszaalakítása az adott felhasználót reprezentáló asszociatív tömbbé)
-    $users[] = $user;            // a felhasználó hozzáadása a regisztrált felhasználókat tároló tömbhöz
+  while (($line = fgets($file)) !== FALSE) {  
+    $user = unserialize($line);  
+    $users[] = $user;            
   }
 
   fclose($file);
-  return $users;                 // a felhasználókat tároló 2D tömb visszaadása
+  return $users;                 
 }
 
-// a regisztrált felhasználók adatait fájlba író függvény
 
 function saveToFile($path, $users)
 {
-  $file = fopen($path, "w");    // fájl megnyitása írásra
-  if ($file === FALSE)          // hibakezelés
+  $file = fopen($path, "w");    
+  if ($file === FALSE)          
     die("HIBA: A fájl megnyitása nem sikerült!");
 
-  foreach ($users as $user) {    // végigmegyünk a regisztrált felhasználók tömbjén
-    $serialized_user = serialize($user);      // szerializált formára alakítjuk az adott felhasználót
-    fwrite($file, $serialized_user . "\n");   // a szerializált adatot kiírjuk a kimeneti fájlba
+  foreach ($users as $user) {    
+    $serialized_user = serialize($user);      
+    fwrite($file, $serialized_user . "\n");
   }
 
   fclose($file);
 }
 
+
 function uploadProfilePicture($username) {
-    global $fajlfeltoltes_hiba;    // ez a változó abban a fájlban található, amiben ezt a függvényt meghívjuk, ezért újradeklaráljuk globálisként
+    global $fajlfeltoltes_hiba;   
 
-    if (isset($_FILES["profile-pic"]) && is_uploaded_file($_FILES["profile-pic"]["tmp_name"])) {  // ha töltöttek fel fájlt...
-      $allowed_extensions = ["png", "jpg", "jpeg"];                                           // az engedélyezett kiterjesztések tömbje
-      $extension = strtolower(pathinfo($_FILES["profile-pic"]["name"], PATHINFO_EXTENSION));  // a feltöltött fájl kiterjesztése
+    if (isset($_FILES["profile-pic"]) && is_uploaded_file($_FILES["profile-pic"]["tmp_name"])) {  
+      $allowed_extensions = ["png", "jpg", "jpeg"];                                           
+      $extension = strtolower(pathinfo($_FILES["profile-pic"]["name"], PATHINFO_EXTENSION));  
 
-      if (in_array($extension, $allowed_extensions)) {      // ha a fájl kiterjesztése megfelelő...
-        if ($_FILES["profile-pic"]["error"] === 0) {        // ha a fájl feltöltése sikeres volt...
-          if ($_FILES["profile-pic"]["size"] <= 31457280) { // ha a fájlméret nem nagyobb 30 MB-nál
-            $path = "pics/ProfilPics/" . $username . "." . $extension;   // a cél útvonal összeállítása
+      if (in_array($extension, $allowed_extensions)) {      
+        if ($_FILES["profile-pic"]["error"] === 0) {        
+          if ($_FILES["profile-pic"]["size"] <= 31457280) { 
+            $path = "pics/ProfilPics/" . $username . "." . $extension;  
 
-            if (!move_uploaded_file($_FILES["profile-pic"]["tmp_name"], $path)) { // fájl átmozgatása a cél útvonalra
+            if (!move_uploaded_file($_FILES["profile-pic"]["tmp_name"], $path)) { 
               $fajlfeltoltes_hiba = "A fájl átmozgatása nem sikerült!";
             }
           } else {

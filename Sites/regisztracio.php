@@ -3,7 +3,7 @@
   $fiokok =  loadFile("users.txt");
   $hibak = [];
 
-  if (isset($_POST["register"])) {   // csak azután dolgozzuk fel az űrlapot, miután az el lett küldve
+  if (isset($_POST["register"])) {   
 
     $id = $_POST["id"];
     $vezeteknev = $_POST["surname"];
@@ -12,7 +12,6 @@
     $jelszo = $_POST["psw"];
     $jelszo2 = $_POST["psw_n"];
     $eletkor = $_POST["birthday"];
-
     
     if (!isset($vezeteknev) || trim($vezeteknev) === "")
       $hibak[] = "A vezetéknév megadása kötelező!";
@@ -79,7 +78,7 @@
         <label for="email"><b>Email</b></label>
         <input class="shadow" type="text" placeholder="jankopisti@valami.com" name="email" value="<?php if (isset($_POST['email'])) echo $_POST['email']; ?>" />
 
-        <label for="psw"><b>Jelszó</b></label>
+        <label for="psw"><b>Jelszó (legalább 5 karakter)</b></label>
         <input class="shadow" type="password" placeholder="Adj meg egy jelszót" name="psw" />
 
         <label for="psw_n"><b>Jelszó újra</b></label>
@@ -87,9 +86,9 @@
 
         <button type="submit" class="login shadow" name="register">Regisztrálok</button>
         <?php
-        if (isset($siker) && $siker === TRUE) {  // ha nem volt hiba, akkor a regisztráció sikeres
+        if (isset($siker) && $siker === TRUE) { 
           echo "<p style='color:green; font-size:1rem;'>Sikeres regisztráció!</p>";
-        } else {                                // az esetleges hibákat kiírjuk egy-egy bekezdésben
+        } else {                                
           foreach ($hibak as $hiba) {
             echo "<p style=' color:red; font-size:1.3rem;'>$hiba</p>";
           }
