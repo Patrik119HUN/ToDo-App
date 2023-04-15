@@ -16,13 +16,13 @@ class NavBar
   private function loggedIn()
   {
     $bejelentkezve = $this->links[0];
-    $profilkep = "pics/ProfilPics/morgandefault.png";      // alapértelmezett kép, amit akkor jelenítünk meg, ha valakinek nincs feltöltött profilképe
-    $utvonal = "pics/ProfilPics/" . $_SESSION["user"]["id"]; // a kép neve a felhasználó nevével egyezik meg
+    $profilkep = "pics/ProfilPics/default.png";      
+    $utvonal = "pics/ProfilPics/" . $_SESSION["user"]["id"]; 
 
-    $kiterjesztesek = ["png", "jpg", "jpeg"];     // a lehetséges kiterjesztések, amivel egy profilkép rendelkezhet
-    foreach ($kiterjesztesek as $kiterjesztes) {  // minden kiterjesztésre megnézzük, hogy létezik-e adott kiterjesztéssel profilképe a felhasználónak
+    $kiterjesztesek = ["png", "jpg", "jpeg"];     
+    foreach ($kiterjesztesek as $kiterjesztes) {  
       if (file_exists($utvonal . "." . $kiterjesztes)) {
-        $profilkep = $utvonal . "." . $kiterjesztes;  // ha megtaláltuk a felhasználó profilképét, eltároljuk annak az elérési útvonalát egy változóban
+        $profilkep = $utvonal . "." . $kiterjesztes;  
       }
     }
     foreach ($bejelentkezve as $linkek) {

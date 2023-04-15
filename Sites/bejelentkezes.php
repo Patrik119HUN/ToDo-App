@@ -2,28 +2,26 @@
   include "./common.php";
   $fiokok = loadFile("users.txt");
 
-  $uzenet = "";                     // az űrlap feldolgozása után kiírandó üzenet
+  $uzenet = "";                     
 
-  if (isset($_GET["login"])) {    // miután az űrlapot elküldték...
+  if (isset($_GET["login"])) {    
     if (!isset($_GET["username"]) || trim($_GET["username"]) === "" || !isset($_GET["psw"]) || trim($_GET["psw"]) === "") {
-      // ha a kötelezően kitöltendő űrlapmezők valamelyike üres, akkor hibaüzenetet jelenítünk meg
+      
       $uzenet = "<strong>Hiba:</strong> Adj meg minden adatot!";
     } else {
-      // ha megfelelően kitöltötték az űrlapot, lementjük az űrlapadatokat egy-egy változóba
+      
       $id = $_GET["username"];
       $jelszo = $_GET["psw"];
 
-      // bejelentkezés sikerességének ellenőrzése
-      $uzenet = "Sikertelen belépés! A belépési adatok nem megfelelők!";  // alapból azt feltételezzük, hogy a bejelentkezés sikertelen
+      
+      $uzenet = "Sikertelen belépés! A belépési adatok nem megfelelők!";  
 
-      foreach ($fiokok as $fiok) {              // végigmegyünk a regisztrált felhasználókon
-        // a bejelentkezés pontosan akkor sikeres, ha az űrlapon megadott felhasználónév-jelszó páros megegyezik egy regisztrált felhasználó belépési adataival
-        // a jelszavakat hash alapján, a password_verify() függvénnyel hasonlítjuk össze
+      foreach ($fiokok as $fiok) {              
         if (($fiok["id"] === $id || $fiok["email"] === $id) && password_verify($jelszo, $fiok["jelszo"])) {
-          $uzenet = "Sikeres belépés!";        // ekkor átírjuk a megjelenítendő üzenet szövegét
+          $uzenet = "Sikeres belépés!";        
           $_SESSION["user"] = $fiok;
           $_SESSION["Bejelentkezve"][1]["felhasznalo"] = $id;
-          header("Location: /kezdolap");                                // mivel találtunk illeszkedést, ezért a többi felhasználót nem kell megvizsgálnunk, kilépünk a ciklusból 
+          header("Location: /kezdolap");                              
         }
       }
     }
