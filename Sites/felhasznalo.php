@@ -37,14 +37,9 @@ $hibak = [];
         if (count($hibak) === 0) {   
             $jelszo = password_hash($_SESSION["user"]["jelszo"], PASSWORD_DEFAULT);
             $modositottAdatok = array("id" => $id, "vezeteknev" => $vezeteknev, "keresztnev" => $keresztnev, "jelszo" => $jelszo,  "eletkor" => $eletkor, "email" => $email);
-            foreach ($fiokok as $fiok){
-                if ($fiok["id"] === $_SESSION["user"]["id"]){
-                    print_r($modositottAdatok);
-                    echo "<br>";
-                    print_r($fiok);
-                    echo "<br>";
-                    array_replace($fiok,$modositottAdatok);
-                    print_r($fiok);
+            for ($i=0; $i < count($fiokok); $i++){
+                if ($fiokok[$i]["id"] === $_SESSION["user"]["id"]){
+                    $fiokok[$i]=$modositottAdatok;
                 }
             }
             saveToFile("users.txt", $fiokok);
