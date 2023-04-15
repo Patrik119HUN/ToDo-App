@@ -29,7 +29,7 @@ class NavBar
       echo "<ul class='menu'>";
       foreach ($linkek as $url => $nev) {
         if ($url == "felhasznalo") {
-          echo "<img src='$profilkep' alt='Hamburger' style='height:3.5rem;padding:0.25rem;border-radius:50%; aspect-ration:1/1;object-fit: cover'/>";
+          echo "<a href='/felhasznalo' style='height:3.5rem;padding:0.25rem;'><img src='$profilkep' alt='Hamburger' style='height:3.5rem;padding:0.25rem;border-radius:50%; aspect-ration:1/1;object-fit: cover'/></a>";
         }
         $this->NavItem($url, $nev);
       }
