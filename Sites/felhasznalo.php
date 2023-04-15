@@ -1,15 +1,22 @@
 <?php
  include "./common.php";
 $fiokok =  loadFile("users.txt");
+$profil;
+foreach($fiokok as $fiok){
+    if($fiok["id"] === $_SESSION["user"]["id"]){
+        $profil = $fiok;
+    }
+}
 $hibak = [];
 
-    if (isset($_GET["adatotModosit"])) {   
+    if (isset($_POST["adatotModosit"])) {   
        
-        $id = $_GET["id"];
-        $vezeteknev = $_GET["surname"];
-        $keresztnev = $_GET["forname"];
-        $email = $_GET["email"];
-        $eletkor = $_GET["dateOfBirth"];
+        $id = $_POST["id"];
+        $vezeteknev = $_POST["surname"];
+        $keresztnev = $_POST["forname"];
+        $email = $_POST["email"];
+        $eletkor = $_POST["dateOfBirth"];
+        $jelszo = $_POST["password"];
 
         if (!isset($id) || trim($id) === "")
             $hibak[] = "A felhasználó név megadása kötelező!";
@@ -25,9 +32,14 @@ $hibak = [];
         }else if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
             $hibak[] = "Érvénytelen e-mail cím";
         }
-        if (!isset($eletkor) || trim($eletkor) === "")
+        if (!isset($eletkor) || trim($eletkor) === ""){
             $hibak[] = "Az születésidátum megadása kötelező!";
-        
+        }
+        if (!isset($jelszo) || trim($eletkor) === ""){
+            $hibak[] = "Adj meg jelszót!";
+        }else if (strlen($jelszo) < 5) {
+            $hibak[] = "A jelszónak legalább 5 karakter hosszúnak kell lennie!";
+        }
         foreach ($fiokok as $fiok) {
             if ($fiok["id"] === $id && $_SESSION["user"]["id"] !== $id)
                 $hibak[] = "A felhasználónév már foglalt!";
@@ -35,16 +47,18 @@ $hibak = [];
 
         
         if (count($hibak) === 0) {   
-            $jelszo = password_hash($_SESSION["user"]["jelszo"], PASSWORD_DEFAULT);
+            $jelszo = password_hash($jelszo, PASSWORD_DEFAULT);
             $modositottAdatok = array("id" => $id, "vezeteknev" => $vezeteknev, "keresztnev" => $keresztnev, "jelszo" => $jelszo,  "eletkor" => $eletkor, "email" => $email);
             for ($i=0; $i < count($fiokok); $i++){
                 if ($fiokok[$i]["id"] === $_SESSION["user"]["id"]){
                     $fiokok[$i]=$modositottAdatok;
                 }
             }
+            
             saveToFile("users.txt", $fiokok);
             $siker = TRUE;
-            //header("Location: /felhasznalo");
+            header("Location: /felhasznalo");
+            
         } else {                   
             $siker = FALSE;
         }
@@ -84,29 +98,33 @@ $hibak = [];
         <ul>
             <h2>Adataid</h2>
         </ul>
-        <form action="/felhasznalo" method="GET">
+        <form action="/felhasznalo" method="POST">
             <ul class="input_row">
                 <label for="id">Felhasználó neved:</label>
-                <input type="text" name="id" value='<?php echo $_SESSION["user"]["id"] ?>' />
-            </ul>
+                <input type="text" name="id" value='<?php echo $profil["id"]?>' readonly/>
+            </ul> 
             <div class="name">
                 <ul class="input_row">
                     <label for="surname" >Vezetékneved:</label><br>
-                    <input type="text" name="surname" value='<?php echo $_SESSION["user"]["vezeteknev"] ?>' />
+                    <input type="text" name="surname" value='<?= $profil["vezeteknev"] ?>' />
                 </ul>
                 <ul class="input_row">
                     <label for="forname" >Keresztneved:</label><br>
-                    <input type="text" name="forname" value='<?php echo $_SESSION["user"]["keresztnev"] ?>'>
+                    <input type="text" name="forname" value='<?= $profil["keresztnev"] ?>'>
                 </ul>
             </div>
             <ul class="input_row">
                 <label for="email">E-mail címed:</label>
-                <input type="text" name="email" value='<?php echo $_SESSION["user"]["email"] ?>' />
+                <input type="text" name="email" value='<?= $profil["email"] ?>' />
             </ul>
             <ul class="input_row">
                 <label for="eletkor">Születési dátumod:</label>
-                <input type="date" name="dateOfBirth" value='<?php echo $_SESSION["user"]["eletkor"] ?>' />
+                <input type="date" name="dateOfBirth" value='<?= $profil["eletkor"] ?>' />
             </ul>
+            <ul class="input_row">
+                <label for="password">Jelszó módosítás (minimum 5 karakter):</label>
+                <input type="password" name="password" />
+            </ul> 
             <ul class="input_row">
                 <input type="submit" id="submit" name="adatotModosit" value="Adatok módosítása" />
             </ul>
