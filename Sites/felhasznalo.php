@@ -10,7 +10,6 @@ foreach ($fiokok as $fiok) {
 $hibak = [];
 
 if (isset($_POST["adatotModosit"])) {
-
     $id = $_POST["id"];
     $vezeteknev = $_POST["surname"];
     $keresztnev = $_POST["forname"];
@@ -86,13 +85,13 @@ if (isset($_POST["modosit"]) && is_uploaded_file($_FILES["profile-pic"]["tmp_nam
             unlink($profilPicture);
         }
 
-        header("Location: /felhasznalo.php");
+        header("Location: /felhasznalo");
     } else {
         echo "<p>" . $fajlfeltoltes_hiba . "</p>";
     }
 }
-if (isset($_GET["delete_user"])) {
-    if (isset($_GET["password_check"]) && password_verify($_GET["password_check"], $profil["jelszo"])) {
+if (isset($_POST["delete_user"])) {
+    if (isset($_POST["password_check"]) && password_verify($_POST["password_check"], $profil["jelszo"])) {
         rrmdir("users/" . $profil["id"] . "/");
         array_map('unlink', glob("pics/ProfilPics/" . $profil["id"] . ".*"));
         foreach ($fiokok as $key => $prof) {
@@ -101,7 +100,7 @@ if (isset($_GET["delete_user"])) {
         saveToFile("users.txt", $fiokok);
         session_unset();
         session_destroy();
-        header("Location: /kezdolap.php");
+        header("Location: /kezdolap");
     } else {
         echo "sikertelen";
     }
@@ -114,7 +113,7 @@ if (isset($_GET["delete_user"])) {
             <img src="<?= $profilPicture ?>" alt="Profilkép" height="250" class="shadow" />
             <br><br>
             <input type="file" name="profile-pic" accept="image/*" />
-            <input type="submit" id="submit" name="modosit" value="Profilkép feltöltés" />
+            <input type="submit" class="submit" name="modosit" value="Profilkép feltöltés" />
         </ul>
     </form>
     <ul>
@@ -157,14 +156,14 @@ if (isset($_GET["delete_user"])) {
             <input type="password" name="password" />
         </ul>
         <ul class="input_row">
-            <input type="submit" id="submit" name="adatotModosit" value="Adatok módosítása" />
+            <input type="submit" class="submit" name="adatotModosit" value="Adatok módosítása" />
         </ul>
     </form>
-    <form action="/felhasznalo.php" method="GET">
+    <form method="POST" style="display:flex; flex-direction:row">
         <ul class="input_row">
             <label for="password_check">Add meg a jelszavad a profilod törléséhez</label>
             <input type="password" name="password_check" />
+            <button type="submit" name="delete_user" class="submit">Profil Törlése</button>
         </ul>
-        <button type="submit" name="delete_user" class="shadow" style="color:black">Profil Törlése</button>
     </form>
 </section>
