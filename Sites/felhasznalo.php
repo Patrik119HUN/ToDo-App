@@ -114,7 +114,7 @@ if (isset($_GET["delete_user"])) {
             <img src="<?= $profilPicture ?>" alt="Profilkép" height="250" class="shadow" />
             <br><br>
             <input type="file" name="profile-pic" accept="image/*" />
-            <input type="submit" id="submit" name="modosit" value="Profilkép feltöltés" />
+            <input type="submit" class="submit" name="modosit" value="Profilkép feltöltés" />
         </ul>
     </form>
     <ul>
@@ -148,7 +148,7 @@ if (isset($_GET["delete_user"])) {
             <input type="password" name="password" />
         </ul>
         <ul class="input_row">
-            <input type="submit" id="submit" name="adatotModosit" value="Adatok módosítása" />
+            <input type="submit" class="submit" name="adatotModosit" value="Adatok módosítása" />
         </ul>
         <?php
         if (isset($siker) && $siker === TRUE) {
@@ -160,11 +160,11 @@ if (isset($_GET["delete_user"])) {
         }
         ?>
     </form>
-    <form method="GET">
+    <form method="POST" style="display:flex; flex-direction:row">
         <ul class="input_row">
             <label for="password_check">Ellenörző</label>
             <input type="password" name="password_check" />
+            <button type="submit" name="delete_user" class="submit">Profil Törlése</button>
         </ul>
-        <button type="submit" name="delete_user" class="shadow" style="color:black">Profil Törlése</button>
     </form>
 </section>
