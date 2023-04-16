@@ -8,7 +8,7 @@ class NavBar
   }
   private function NavItem(string $path, string $name)
   {
-    $activePage = basename($_SERVER['PHP_SELF'], ".php");
+    $activePage = basename($_SERVER['PHP_SELF']);
     $class = ($activePage == $path) ? 'active' : '';
     echo "<li class=$class ><a href=$path>$name</a></li>";
   }

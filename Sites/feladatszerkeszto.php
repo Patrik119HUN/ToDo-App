@@ -18,5 +18,3 @@
         <img src="./pics/feladatok.png" id="kep" alt="Feldattervező" style="width: 85%" />
     </div>
 </main>
-
-<script src="../JS/nav.js"></script>
