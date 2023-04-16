@@ -10,7 +10,6 @@ foreach ($fiokok as $fiok) {
 $hibak = [];
 
 if (isset($_POST["adatotModosit"])) {
-
     $id = $_POST["id"];
     $vezeteknev = $_POST["surname"];
     $keresztnev = $_POST["forname"];
@@ -86,13 +85,13 @@ if (isset($_POST["modosit"]) && is_uploaded_file($_FILES["profile-pic"]["tmp_nam
             unlink($profilPicture);
         }
 
-        header("Location: /felhasznalo");
+        header("Location: /felhasznalo.php");
     } else {
         echo "<p>" . $fajlfeltoltes_hiba . "</p>";
     }
 }
-if (isset($_GET["delete_user"])) {
-    if (isset($_GET["password_check"]) && password_verify($_GET["password_check"], $profil["jelszo"])) {
+if (isset($_POST["delete_user"])) {
+    if (isset($_POST["password_check"]) && password_verify($_POST["password_check"], $profil["jelszo"])) {
         rrmdir("users/" . $profil["id"] . "/");
         array_map('unlink', glob("pics/ProfilPics/" . $profil["id"] . ".*"));
         foreach ($fiokok as $key => $prof) {
@@ -101,7 +100,7 @@ if (isset($_GET["delete_user"])) {
         saveToFile("users.txt", $fiokok);
         session_unset();
         session_destroy();
-        header("Location: /kezdolap");
+        header("Location: /kezdolap.php");
     } else {
         echo "sikertelen";
     }
@@ -120,7 +119,7 @@ if (isset($_GET["delete_user"])) {
     <ul>
         <h2>Adataid</h2>
     </ul>
-    <form action="/felhasznalo" method="POST">
+    <form action="/felhasznalo.php" method="POST">
         <ul class="input_row">
             <label for="id">Felhasználó neved:</label>
             <input type="text" name="id" value='<?php echo $profil["id"] ?>' readonly />
