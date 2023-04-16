@@ -108,14 +108,32 @@ input:focus {
     width: 100%;
     padding: 2rem;
   }
+  #kep{
+    max-height: 450px;
+  }
   .name {
     flex-direction: column;
     gap: 0;
+    max-height: 150px;
+    margin-bottom: 1rem;
+  }
+  .input_row{
+    margin-bottom: 1.5rem;
   }
   .input_row li {
     font-size: 1.2rem;
   }
+  .input-row ul{
+    margin-bottom: 0;
+  }
   input {
     padding: 0.5rem;
   }
+  #adatok{
+    max-height: 600px;
+  }
+  #torles{
+    max-height: 200px;
+  }
+  
 }

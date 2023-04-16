@@ -107,7 +107,7 @@ if (isset($_POST["delete_user"])) {
 }
 ?>
 <section class="container">
-    <form action="/felhasznalo.php" method="POST" enctype="multipart/form-data">
+    <form action="/felhasznalo.php" id="kep" method="POST" enctype="multipart/form-data">
         <ul class="profilkep">
             <label for="profile-pic">Töltsd fel a profilképed:</label>
             <img src="<?= $profilPicture ?>" alt="Profilkép" height="250" class="shadow" />
@@ -128,18 +128,18 @@ if (isset($_POST["delete_user"])) {
             }
         }
         ?>
-    <form action="/felhasznalo.php" method="POST">
+    <form action="/felhasznalo.php" id="adatok" method="POST">
         <ul class="input_row">
             <label for="id">Felhasználó neved:</label>
             <input type="text" name="id" value='<?php echo $profil["id"] ?>' readonly />
         </ul>
         <div class="name">
             <ul class="input_row">
-                <label for="surname">Vezetékneved:</label><br>
+                <label for="surname">Vezetékneved:</label>
                 <input type="text" name="surname" value='<?= $profil["vezeteknev"] ?>' />
             </ul>
             <ul class="input_row">
-                <label for="forname">Keresztneved:</label><br>
+                <label for="forname">Keresztneved:</label>
                 <input type="text" name="forname" value='<?= $profil["keresztnev"] ?>'>
             </ul>
         </div>
@@ -155,11 +155,11 @@ if (isset($_POST["delete_user"])) {
             <label for="password">Jelszó módosítás (minimum 5 karakter):</label>
             <input type="password" name="password" />
         </ul>
-        <ul class="input_row">
+        <ul class="input_row igazit">
             <input type="submit" class="submit" name="adatotModosit" value="Adatok módosítása" />
         </ul>
     </form>
-    <form method="POST" style="display:flex; flex-direction:row">
+    <form method="POST" id="torles" style="display:flex; flex-direction:row">
         <ul class="input_row">
             <label for="password_check">Add meg a jelszavad a profilod törléséhez</label>
             <input type="password" name="password_check" />
