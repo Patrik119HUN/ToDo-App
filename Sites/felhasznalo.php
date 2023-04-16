@@ -57,7 +57,7 @@ if (isset($_POST["adatotModosit"])) {
 
         saveToFile("users.txt", $fiokok);
         $siker = TRUE;
-        header("Location: /felhasznalo");
+        header("Location: /felhasznalo.php");
     } else {
         $siker = FALSE;
     }
@@ -86,7 +86,7 @@ if (isset($_POST["modosit"]) && is_uploaded_file($_FILES["profile-pic"]["tmp_nam
             unlink($profilPicture);
         }
 
-        header("Location: /felhasznalo");
+        header("Location: /felhasznalo.php");
     } else {
         echo "<p>" . $fajlfeltoltes_hiba . "</p>";
     }
@@ -101,14 +101,14 @@ if (isset($_GET["delete_user"])) {
         saveToFile("users.txt", $fiokok);
         session_unset();
         session_destroy();
-        header("Location: /kezdolap");
+        header("Location: /kezdolap.php");
     } else {
         echo "sikertelen";
     }
 }
 ?>
 <section class="container">
-    <form method="POST" enctype="multipart/form-data">
+    <form action="/felhasznalo.php" method="POST" enctype="multipart/form-data">
         <ul class="profilkep">
             <label for="profile-pic">Töltsd fel a profilképed:</label>
             <img src="<?= $profilPicture ?>" alt="Profilkép" height="250" class="shadow" />
@@ -120,7 +120,16 @@ if (isset($_GET["delete_user"])) {
     <ul>
         <h2>Adataid</h2>
     </ul>
-    <form action="/felhasznalo" method="POST">
+    <?php
+        if (isset($siker) && $siker === TRUE) {
+            echo "<p style='color:green; font-size:1rem;'>Adatok módosítva!</p>";
+        } else {
+            foreach ($hibak as $hiba) {
+                echo "<p style=' color:red; font-size:1.3rem;'>$hiba</p>";
+            }
+        }
+        ?>
+    <form action="/felhasznalo.php" method="POST">
         <ul class="input_row">
             <label for="id">Felhasználó neved:</label>
             <input type="text" name="id" value='<?php echo $profil["id"] ?>' readonly />
@@ -150,19 +159,10 @@ if (isset($_GET["delete_user"])) {
         <ul class="input_row">
             <input type="submit" id="submit" name="adatotModosit" value="Adatok módosítása" />
         </ul>
-        <?php
-        if (isset($siker) && $siker === TRUE) {
-            echo "<p style='color:green; font-size:1rem;'>Adatok módosítva!</p>";
-        } else {
-            foreach ($hibak as $hiba) {
-                echo "<p style=' color:red; font-size:1.3rem;'>$hiba</p>";
-            }
-        }
-        ?>
     </form>
-    <form method="GET">
+    <form action="/felhasznalo.php" method="GET">
         <ul class="input_row">
-            <label for="password_check">Ellenörző</label>
+            <label for="password_check">Add meg a jelszavad a profilod törléséhez</label>
             <input type="password" name="password_check" />
         </ul>
         <button type="submit" name="delete_user" class="shadow" style="color:black">Profil Törlése</button>

@@ -1,3 +1,6 @@
+main{
+  min-height: 140vh;
+}
 .bg-img {
   background-image: url(../pics/parafa.png);
   min-height: 140vh;

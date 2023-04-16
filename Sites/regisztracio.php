@@ -50,6 +50,7 @@
       $path = "users/" . $id . "/";
       mkdir($path);
       $siker = TRUE;
+      header("Location: /bejelentkezes.php");
     } else {
       $siker = FALSE;
     }
@@ -60,6 +61,15 @@
     <form action="/regisztracio.php" class="form shadow" id="reset" method="POST">
       <fieldset style="padding:2rem; border:none">
         <h1>Regisztráció</h1>
+        <?php
+        if (isset($siker) && $siker === TRUE) { 
+          echo "<p style='color:green; font-size:1rem;'>Sikeres regisztráció!</p>";
+        } else {                                
+          foreach ($hibak as $hiba) {
+            echo "<p style=' color:red; font-size:1.3rem;'>$hiba</p>";
+          }
+        }
+        ?>
         <div style="display:flex; gap:2rem">
           <div>
             <label for="surname"><b>Vezetéknév</b></label>
@@ -72,6 +82,7 @@
         </div>
         <label for="id"><b>Felhasználónév</b></label>
         <input class="shadow" type="text" placeholder="jankópityu129" name="id" value="<?php if (isset($_POST['id'])) echo $_POST['id']; ?>" />
+        
         <label for="birthday"><b>Születési dátum: </b></label>
         <input class="shadow" type="date" id="birthday" name="birthday" value="<?php if (isset($_POST['birthday'])) echo $_POST['birthday']; ?>" />
         <br>
@@ -85,15 +96,7 @@
         <input class="shadow" type="password" placeholder="Adj meg egy jelszót" name="psw_n" />
 
         <button type="submit" class="login shadow" name="register">Regisztrálok</button>
-        <?php
-        if (isset($siker) && $siker === TRUE) { 
-          echo "<p style='color:green; font-size:1rem;'>Sikeres regisztráció!</p>";
-        } else {                                
-          foreach ($hibak as $hiba) {
-            echo "<p style=' color:red; font-size:1.3rem;'>$hiba</p>";
-          }
-        }
-        ?>
+        
         <button type="reset" class="rButton shadow" onclick="myFunction()"> Törlés </button>
       </fieldset>
     </form>

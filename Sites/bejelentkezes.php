@@ -33,7 +33,7 @@
         <h1>Bejelentkezés</h1>
 
         <label for="username"><b>Felhasználónév vagy E-mail cím</b></label>
-        <input class="shadow" type="text" placeholder="'jankópityu129' vagy 'jankopisti@valami.com'" name="username" required />
+        <input class="shadow" type="text" placeholder="'jankópityu129' vagy 'jankopisti@valami.com'"  name="username" required />
 
         <label for="psw"><b>Password</b></label>
         <input class="shadow" type="password" placeholder="Adj meg egy jelszót" name="psw" required />
