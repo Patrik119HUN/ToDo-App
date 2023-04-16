@@ -90,7 +90,7 @@ input[type="text"]:focus{
 .task select:focus {
   outline: 0;
 }
-#leiras {
+.leiras {
   margin-top: 1rem;
   font-size: 1.25rem;
   padding-top: 0.2rem;

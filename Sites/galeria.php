@@ -22,9 +22,6 @@
             <td>Kiemelheted a legfontosabb eseményeidet</td>
             <td>Nem tudod visszakeresni a részleteket, ha nem emlékszel</td>
         </tr>
-        <tr>
-
-        </tr>
 
     </table>
 </main>

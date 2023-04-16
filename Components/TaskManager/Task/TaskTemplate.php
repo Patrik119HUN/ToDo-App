@@ -1,14 +1,14 @@
  <div class="task shadow">
      <form  method=get>
-         <button type=submit name=delete value=<?= $this->id ?> class=delete_button style="background-color:blanchedalmond;">X</button>
-         <input type=hidden name=taskId value=<?= $this->id ?>></input>
+         <button type=submit name=delete value='<?= $this->id ?>' class="delete_button" style="background-color:blanchedalmond;">X</button>
+         <input type=hidden name=taskId value='<?= $this->id ?>' />
          <div class=inputs>
-             <input type=text placeholder="Feladat neve" name=name value='<?= $this->name ?>'></input>
-             <input type=text placeholder="Leírása" id=leiras name=description value='<?= $this->description ?>'></input>
-             <input type=date name=date value=<?= $this->hatarIdo ?>></input>
+             <input type=text placeholder="Feladat neve" name=name value='<?= $this->name ?>'/>
+             <input type=text placeholder="Leírása" class=leiras name=description value='<?= $this->description ?>'/>
+             <input type=date name=date value='<?= $this->hatarIdo ?>'/>
          </div>
          <div style="display: flex; flex-direction: row;justify-content: space-between; ">
-             <select name=state id=state>
+             <select name=state>
                  <?php
                     foreach (TaskList::$name as $i) {
                         if ($i == $this->state) {
