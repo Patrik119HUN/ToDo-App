@@ -3,8 +3,8 @@
          <button type=submit name=delete value=<?= $this->id ?> class=delete_button style="background-color:blanchedalmond;">X</button>
          <input type=hidden name=taskId value=<?= $this->id ?>></input>
          <div class=inputs>
-             <input type=text placeholder="Feladat neve" name=name value=<?= $this->name ?>></input>
-             <input type=text placeholder="Leírása" id=leiras name=description value=<?= $this->description ?>></input>
+             <input type=text placeholder="Feladat neve" name=name value='<?= $this->name ?>'></input>
+             <input type=text placeholder="Leírása" id=leiras name=description value='<?= $this->description ?>'></input>
              <input type=date name=date value=<?= $this->hatarIdo ?>></input>
          </div>
          <div style="display: flex; flex-direction: row;justify-content: space-between; ">
