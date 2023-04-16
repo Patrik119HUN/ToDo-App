@@ -1,5 +1,5 @@
  <div class="task shadow">
-     <form action=/teendok method=get>
+     <form  method=get>
          <button type=submit name=delete value=<?= $this->id ?> class=delete_button style="background-color:blanchedalmond;">X</button>
          <input type=hidden name=taskId value=<?= $this->id ?>></input>
          <div class=inputs>

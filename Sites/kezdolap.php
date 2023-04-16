@@ -1,4 +1,5 @@
 <?php
+
 include 'Components/Card/Card.php';
 include 'Components/Hero/Hero.php';
 

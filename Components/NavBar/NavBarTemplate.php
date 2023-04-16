@@ -1,6 +1,6 @@
 <nav class=topnav>
     <div>
-        <a href='/kezdolap' class='logo'>ToDo APP</a>
+        <a href='/kezdolap.php' class='logo'>ToDo APP</a>
         <button class='ham' id='myBtn'>
             <img src='SVG/menu.svg' alt="Hamburger" style="width: 2rem"/>
         </button>

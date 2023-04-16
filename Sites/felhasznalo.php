@@ -1,5 +1,5 @@
 <?php
-include "./common.php";
+include "./Components/common.php";
 $fiokok =  loadFile("users.txt");
 $profil;
 foreach ($fiokok as $fiok) {

@@ -1,5 +1,5 @@
   <?php
-  include "./common.php";
+  include "./Components/common.php";
   $fiokok = loadFile("users.txt");
 
   $uzenet = "";                     
@@ -21,14 +21,14 @@
           $uzenet = "Sikeres belépés!";        
           $_SESSION["user"] = $fiok;
           $_SESSION["Bejelentkezve"][1]["felhasznalo"] = $id;
-          header("Location: /kezdolap");                              
+          header("Location: /kezdolap.php");                              
         }
       }
     }
   }
   ?>
   <main class="bg-img" id="bejelentkezes">
-    <form action="/bejelentkezes" class="form shadow" id="reset" method="GET">
+    <form action="/bejelentkezes.php" class="form shadow" id="reset" method="GET">
     <fieldset style="padding:2rem; border:none">
         <h1>Bejelentkezés</h1>
 

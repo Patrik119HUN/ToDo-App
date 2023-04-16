@@ -1,5 +1,5 @@
   <?php
-  include "./common.php";
+  include "./Components/common.php";
   $fiokok =  loadFile("users.txt");
   $hibak = [];
 
@@ -57,7 +57,7 @@
   ?>
 
   <main class="bg-signup" id="bejelentkezes">
-    <form action="/regisztracio" class="form shadow" id="reset" method="POST">
+    <form action="/regisztracio.php" class="form shadow" id="reset" method="POST">
       <fieldset style="padding:2rem; border:none">
         <h1>Regisztráció</h1>
         <div style="display:flex; gap:2rem">

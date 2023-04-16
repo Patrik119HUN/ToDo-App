@@ -45,7 +45,7 @@ class TaskManager
         array_push(TaskManager::$taskList, new TaskList("", $id, $name));
         array_push(TaskManager::$TaskNames, array($id, $name));
         saveToFile($this->path, TaskManager::$TaskNames);
-        header("Location: /teendok");
+        header("Location: /teendok.php");
     }
     public function delete($id)
     {
@@ -54,13 +54,13 @@ class TaskManager
         $key = $this->searchInTasksByKey($id);
         unset(TaskManager::$TaskNames[$key]);
         saveToFile($this->path, TaskManager::$TaskNames);
-        header("Location: /teendok");
+        header("Location: /teendok.php");
     }
     private function change($id)
     {
         TaskManager::$TaskNames[$this->searchInTasksByKey($id)][1] = $_GET["taskName"];
         saveToFile($this->path, TaskManager::$TaskNames);
-        header("Location: /teendok");
+        header("Location: /teendok.php");
     }
     public function render()
     {

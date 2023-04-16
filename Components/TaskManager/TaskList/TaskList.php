@@ -1,5 +1,5 @@
 <?php
-include './common.php';
+include './Components/common.php';
 include 'Components/TaskManager/Task/Task.php';
 class TaskList
 {
@@ -47,7 +47,7 @@ class TaskList
             }
             saveToFile($this->path, $this->TaskList);
         }
-        header("Location: /teendok");
+        header("Location: /teendok.php");
     }
     public function render()
     {
