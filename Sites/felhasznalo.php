@@ -85,7 +85,7 @@ if (isset($_POST["modosit"]) && is_uploaded_file($_FILES["profile-pic"]["tmp_nam
             unlink($profilPicture);
         }
 
-        header("Location: /felhasznalo");
+        header("Location: /felhasznalo.php");
     } else {
         echo "<p>" . $fajlfeltoltes_hiba . "</p>";
     }
@@ -100,7 +100,7 @@ if (isset($_POST["delete_user"])) {
         saveToFile("users.txt", $fiokok);
         session_unset();
         session_destroy();
-        header("Location: /kezdolap");
+        header("Location: /kezdolap.php");
     } else {
         echo "sikertelen";
     }
