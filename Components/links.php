@@ -17,7 +17,7 @@ $bejelentkezve = [
     "statisztika.php" => "Statisztika",
   ],
   [
-    //"felhasznalo.php" => "Adatok",
+    "felhasznalo.php" => "Adatok",
     "kijelentkezes.php" => "Kijelentkezés",
   ]
 ];
